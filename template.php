@@ -42,7 +42,7 @@ abstract class sasi_template{
 					}
 				}
 				
-				echo '<div class="container">';
+				echo '<div class="container-fluid card pt-md pr-xl pl-xl pb-xl  light-grey">';
 				echo '<div class="row">';
 					$object::{$func}($val['data']);
 				echo '</div>';
@@ -308,7 +308,6 @@ abstract class sasi_template{
 		}
 		
 		?>
-	<div class="container-fluid card pt-md pr-xl pl-xl pb-xl  light-grey">
 		<div class="col-md-12" style="border:1px solid #fff">
 			<div class="portlet box blue-madison">
 				<div class="portlet-title">
@@ -336,7 +335,6 @@ abstract class sasi_template{
 				</div>
 			</div>
 		</div>
-	</div>
 		<?php
 	}
 

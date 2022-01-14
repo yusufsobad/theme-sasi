@@ -279,7 +279,7 @@ class sasi_layout extends sasi_template{
 					object = obj;
 
 					data = "ajax=_sidemenu&object="+object+"&data=";
-					sobad_ajax('#here_sidemenu',data,'html',false);
+					sobad_ajax('#here_content',data,'html',false);
 				}
 
 				function sasi_ajaxmenu(sasi_menu,lenSasi){
