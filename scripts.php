@@ -57,7 +57,7 @@ class theme_script{
 		}
 		
 		return $css;
-	}	
+	}
 
 // BEGIN PAGE LEVEL SCRIPTS ---->
 	private function _js_page_level($idx=array()){
