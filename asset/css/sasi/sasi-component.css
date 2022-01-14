@@ -1,0 +1,17 @@
+.topnav a.disable-target:hover{
+    border-bottom: unset !important; 
+}
+
+.navbar-default .navbar-nav>li>a.disable-target{
+    color: #818893 !important;
+}
+
+.navbar-default .navbar-nav>li>a.disable-target:hover {
+    cursor: not-allowed !important;
+}
+
+.portlet.box.blue-madison {
+    padding: 3em !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}

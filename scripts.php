@@ -27,6 +27,7 @@ class theme_script{
 		$loc = $this->lokasi();
 		$css = array(
 			'component'			=> $loc.'css/pages/components.css',
+			'sasi-component'	=> $loc.'css/sasi/sasicomponent.css',
 		);
 		
 		$check = array_filter($idx);

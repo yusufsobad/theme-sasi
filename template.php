@@ -308,7 +308,7 @@ abstract class sasi_template{
 		}
 		
 		?>
-		<div class="col-md-12" style="border:1px solid #fff">
+		<div class="col-md-12">
 			<div class="portlet box blue-madison">
 				<div class="portlet-title">
 					<div class="caption">
