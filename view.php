@@ -58,6 +58,8 @@ class sasi_layout extends sasi_template{
 				$menu = $val['child'];
 				$func = $val['func'];
 				$data = $val['label'];
+
+				$loc = isset($val['loc'])?$val['loc']:'';
 			}
 
 			// Check active Sidemenu
@@ -66,6 +68,8 @@ class sasi_layout extends sasi_template{
 				$menu = $val['child'];
 				$func = $val['func'];
 				$data = $val['label'];
+
+				$loc = isset($val['loc'])?$val['loc']:'';
 			}
 
 			$no += 1;
@@ -76,6 +80,11 @@ class sasi_layout extends sasi_template{
 				<?php
 					if($status){
 						if($menu==null){
+							if(!empty($loc)){
+								$loc = empty($loc)?$func:$loc.'.'.$func;
+								sobad_asset::_loadFile($loc);
+							}
+
 							if(class_exists($func)){
 								if(is_callable(array($func,'_sidemenu'))){	
 									echo $func::_sidemenu($data);
