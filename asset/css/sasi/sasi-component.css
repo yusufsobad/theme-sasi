@@ -1,3 +1,7 @@
+.footer-logo>img {
+    width: 170px;
+}
+
 .topnav a.disable-target:hover{
     border-bottom: unset !important; 
 }
@@ -20,4 +24,8 @@
 .portlet > .portlet-body.blue-madison, .portlet.blue-madison,
 .portlet.box.blue-madison > .portlet-title {
     background-color: #fff !important;
+}
+
+.portlet.box.blue-madison > .portlet-title > .caption {
+    color: #333;
 }

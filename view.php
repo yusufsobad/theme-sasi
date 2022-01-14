@@ -115,7 +115,7 @@ class sasi_layout extends sasi_template{
                     </div>
                     <div class="footer-logo col-lg-6 text-right ">
                         <h4> Your company: </h4>
-                        <img src="asset/img/logo-big-sobad.png">
+                        <img src="asset/img/logo-company.png">
                     </div>
                 </div>
             </div>
