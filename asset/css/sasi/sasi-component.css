@@ -14,4 +14,10 @@
     padding: 3em !important;
     border-radius: 20px !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+    border:unset !important;
+}
+
+.portlet > .portlet-body.blue-madison, .portlet.blue-madison,
+.portlet.box.blue-madison > .portlet-title {
+    background-color: #fff !important;
 }
