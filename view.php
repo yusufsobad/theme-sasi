@@ -315,6 +315,13 @@ class sasi_layout extends sasi_template{
 
 		parent::_modal_form($qty);
 		parent::_head_pagebar($args['link'],$args['date']);
+		?>
+		<div class="sasi-tittle pl-xl light-grey">
+            <div class="container-fluid pl-xl">
+                <h1 class="font-weight-600"><?php echo $args['title'] ;?></h1>
+            </div>
+        </div>
+        <?php
 	}
 
 	public static function _content($func,$args = array()){
