@@ -53,6 +53,11 @@ label.control-label {
 
 /* End Modal */
 
+.btn.btn-xs {
+    padding: 3px 10px;
+    border-radius: 5px !important;
+}
+
 .footer-logo>img {
     width: 170px;
 }
@@ -83,4 +88,31 @@ label.control-label {
 
 .portlet.box.blue-madison > .portlet-title > .caption {
     color: #333;
+}
+
+/* Button */
+
+.btn.blue {
+    color: #009EF7 !important;
+    background-color: #F5F8FA !important;
+}
+
+.btn.green {
+    color: #15BA6B !important;
+    background-color: #F5F8FA !important;
+}
+
+.btn.orange {
+    color: #FF8459 !important;
+    background-color: #F5F8FA !important;
+}
+
+.btn.red {
+    color: #D51442 !important;
+    background-color: #F5F8FA !important;
+}
+
+.btn.orange {
+    color: #FF8459 !important;
+    background-color: #F5F8FA !important;
 }
