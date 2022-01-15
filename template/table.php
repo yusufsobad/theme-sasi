@@ -5,7 +5,7 @@ class create_table{
 	
 	public static function _table ($args=array()){
 		
-		$class = "table table-striped table-bordered table-hover dataTable no-footer ";
+		$class = "table table-hover sasi-table ";
 		if(isset($args['class'])){
 			$class .= $args['class'];
 		}
@@ -21,7 +21,7 @@ class create_table{
 		
 		// table-scrollable
 		?>
-		<div class="table_flexible">
+		<div class="table-responsive">
 			<table id="<?php print($id) ;?>" class="<?php print($class) ;?>">
 				<?php
 				$check = array_filter($args['table']);
@@ -77,9 +77,6 @@ class create_table{
 										self::_dropdown($args,$search,$val_src);
 									}
 								?>
-								<button data-sobad="<?php print($func) ;?>" type="button" class="btn green-haze" data-load="<?php print($load) ;?>" data-type="<?php print($type) ;?>" data-object="<?php print($obj) ;?>" onclick="sobad_search(this)">
-									Search &nbsp; <i class="m-icon-swapright m-icon-white"></i>
-								</button>
 							</span>
 						</div>
 					</form>
@@ -100,7 +97,7 @@ class create_table{
 	private static function _dropdown($args = array(),$search='',$value=0){
 		?>
 			<div class="btn-group">
-				<button type="button" class="btn blue dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs"></i></button>
+				<button type="button" class="btn sasi-btn-search dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs"></i></button>
 				<div class="dropdown-menu hold-on-click dropdown-radiobuttons" role="menu">
 					<?php 
 						foreach($args as $key => $val){ 
@@ -172,10 +169,10 @@ private static function tbody($args=array()){
 			<?php
 				for($i=0;$i<$len;$i++){
 					$hsl = $i % 2;
-					$cls = 'odd';
-					if($hsl == 1){
-						$cls = 'even';
-					}
+					$cls = '';//'odd';
+					//if($hsl == 1){
+					//	$cls = 'even';
+					//}
 					
 					$cls1 = isset($args[$i]['tr'])?$args[$i]['tr']:'';
 					$cls1 = isset($cls1[0])?$cls1[0]:'';
@@ -229,8 +226,8 @@ private static function tbody($args=array()){
 
 			if($start-1>=1){
 				$prev = '<li>
-							<a class="page_malika" data-sobad="'.$args['func'].'" data-qty="'.intval($start-1).'" data-load="'.$load.'" data-object="'.$object.'" data-type="'.$type.'" href="javascript:;">
-								<i class="fa fa-angle-left"></i>
+							<a class="page_malika" data-sobad="'.$args['func'].'" data-qty="'.intval($start-1).'" data-load="'.$load.'" data-object="'.$object.'" data-type="'.$type.'" href="javascript:;" aria-label="Previous">
+								<span aria-hidden="true">«</span>
 							</a>
 						</li>';
 			}
@@ -241,32 +238,48 @@ private static function tbody($args=array()){
 		
 		if($finish<$page){
 			$next = '<li>
-						<a class="page_malika" data-sobad="'.$args['func'].'" data-qty="'.intval($finish+1).'" data-load="'.$load.'" data-object="'.$object.'" data-type="'.$type.'" href="javascript:;">
-							<i class="fa fa-angle-right"></i>
+						<a class="page_malika" data-sobad="'.$args['func'].'" data-qty="'.intval($finish+1).'" data-load="'.$load.'" data-object="'.$object.'" data-type="'.$type.'" href="javascript:;" aria-label="Next">
+							<span aria-hidden="true">»</span>
 						</a>
 					</li>';
 		}
 		?>
-			<div class="margin-top-20">
-				<ul id="dash_pagination" class="pagination">
-					<?php
-						print($prev);
-					
-						for($i=$start;$i<=$finish;$i++){
-							$opt = '';
-							$pg_malika = 'page_malika';
-							if($i==$number){
-								$opt = 'disabled';
-								$pg_malika = '';
-							}
+		<div class="panel-footer sasi-card-footer light radius-bottom-lg p-lg">
+			<div class="sasi-pagination pl-lg pr-lg pb-md">
+				<div class="row">
+					<div class="col-lg-6">
+	                    <div class="table-length width-fit">
+	                        <select name="show_page" class="form-control input-sm">
+	                            <option value="10">10</option>
+	                            <option value="25">25</option>
+	                            <option value="50">50</option>
+	                            <option value="100">100</option>
+	                        </select>
+	                    </div>
+	                </div>
+					<div class="col-lg-6 text-right">
+						<ul id="dash_pagination" class="pagination sasi-pagination m-0">
+							<?php
+								print($prev);
 							
-							echo '<li class="'.$opt.'"><a class="'.$pg_malika.'" data-sobad="'.$args['func'].'" data-object="'.$object.'" data-qty="'.$i.'" data-load="'.$load.'" data-type="'.$type.'" href="javascript:;"> '.$i.' </a></li>';
-						}
-						
-						print($next);
-					?>
-				</ul>
+								for($i=$start;$i<=$finish;$i++){
+									$opt = '';
+									$pg_malika = 'page_malika';
+									if($i==$number){
+										$opt = 'disabled';
+										$pg_malika = '';
+									}
+									
+									echo '<li class="'.$opt.'"><a class="'.$pg_malika.'" data-sobad="'.$args['func'].'" data-object="'.$object.'" data-qty="'.$i.'" data-load="'.$load.'" data-type="'.$type.'" href="javascript:;"> '.$i.' <span class="sr-only">(current)</span></a></li>';
+								}
+								
+								print($next);
+							?>
+						</ul>
+					</div>
+				</div>
 			</div>
+		</div>
 			<script>
 				$("a.page_malika").click(function(){
 					sobad_pagination(this);
