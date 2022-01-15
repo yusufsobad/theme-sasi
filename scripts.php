@@ -66,6 +66,8 @@ class theme_script{
 //			'themes-sasi'			=> $loc.'js/sasi/sasi.js',
 			'themes-login-soft'		=> $loc.'js/pages/login-soft.js',
 			'themes-ui-toastr'		=> $loc.'js/pages/ui-toastr.js',
+			'themes-dropdown'		=> $loc.'js/pages/components-dropdowns.js',
+			'themes-editor'			=> $loc.'js/pages/components-editors.js',
 		);
 		
 		$check = array_filter($idx);
