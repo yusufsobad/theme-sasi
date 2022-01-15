@@ -154,7 +154,7 @@ class create_table{
 								$rowspan = 'rowspan="'.$val[5].'"';
 							}
 							
-							print('<th '.$colspan.' '.$rowspan.' '.$att.' style="text-align:center;width:'.$val[1].';">'.$key.'</th>');
+							print('<th '.$colspan.' '.$rowspan.' '.$att.' style="text-align:left;width:'.$val[1].';">'.$key.'</th>');
 						}
 					?>
 				</tr>
