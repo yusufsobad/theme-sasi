@@ -1,3 +1,42 @@
+/* Modal */
+.modal-full-custom.modal-dialog{
+	width: 60% !important;
+}
+
+.modal-dialog .modal-header,
+.modal-dialog .modal-body,
+.modal-dialog .modal-footer {
+    padding: 30px 40px 20px 40px;
+    border: unset !important;
+}
+
+.modal-header>h4.modal-title {
+    font-size: 20px !important;
+    text-transform: capitalize;
+}
+
+.modal-dialog .modal-footer{
+	text-align: left !important;
+}
+
+label.col-md-4.control-label {
+    margin-bottom: 10px;
+}
+
+.modal-footer>button.btn.blue,
+.modal-footer>button.btn.red-border {
+    padding: 7px 30px;
+    border-radius: 10px !important;
+}
+
+.modal-footer>button.btn.red-border{
+	background-color: #fff;
+    color: #D51414;
+    border: 1px solid #D51414;
+}
+
+/* End Modal */
+
 .footer-logo>img {
     width: 170px;
 }

@@ -7,16 +7,16 @@ class create_form{
 
 	private static $_require = array();
 
-	public static $col_label = 4;
+	public static $col_label = 12;
 
-	public static $col_input = 7;
+	public static $col_input = 12;
 	
 	private static function option_form($args=array()){
 		$inp = '';
 		foreach($args as $key => $val){
 			if($key === 'cols'){
-				self::$col_label = $val[0];
-				self::$col_input = $val[1];
+				//self::$col_label = $val[0];
+				//self::$col_input = $val[1];
 			}else{
 				if(is_callable(array(new self(),$val['func']))){
 					$func = $val['func'];
