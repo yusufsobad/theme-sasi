@@ -3,10 +3,21 @@
 	width: 60% !important;
 }
 
-.modal-dialog .modal-header,
-.modal-dialog .modal-body,
-.modal-dialog .modal-footer {
-    padding: 30px 40px 20px 40px;
+.modal-dialog .modal-content {
+    border-radius: 25px !important;
+}
+
+.modal-dialog .modal-header {
+    padding: 30px 40px 10px 40px;
+    border: unset !important;
+}
+
+.modal-dialog .modal-body{
+	padding: 10px 40px 10px 40px;
+}
+
+.modal-dialog .modal-footer{
+	padding: 10px 40px 30px 40px;
     border: unset !important;
 }
 
@@ -19,8 +30,13 @@
 	text-align: left !important;
 }
 
-label.col-md-4.control-label {
-    margin-bottom: 10px;
+label.control-label {
+    padding-bottom: 10px;
+    text-align: left !important;
+}
+
+.form-group .form-control.input-circle {
+    border-radius: 10px !important;
 }
 
 .modal-footer>button.btn.blue,
