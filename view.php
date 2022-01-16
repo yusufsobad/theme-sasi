@@ -82,6 +82,7 @@ class sasi_layout extends sasi_template{
 			$child = get_side_active($reg_sidebar,$page);
 				
 			$menu = null;
+			$uri = $page;
 			$func = $child['func'];
 			$data = $child['label'];
 		}
