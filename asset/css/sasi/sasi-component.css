@@ -147,6 +147,10 @@ td>.btn.yellow {
     color: #fff;
 }
 
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+    background-color: #ddd;
+}
+
 ul.nav.nav-tabs>li:first-child>a {
     border-top-left-radius: 10px !important;
     border-bottom-left-radius: 10px !important;
