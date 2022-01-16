@@ -50,29 +50,40 @@ class sasi_layout extends sasi_template{
 	private static function _container(){
 		global $reg_sidebar;
 
+		$page = get_page_url();
+
 		$no = 0;
 		$status = false;
-		foreach($reg_sidebar as $key => $val){
-			if($no==0){
-				$uri = $key;
-				$menu = $val['child'];
-				$func = $val['func'];
-				$data = $val['label'];
+		if(empty($page)){
+			foreach($reg_sidebar as $key => $val){
+				if($no==0){
+					$uri = $key;
+					$menu = $val['child'];
+					$func = $val['func'];
+					$data = $val['label'];
 
-				$loc = isset($val['loc'])?$val['loc']:'';
+					$loc = isset($val['loc'])?$val['loc']:'';
+				}
+
+				// Check active Sidemenu
+				if($val['status']=='active'){
+					$status = true;
+					$menu = $val['child'];
+					$func = $val['func'];
+					$data = $val['label'];
+
+					$loc = isset($val['loc'])?$val['loc']:'';
+				}
+
+				$no += 1;
 			}
-
-			// Check active Sidemenu
-			if($val['status']=='active'){
-				$status = true;
-				$menu = $val['child'];
-				$func = $val['func'];
-				$data = $val['label'];
-
-				$loc = isset($val['loc'])?$val['loc']:'';
-			}
-
-			$no += 1;
+		}else{
+			$status = true;
+			$child = get_side_active($reg_sidebar,$page);
+				
+			$menu = null;
+			$func = $child['func'];
+			$data = $child['label'];
 		}
 
 		?>
@@ -245,9 +256,11 @@ class sasi_layout extends sasi_template{
 					var ajx = $(val).attr("id");
 					var uri = $(val).attr("data-uri");
 					sobad_load('here_content');
-					
+
 					if(ajx!='sobad_#' && ajx!='sobad_'){
-						
+						var lenSasi = history_menu.length;
+						history_menu[lenSasi] = uri;
+
 						//setcookie("sidemenu",ajx);
 						window.history.pushState(sasi_history(uri), ajx, '/'+system+'/'+uri);
 					}else{
