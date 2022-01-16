@@ -83,6 +83,8 @@ class sasi_layout extends sasi_template{
 				
 			$menu = null;
 			$uri = $page;
+			$loc = '';
+			
 			$func = $child['func'];
 			$data = $child['label'];
 		}

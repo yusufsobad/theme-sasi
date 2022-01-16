@@ -99,7 +99,8 @@ button.btn.dropdown-toggle.selectpicker {
 /* loading spinner */
 .nav-tabs>li.active>a,
 span.badge.badge-success,
-.loading-message>.block-spinner-bar>div {
+.loading-message>.block-spinner-bar>div,
+#dash_pagination li.disabled>a {
     background: #8023B4;
 }
 
@@ -195,4 +196,9 @@ form#sobad-search div.input-cont>input {
 
 button.btn.sasi-btn-search.dropdown-toggle {
     border-radius: 0px 10px 10px 0px !important;
+}
+
+#dash_pagination li.disabled>a,
+#dash_pagination li.disabled>a:hover {
+    border-radius: 5px !important;
 }
