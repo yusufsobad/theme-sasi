@@ -244,7 +244,8 @@ class sasi_layout extends sasi_template{
 				function sasi_sidemenu(val){
 					var ajx = $(val).attr("id");
 					var uri = $(val).attr("data-uri");
-
+					sobad_load('here_content');
+					
 					if(ajx!='sobad_#' && ajx!='sobad_'){
 						
 						//setcookie("sidemenu",ajx);
