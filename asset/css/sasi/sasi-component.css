@@ -92,6 +92,7 @@ a,
 }
 
 /* loading spinner */
+.nav-tabs>li.active>a,
 span.badge.badge-success,
 .loading-message>.block-spinner-bar>div {
     background: #8023B4;
@@ -143,8 +144,13 @@ td>.btn.yellow {
 }
 
 .nav-tabs>li.active>a {
-    background: #8023B4;
     color: #fff;
+}
+
+li.active span.badge.badge-success {
+    background: #fff;
+    color: #8023B4;
+    font-weight: 700;
 }
 
 .nav-tabs>li.active>a:focus {
