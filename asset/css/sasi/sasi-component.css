@@ -75,7 +75,7 @@ label.control-label {
 }
 
 .portlet.box.blue-madison {
-    padding: 3em !important;
+    padding: 2em 3em !important;
     border-radius: 20px !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
     border:unset !important;
@@ -86,33 +86,94 @@ label.control-label {
     background-color: #fff !important;
 }
 
+a,
 .portlet.box.blue-madison > .portlet-title > .caption {
     color: #333;
 }
 
+/* loading spinner */
+span.badge.badge-success,
+.loading-message>.block-spinner-bar>div {
+    background: #8023B4;
+}
+
 /* Button */
 
-.btn.blue {
+.table-hover>tbody>tr:hover{
+	background: unset;
+}
+
+button.btn.default.dropdown-toggle {
+    background: #F5F8FA;
+    border-radius: 5px !important;
+    margin-bottom: 5px;
+}
+
+td>.btn.blue {
     color: #009EF7 !important;
     background-color: #F5F8FA !important;
 }
 
-.btn.green {
+td>.btn.green {
     color: #15BA6B !important;
     background-color: #F5F8FA !important;
 }
 
-.btn.orange {
+td>.btn.orange {
     color: #FF8459 !important;
     background-color: #F5F8FA !important;
 }
 
-.btn.red {
+td>.btn.red {
     color: #D51442 !important;
     background-color: #F5F8FA !important;
 }
 
-.btn.orange {
+td>.btn.yellow {
     color: #FF8459 !important;
     background-color: #F5F8FA !important;
+}
+
+/* Tabs Nav */
+.nav-tabs{
+	display: inline-block;
+    background: #fff;
+    border-radius: 10px !important;
+    border-bottom: unset;
+}
+
+.nav-tabs>li.active>a {
+    background: #8023B4;
+    color: #fff;
+}
+
+ul.nav.nav-tabs>li:first-child>a {
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+ul.nav.nav-tabs>li:last-child>a {
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+/* Search Table */
+
+.row.search-form-default {
+    margin-bottom: 20px;
+}
+
+.row.search-form-default>div {
+    padding: 0px;
+}
+
+form#sobad-search div.input-cont>input {
+    border-top: 1px solid #dfdfdf;
+    border-radius: 10px 0px 0px 10px !important;
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+button.btn.sasi-btn-search.dropdown-toggle {
+    border-radius: 0px 10px 10px 0px !important;
 }
