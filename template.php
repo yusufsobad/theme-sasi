@@ -110,6 +110,8 @@ abstract class sasi_template{
 			return '';
 		}
 
+		$form = isset($args['form'])?$args['form']:true;
+
 		$id = isset($args['id'])?'id="'.$args['id'].'"':'';
 		$obj = _object;
 		
@@ -123,7 +125,11 @@ abstract class sasi_template{
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 					<h4 class="modal-title"><?php print($args['title']) ;?></h4>
 				</div>
-				<form id="<?php print($idx) ;?>" role="form" method="post" class="form-horizontal" enctype="multipart/form-data">
+
+				<?php if($form): ?>
+					<form id="frm_<?php print($idx) ;?>" role="form" method="post" class="form-horizontal" enctype="multipart/form-data" novalidate="novalidate">
+				<?php endif; ?>	
+
 					<button id="metronic-submit" type="submit" class="btn" style="display: none;"></button>
 					<?php foreach($args['func'] as $key => $func): ?>
 						<div class="modal-body">
@@ -138,7 +144,10 @@ abstract class sasi_template{
 							</div>
 						</div>
 					<?php endforeach; ?>
-				</form>
+
+				<?php if($form): ?>
+					</form>
+				<?php endif; ?>
 
 				<div class="modal-footer">
 					<?php
