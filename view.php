@@ -203,7 +203,7 @@ class sasi_layout extends sasi_template{
 	                    </div>
 	                </div>
                 </a>
-                <a href="javascript:void(0)">
+                <a href="javascript:">
                     <div class="col color-magenta text-left absolute bottom-6 pl-md pb-md-pr-md">
                         <p><img src="theme/<?php echo _theme_folder ;?>/asset/img/sasi-logo-help.png">Bantuan</p>
                     </div>
