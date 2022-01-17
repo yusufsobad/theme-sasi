@@ -275,7 +275,7 @@ abstract class sasi_template extends custom_script{
 			<div class="sasi-navigation secondary-grey pt-md pl-lg pr-lg">
                 <div class="container-fluid pl-xl pr-xl">
                     <ol class="breadcrumb secondary-grey">
-                        <a class="ml-sm mr-sm" href="javascript:void(0)" onclick="sasi_backmenu()"><i class="fa fa-arrow-circle-left color-dark-grey"></i></a>
+                        <a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><i class="fa fa-arrow-circle-left color-dark-grey"></i></a>
                         <li>
                         	<a class="color-dark-grey" href="">Home</a>
                         </li>
@@ -284,7 +284,7 @@ abstract class sasi_template extends custom_script{
 								foreach($link as $key => $val){
 									echo '
 										<li>
-											<a id="sobad_'.$val['func'].'" class="color-dark-grey" href="javascript:void(0)" onclick="sasi_sidemenu(this)" data-uri="'.$key.'">
+											<a id="sobad_'.$val['func'].'" class="color-dark-grey" href="javascript:" onclick="sasi_sidemenu(this)" data-uri="'.$key.'">
 												'.$val['label'].'
 											</a>
 										</li>';
