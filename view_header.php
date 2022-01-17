@@ -22,7 +22,7 @@ class sasi_header{
 			<!-- BEGIN LOGO -->
 			<div class="navbar-header">
                 <a class="navbar-brand" href="#">
-                    <img src="theme/sasi/asset/img/sasi-logo.png" width="50" height="50">
+                    <img src="theme/<?php echo _theme_folder ;?>/asset/img/sasi-logo.png" width="50" height="50">
                 </a>
             </div>
 			<!-- END LOGO -->

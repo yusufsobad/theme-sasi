@@ -3,6 +3,7 @@
 (!defined('THEMEPATH'))?exit:'';
 
 define('_theme_name','sasi_layout');
+define('_theme_folder',basename(__DIR__));
 
 require dirname(__FILE__).'/scripts.php';
 require dirname(__FILE__).'/view_header.php';
@@ -190,7 +191,7 @@ class sasi_layout extends sasi_template{
 
 		?>
 			<div class="overlay">
-                <img class="circle-icon" src="theme/sasi/asset/img/sasi-logo-circle.png">
+                <img class="circle-icon" src="theme/<?php echo _theme_folder ;?>/asset/img/sasi-logo-circle.png">
                 <div class="content-card-menu"></div>
                 <a id="sobad_<?php echo $func ;?>" href="javascript:" class="sasi_childmenu <?php echo $status ;?>" data-uri="<?php echo $key ;?>" <?php echo $click ;?>>
                 	<div class="box-sidemenu">
@@ -204,7 +205,7 @@ class sasi_layout extends sasi_template{
                 </a>
                 <a href="javascript:void(0)">
                     <div class="col color-magenta text-left absolute bottom-6 pl-md pb-md-pr-md">
-                        <p><img src="theme/sasi/asset/img/sasi-logo-help.png">Bantuan</p>
+                        <p><img src="theme/<?php echo _theme_folder ;?>/asset/img/sasi-logo-help.png">Bantuan</p>
                     </div>
                 </a>
             </div>
@@ -310,7 +311,7 @@ class sasi_layout extends sasi_template{
 
 				function sasi_ajaxmenu(sasi_menu,lenSasi){
 					var system_ajax = url_ajax;
-					url_ajax = "theme/sasi/ajax.php";
+					url_ajax = "theme/<?php echo _theme_folder ;?>/ajax.php";
 
 					for(var i=0;i<lenSasi;i++){
 						sasi_menu = sasi_menu[history_menu[i]]['child'];

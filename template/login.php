@@ -18,7 +18,7 @@ class user_login{
 	}
 
 	public static function _form_image($src=''){
-		$src = empty($src)?'theme/sasi/asset/img/login-sasi.png':$src;
+		$src = empty($src)?'theme/'._theme_folder.'/asset/img/login-sasi.png':$src;
 
 		?>
 			<div class="col-md-5 login-col secondary-grey">
@@ -33,7 +33,7 @@ class user_login{
 		?>
 			<div class="col-md-7 login-col light">
                 <div class="col-login-logo">
-                    <img class="login-logo" src="theme/sasi/asset/img/sasi-logo-login.png" alt="">
+                    <img class="login-logo" src="theme/<?php echo _theme_folder ;?>/asset/img/sasi-logo-login.png" alt="">
                 </div>
                 <div class="form-login">
                     <div class="login_inner">
