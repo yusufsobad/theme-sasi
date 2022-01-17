@@ -51,6 +51,10 @@ label.control-label {
     border: 1px solid #D51414;
 }
 
+.modal .modal-backdrop.fade.in {
+    position: fixed;
+}
+
 /* End Modal */
 
 .btn.btn-xs {
