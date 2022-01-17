@@ -55,6 +55,11 @@ label.control-label {
     position: fixed;
 }
 
+#history_portlet .table-responsive {
+    overflow-x: unset;
+    margin-top: 15px;
+}
+
 /* End Modal */
 
 .btn.btn-xs {
