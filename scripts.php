@@ -18,7 +18,19 @@ class theme_script{
 // BEGIN PAGE LEVEL STYLES ---->
 	
 	private function _css_page_level($idx=array()){
-		return array();
+		$loc = $this->lokasi();
+		$css = array(
+			'themes-login-soft'	=> $loc.'css/sasi/sasi-login.css',
+		);
+		
+		$check = array_filter($idx);
+		if(!empty($check)){
+			foreach($idx as $key){
+				$css[$key];
+			}
+		}
+		
+		return $css;
 	}
 	
 	
