@@ -168,7 +168,7 @@ class create_form{
 		$btn = '';
 		$cols = self::$col_input;
 		if(isset($val['button'])){
-			$cols -= 1;
+			$cols -= 2;
 			$btn = '<div class="col-md-1">'.$val['button'].'</div>';
 		}
 
@@ -244,7 +244,7 @@ class create_form{
 		$btn = '';
 		$cols = self::$col_input;
 		if(isset($val['button'])){
-			$cols -= 1;
+			$cols -= 2;
 			$btn = '<div class="col-md-1">'.$val['button'].'</div>';
 		}
 
@@ -440,7 +440,7 @@ class create_form{
 		$btn = '';
 		$cols = self::$col_input;
 		if(isset($val['button'])){
-			$cols -= 1;
+			$cols -= 2;
 			$btn = '<div class="col-md-1">'.$val['button'].'</div>';
 		}
 
@@ -583,7 +583,7 @@ class create_form{
 		$btn = '';
 		$cols = self::$col_input;
 		if(isset($val['button'])){
-			$cols -= 1;
+			$cols -= 2;
 			$btn = '<div class="col-md-1">'.$val['button'].'</div>';
 		}
 
