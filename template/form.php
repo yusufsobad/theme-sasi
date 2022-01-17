@@ -49,7 +49,7 @@ class create_form{
 		return self::$func($args);
 	}
 	
-	public static function get_form($args){
+	public static function get_form($args,$status=false){
 		$check = array_filter($args);
 		if(empty($check)){
 			$args = array(
