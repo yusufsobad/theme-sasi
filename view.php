@@ -159,8 +159,9 @@ class sasi_layout extends sasi_template{
 		$icon = isset($args['icon-menu'])?$args['icon-menu']:'sasi-icon-other';
 		$qty = isset($args['qty'])?$args['qty']:'';
 
+		$status = empty($args['func'])?'menu-disabled':'';
 		?>
-			<div class="d-flex">
+			<div class="d-flex <?php echo $status ;?>">
                 <div class="w-100">
                     <div class="pr-lg">
                         <i class="<?php echo $icon ;?> color-purple icon-menu"></i>
@@ -181,11 +182,17 @@ class sasi_layout extends sasi_template{
 		$label = $args['label'];
 		$help = isset($args['help'])?$args['help']:'';
 
+		$click = 'onclick="sasi_sidemenu(this)"';$status = '';
+		if(empty($func)){
+			$click = '';
+			$status = 'disabled';
+		}
+
 		?>
 			<div class="overlay">
                 <img class="circle-icon" src="theme/sasi/asset/img/sasi-logo-circle.png">
                 <div class="content-card-menu"></div>
-                <a id="sobad_<?php echo $func ;?>" href="javascript:" class="sasi_childmenu" data-uri="<?php echo $key ;?>" onclick="sasi_sidemenu(this)">
+                <a id="sobad_<?php echo $func ;?>" href="javascript:" class="sasi_childmenu <?php echo $status ;?>" data-uri="<?php echo $key ;?>" <?php echo $click ;?>>
                 	<div class="box-sidemenu">
 	                    <div class="content-menu absolute color-magenta pl-lg pr-lg top-0">
 	                        <div class="col text-left">
