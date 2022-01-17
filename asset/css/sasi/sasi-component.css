@@ -157,7 +157,11 @@ td>.btn.yellow {
 
 .nav-tabs>li.active>a {
     color: #fff;
-    border-radius: 20px !important;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li>a:hover{
+	border-radius: 20px !important;
 }
 
 li.active span.badge.badge-success {
