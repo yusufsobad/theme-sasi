@@ -192,12 +192,12 @@ abstract class sasi_template extends custom_script{
 		}
 		
 		?>
-		<button id="btn_<?php print($idx) ;?>" data-sobad="<?php print($args['link']) ;?>" data-load="<?php print($args['load']) ;?>" data-type="<?php print($type) ;?>" type="submit" class="btn blue" data-index="#<?php print($idx) ;?>" data-modal="<?php print($modal) ;?>" onclick="metronicSubmit_<?php print($idx) ;?>()" <?php print($status) ;?>>Save</button>
+		<button id="btn_<?php print($idx) ;?>" data-sobad="<?php print($args['link']) ;?>" data-load="<?php print($args['load']) ;?>" data-type="<?php print($type) ;?>" type="button" class="btn blue" data-index="#frm_<?php print($idx) ;?>" data-modal="<?php print($modal) ;?>" onclick="metronicSubmit_<?php print($idx) ;?>()" <?php print($status) ;?>>Save</button>
 		<button type="button" class="btn red-border" data-dismiss="modal">Cancel</button>
 
 		<script type="text/javascript">
 			function metronicSubmit_<?php print($idx) ;?>(){
-				$("form#<?php print($idx) ;?>").validate({
+				$("form#frm_<?php print($idx) ;?>").validate({
 					errorElement: 'span', //default input error message container
 	                errorClass: 'help-block help-block-error', // default input error message class
 	                focusInvalid: false, // do not focus the last invalid input
@@ -213,8 +213,13 @@ abstract class sasi_template extends custom_script{
 				    	sobad_submitLoad('#btn_<?php print($idx) ;?>');
 				  	}
 				 });
+				
+				$("form#frm_<?php print($idx) ;?>>button.metronic-submit").trigger("click");
 
-				$("form#<?php print($idx) ;?>>#metronic-submit").trigger("click");
+				setTimeout(function(){
+					$("form#frm_<?php print($idx) ;?>>button.metronic-submit").removeAttr("type").attr("type", "submit");
+					$("form#frm_<?php print($idx) ;?>>button.metronic-submit").trigger("click");
+				}, 200);
 			}
 		</script>
 		<?php
