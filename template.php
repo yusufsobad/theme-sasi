@@ -410,7 +410,9 @@ abstract class sasi_template{
 						}
 					?>
 				</div>
-			<?php
+			</div>
+		</div>
+		<?php
 	}
 
 	// ---------------------------------------------
