@@ -208,19 +208,25 @@ button.btn.sasi-btn-search.dropdown-toggle {
 ul.ver-inline-menu.tabbable {
     background: #F5F5F5;
     padding: 3px;
-    border-radius: 7px !important;
 }
 
 .ver-inline-menu li a {
     border-left: 1px solid #F5F5F5;
 }
 
+ul.ver-inline-menu.tabbable,
+.ver-inline-menu li.active a,
+.ver-inline-menu li:hover a{
+	border-radius: 7px !important;
+}
+
 .ver-inline-menu li.active a {
-    border-radius: 7px !important;
     border-left: 1px solid #8023B4;
 }
 
-.ver-inline-menu li i, .ver-inline-menu li.active i {
+.ver-inline-menu li i, 
+.ver-inline-menu li.active i,
+.ver-inline-menu li:hover i {
     background: unset !important;
 }
 
