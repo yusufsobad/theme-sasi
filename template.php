@@ -2,12 +2,10 @@
 
 (!defined('THEMEPATH'))?exit:'';
 
-require dirname(__FILE__).'/template/chart.php';
 require dirname(__FILE__).'/template/coming_soon.php';
-require dirname(__FILE__).'/template/file_manager.php';
-require dirname(__FILE__).'/template/dashboard.php';
-require dirname(__FILE__).'/template/form.php';
 require dirname(__FILE__).'/template/login.php';
+
+require dirname(__FILE__).'/template/form.php';
 require dirname(__FILE__).'/template/table.php';
 
 abstract class sasi_template{
@@ -483,7 +481,11 @@ abstract class sasi_template{
 	// ---------------------------------------------
 	// Create option dashboard ---------------------
 	// ---------------------------------------------
-	public static function sobad_dashboard($args = array()){
+public static function sobad_dashboard($args = array()){
+		if(!class_exists('admin_dashboard')){
+			require dirname(__FILE__).'/template/dashboard.php';
+		}
+
 		$dash = admin_dashboard::_dashboard($args);
 	}
 
@@ -498,20 +500,32 @@ abstract class sasi_template{
 	// Create option File manager ------------------
 	// ---------------------------------------------
 	public static function sobad_file_manager($args = array()){
+		if(!class_exists('create_file_manager')){
+			require dirname(__FILE__).'/template/file_manager.php';
+		}
+
 		$manager = create_file_manager::_layout($args);
 	}
 
 	// ---------------------------------------------
 	// Create Form ---------------------------------
 	// ---------------------------------------------
+	public static function report_form($args = array()){
+		$form = create_form::get_form($args,true);
+	}
+
 	public static function sobad_form($args = array()){
-		$form = create_form::get_form($args);
+		$form = create_form::get_form($args,false);
 	}
 
 	// ---------------------------------------------
 	// Create Chart ---------------------------------
 	// ---------------------------------------------
 	public static function sobad_chart($args = array()){
+		if(!class_exists('create_chart')){
+			require dirname(__FILE__).'/template/chart.php';
+		}
+
 		$chart = create_chart::_layout($args);
 	}
 }
