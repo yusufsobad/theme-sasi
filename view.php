@@ -186,12 +186,14 @@ class sasi_layout extends sasi_template{
                 <img class="circle-icon" src="theme/sasi/asset/img/sasi-logo-circle.png">
                 <div class="content-card-menu"></div>
                 <a id="sobad_<?php echo $func ;?>" href="javascript:" class="sasi_childmenu" data-uri="<?php echo $key ;?>" onclick="sasi_sidemenu(this)">
-                    <div class="content-menu absolute color-magenta pl-lg pr-lg top-0">
-                        <div class="col text-left">
-                            <h4 class="font-weight-600"><?php echo $label ;?></h4>
-                            <p><?php echo $help ;?></p>
-                        </div>
-                    </div>
+                	<div class="box-sidemenu">
+	                    <div class="content-menu absolute color-magenta pl-lg pr-lg top-0">
+	                        <div class="col text-left">
+	                            <h4 class="font-weight-600"><?php echo $label ;?></h4>
+	                            <p><?php echo $help ;?></p>
+	                        </div>
+	                    </div>
+	                </div>
                 </a>
                 <a href="javascript:void(0)">
                     <div class="col color-magenta text-left absolute bottom-6 pl-md pb-md-pr-md">

@@ -96,6 +96,11 @@ button.btn.dropdown-toggle.selectpicker {
     border-radius: 10px !important;
 }
 
+.sasi_childmenu .box-sidemenu {
+    width: 100%;
+    height: 75%;
+}
+
 /* loading spinner */
 .nav-tabs>li.active>a,
 span.badge.badge-success,
