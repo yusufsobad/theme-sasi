@@ -76,7 +76,7 @@ class sasi_header{
 				
 				echo '<li>';
 				
-				echo '<a id="sobad_'.$val['func'].'" class="sasi_sidemenu '.$status.' '.$disable.'" href="javascript:void(0)" data-uri="'.$key.'">
+				echo '<a id="sobad_'.$val['func'].'" class="sasi_sidemenu '.$status.' '.$disable.'" href="javascript:" data-uri="'.$key.'">
 					<h4 class="font-weight-200 pb-sm">'.$val['label'].'</h4></a>';
 
 				echo '</li>';
@@ -126,10 +126,10 @@ class sasi_header{
                                     <img src="<?php print($image) ;?>">
                                 </button>
                                 <ul class="dropdown-menu icon-user-menu" aria-labelledby="dropdownMenu1">
-                                    <li><a href="javascript:void(0)">My Profile</a></li>
-                                    <li><a href="javascript:void(0)">My Calender</a></li>
+                                    <li><a href="javascript:">My Profile</a></li>
+                                    <li><a href="javascript:">My Calender</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="javascript:void(0)">Lock Screen</a></li>
+                                    <li><a href="javascript:">Lock Screen</a></li>
                                     <li role="separator" class="divider"></li>
                                     <a href="#myModal" data-toggle="modal" class="btn btn-sm magenta color-light radius-sm mb-md sobad_logout" tabindex="-1" role="button" aria-disabled="true">Logout</a>
                                 </ul>
