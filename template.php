@@ -132,7 +132,7 @@ abstract class sasi_template extends custom_script{
 					<form id="frm_<?php print($idx) ;?>" role="form" method="post" class="form-horizontal" enctype="multipart/form-data" novalidate="novalidate">
 				<?php endif; ?>	
 
-					<button id="metronic-submit" type="submit" class="btn" style="display: none;"></button>
+					<button type="button" class="btn metronic-submit" style="display: none;"></button>
 					<?php foreach($args['func'] as $key => $func): ?>
 						<div class="modal-body">
 							<div <?php print($id) ;?> class="row">
