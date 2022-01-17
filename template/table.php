@@ -97,7 +97,7 @@ class create_table{
 	private static function _dropdown($args = array(),$search='',$value=0){
 		?>
 			<div class="btn-group">
-				<button type="button" class="btn sasi-btn-search dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs"></i></button>
+				<button type="button" class="btn sasi-btn-search dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-filter"></i></button>
 				<div class="dropdown-menu hold-on-click dropdown-radiobuttons" role="menu">
 					<?php 
 						foreach($args as $key => $val){ 

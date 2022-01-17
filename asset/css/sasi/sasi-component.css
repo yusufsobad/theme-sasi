@@ -100,7 +100,8 @@ button.btn.dropdown-toggle.selectpicker {
 .nav-tabs>li.active>a,
 span.badge.badge-success,
 .loading-message>.block-spinner-bar>div,
-#dash_pagination li.disabled>a {
+#dash_pagination li.disabled>a,
+.ver-inline-menu li.active a {
     background: #8023B4;
 }
 
@@ -145,12 +146,18 @@ td>.btn.yellow {
 .nav-tabs{
 	display: inline-block;
     background: #fff;
-    border-radius: 10px !important;
+    border-radius: 25px !important;
     border-bottom: unset;
+    padding: 3px;
+}
+
+.nav-tabs>li{
+	margin-bottom: 0px;
 }
 
 .nav-tabs>li.active>a {
     color: #fff;
+    border-radius: 20px !important;
 }
 
 li.active span.badge.badge-success {
@@ -161,16 +168,6 @@ li.active span.badge.badge-success {
 
 .nav-tabs>li.active>a:focus {
     background-color: #ddd;
-}
-
-ul.nav.nav-tabs>li:first-child>a {
-    border-top-left-radius: 10px !important;
-    border-bottom-left-radius: 10px !important;
-}
-
-ul.nav.nav-tabs>li:last-child>a {
-    border-top-right-radius: 10px !important;
-    border-bottom-right-radius: 10px !important;
 }
 
 .nav-tabs>li>a{
@@ -201,4 +198,28 @@ button.btn.sasi-btn-search.dropdown-toggle {
 #dash_pagination li.disabled>a,
 #dash_pagination li.disabled>a:hover {
     border-radius: 5px !important;
+}
+
+/* inline menu */
+ul.ver-inline-menu.tabbable {
+    background: #F5F5F5;
+    padding: 3px;
+    border-radius: 7px !important;
+}
+
+.ver-inline-menu li a {
+    border-left: 1px solid #F5F5F5;
+}
+
+.ver-inline-menu li.active a {
+    border-radius: 7px !important;
+    border-left: 1px solid #8023B4;
+}
+
+.ver-inline-menu li i, .ver-inline-menu li.active i {
+    background: unset !important;
+}
+
+.ver-inline-menu li.active:after {
+    border-left-color: transparent;
 }
