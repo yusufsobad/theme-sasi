@@ -2,13 +2,15 @@
 
 (!defined('THEMEPATH'))?exit:'';
 
+require dirname(__FILE__).'/js-script.php';
+
 require dirname(__FILE__).'/template/coming_soon.php';
 require dirname(__FILE__).'/template/login.php';
 
 require dirname(__FILE__).'/template/form.php';
 require dirname(__FILE__).'/template/table.php';
 
-abstract class sasi_template{
+abstract class sasi_template extends custom_script{
 
 	// ---------------------------------------------
 	// Create Panel --------------------------------

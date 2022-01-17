@@ -13,7 +13,7 @@ class theme_script{
 	}
 	
 	private function lokasi(){
-		return 'theme/sasi/asset/';
+		return 'theme/'.theme.'/asset/';
 	}
 // BEGIN PAGE LEVEL STYLES ---->
 	
