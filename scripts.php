@@ -21,6 +21,7 @@ class theme_script{
 		$loc = $this->lokasi();
 		$css = array(
 			'themes-login-soft'	=> $loc.'css/sasi/sasi-login.css',
+			'themes-search'		=> $loc.'css/pages/search.css'
 		);
 		
 		$check = array_filter($idx);
