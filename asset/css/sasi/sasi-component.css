@@ -232,6 +232,10 @@ button.btn.sasi-btn-search.dropdown-toggle {
     border-radius: 5px !important;
 }
 
+div#reduce_portlet .table-responsive {
+    display: contents;
+}
+
 /* inline menu */
 ul.ver-inline-menu.tabbable {
     background: #F5F5F5;
