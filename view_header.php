@@ -137,12 +137,11 @@ class sasi_header
 								<div class="icon-user-content pt-md">
 									<div class="row">
 										<div class="col-xs-8 col-sm-7 text-right pl-md pr-xs">
-											<h4 class="color-dark font-weight-700">Gading Rengga
-											</h4>
+											<h4 class="color-dark font-weight-700"><?php print($name); ?></h4>
 											<h6 class="color-dark">PT.Solo Abadi</h6>
 										</div>
 										<div class="col-xs-4 col-sm-5 pt-sm pl-sm pr-0">
-											<img src="<?php print($image); ?>">
+											<img src="<?php print($image); ?>" style="width: 40px; height:40px">
 										</div>
 									</div>
 								</div>
