@@ -793,6 +793,7 @@ table.sasi-table {
 
 .table tbody {
     background-color: #fff;
+    font-size: 19px;
 }
 
 .sasi-btn-search {
@@ -897,6 +898,13 @@ select.form-control.input-sm {
     text-align: center;
     background: linear-gradient(115.43deg, rgba(243, 243, 243, 0.51) 5.93%, rgba(243, 243, 243, 0) 98.56%);
     backdrop-filter: blur(3px);
+}
+
+@media (max-width: 1500px) {
+    .table tbody {
+        background-color: #fff;
+        font-size: 14px;
+    }
 }
 
 
