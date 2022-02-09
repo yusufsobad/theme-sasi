@@ -152,6 +152,11 @@ p {
     border-color: #FFF !important;
 }
 
+.btn-default:hover {
+    box-shadow: 0px 0px 12px 0px #d884fd !important;
+    color: #fff !important;
+}
+
 .purple.btn:hover {
     box-shadow: 0px 0px 12px 0px #d884fd !important;
     color: #fff !important;
