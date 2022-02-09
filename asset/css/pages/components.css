@@ -3251,7 +3251,7 @@ Dropdown Menu
   margin-top: 10px;
 }
 
-.dropdown>.dropdown-menu:before,
+/* .dropdown>.dropdown-menu:before,
 .dropdown-toggle>.dropdown-menu:before,
 .btn-group>.dropdown-menu:before {
   position: absolute;
@@ -3263,7 +3263,7 @@ Dropdown Menu
   border-bottom: 8px solid #e0e0e0;
   border-left: 8px solid transparent;
   content: '';
-}
+} */
 
 .dropdown>.dropdown-menu:after,
 .dropdown-toggle>.dropdown-menu:after,
