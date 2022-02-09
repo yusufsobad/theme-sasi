@@ -8111,12 +8111,12 @@ fieldset[disabled] .blue-madison.btn.active {
   color: #FFFFFF;
 }
 
-/* .portlet.box.blue-madison>.portlet-title>.actions .btn-default {
+.portlet.box.blue-madison>.portlet-title>.actions .btn-default {
   background: transparent !important;
   background-color: transparent !important;
   border: 1px solid #a8c4dd;
   color: #bad1e4;
-} */
+}
 
 .portlet.box.blue-madison>.portlet-title>.actions .btn-default>i {
   color: #c5d8e9;
