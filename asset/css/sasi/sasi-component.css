@@ -1,6 +1,6 @@
-/* Modal */  
-.modal-full-custom.modal-dialog{
-	width: 60% !important;
+/* Modal */
+.modal-full-custom.modal-dialog {
+    width: 60% !important;
 }
 
 .modal-dialog .modal-content {
@@ -12,12 +12,12 @@
     border: unset !important;
 }
 
-.modal-dialog .modal-body{
-	padding: 10px 40px 10px 40px;
+.modal-dialog .modal-body {
+    padding: 10px 40px 10px 40px;
 }
 
-.modal-dialog .modal-footer{
-	padding: 10px 40px 30px 40px;
+.modal-dialog .modal-footer {
+    padding: 10px 40px 30px 40px;
     border: unset !important;
 }
 
@@ -26,8 +26,8 @@
     text-transform: capitalize;
 }
 
-.modal-dialog .modal-footer{
-	text-align: left !important;
+.modal-dialog .modal-footer {
+    text-align: left !important;
 }
 
 label.control-label {
@@ -45,8 +45,8 @@ label.control-label {
     border-radius: 10px !important;
 }
 
-.modal-footer>button.btn.red-border{
-	background-color: #fff;
+.modal-footer>button.btn.red-border {
+    background-color: #fff;
     color: #D51414;
     border: 1px solid #D51414;
 }
@@ -71,11 +71,11 @@ label.control-label {
     width: 170px;
 }
 
-.topnav a.disable-target:hover{
-    border-bottom: unset !important; 
+.topnav a.disable-target:hover {
+    border-bottom: unset !important;
 }
 
-.navbar-default .navbar-nav>li>a.disable-target{
+.navbar-default .navbar-nav>li>a.disable-target {
     color: #818893 !important;
 }
 
@@ -87,16 +87,17 @@ label.control-label {
     padding: 2em 3em !important;
     border-radius: 20px !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
-    border:unset !important;
+    border: unset !important;
 }
 
-.portlet > .portlet-body.blue-madison, .portlet.blue-madison,
-.portlet.box.blue-madison > .portlet-title {
+.portlet>.portlet-body.blue-madison,
+.portlet.blue-madison,
+.portlet.box.blue-madison>.portlet-title {
     background-color: #fff !important;
 }
 
 a,
-.portlet.box.blue-madison > .portlet-title > .caption {
+.portlet.box.blue-madison>.portlet-title>.caption {
     color: #333;
 }
 
@@ -135,14 +136,23 @@ span.badge.badge-success,
 
 /* Button */
 
-.table-hover>tbody>tr:hover{
-	background: unset;
+.table-hover>tbody>tr:hover {
+    background: unset;
 }
 
 button.btn.default.dropdown-toggle {
     background: #F5F8FA;
     border-radius: 5px !important;
     margin-bottom: 5px;
+}
+
+.btn-default {
+    color: #8023B4 !important;
+    border-color: #8023B4 !important;
+}
+
+.btn-default>i {
+    color: #8023B4 !important;
 }
 
 td>.btn.blue {
@@ -171,16 +181,16 @@ td>.btn.yellow {
 }
 
 /* Tabs Nav */
-.nav-tabs{
-	display: inline-block;
+.nav-tabs {
+    display: inline-block;
     background: #fff;
     border-radius: 25px !important;
     border-bottom: unset;
     padding: 3px;
 }
 
-.nav-tabs>li{
-	margin-bottom: 0px;
+.nav-tabs>li {
+    margin-bottom: 0px;
 }
 
 .nav-tabs>li.active>a {
@@ -188,8 +198,8 @@ td>.btn.yellow {
 }
 
 .nav-tabs>li.active>a,
-.nav-tabs>li>a:hover{
-	border-radius: 20px !important;
+.nav-tabs>li>a:hover {
+    border-radius: 20px !important;
 }
 
 li.active span.badge.badge-success {
@@ -202,8 +212,8 @@ li.active span.badge.badge-success {
     background-color: #ddd;
 }
 
-.nav-tabs>li>a{
-	margin-right: unset;
+.nav-tabs>li>a {
+    margin-right: unset;
 }
 
 /* Search Table */
@@ -216,7 +226,7 @@ li.active span.badge.badge-success {
     padding: 0px;
 }
 
-.search-form-default{
+.search-form-default {
     background: unset;
     padding: unset;
 }
@@ -253,15 +263,15 @@ ul.ver-inline-menu.tabbable {
 
 ul.ver-inline-menu.tabbable,
 .ver-inline-menu li.active a,
-.ver-inline-menu li:hover a{
-	border-radius: 7px !important;
+.ver-inline-menu li:hover a {
+    border-radius: 7px !important;
 }
 
 .ver-inline-menu li.active a {
     border-left: 1px solid #8023B4;
 }
 
-.ver-inline-menu li i, 
+.ver-inline-menu li i,
 .ver-inline-menu li.active i,
 .ver-inline-menu li:hover i {
     background: unset !important;
