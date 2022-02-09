@@ -282,6 +282,10 @@ p {
     border-bottom-left-radius: 20px !important;
 }
 
+.radius-circle {
+    border-radius: 30px !important;
+}
+
 .border-none {
     border-radius: unset;
     border-top: unset;
