@@ -152,7 +152,7 @@ p {
 
 .red.btn:hover {
     box-shadow: 0px 0px 12px 0px #ff7a99 !important;
-    color: #fff !important;
+
 }
 
 .magenta.btn:hover {
@@ -162,7 +162,7 @@ p {
 
 .blue.btn:hover {
     box-shadow: 0px 0px 12px 0px #87d3ff !important;
-    color: #fff !important;
+
 }
 
 .green.btn:hover {
