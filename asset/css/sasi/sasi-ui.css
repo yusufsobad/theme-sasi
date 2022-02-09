@@ -149,7 +149,13 @@ p {
     background-color: #8023B4 !important;
     background: #8023B4 !important;
     color: #FFF !important;
-    border-color: #FFF !important;
+    border-color: unset !important;
+}
+
+.btn.blue {
+    background: #009EF7 !important;
+    color: #FFF !important;
+    border-color: unset !important;
 }
 
 .btn-default:hover {
