@@ -895,15 +895,6 @@ select.form-control.input-sm {
     backdrop-filter: blur(3px);
 }
 
-.content-menu,
-a:hover,
-a:focus {
-    color: #DD0F7A !important;
-    text-decoration: unset;
-}
-
-
-
 
 @media (max-width: 1024px) {
     .icon-user {
