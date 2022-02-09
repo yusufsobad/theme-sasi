@@ -21,9 +21,9 @@
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid #fff;
-    border-radius: 9px;
+    border-radius: 9px !important;
     -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
-    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%) !important;
 }
 
 .icon-user-menu {
