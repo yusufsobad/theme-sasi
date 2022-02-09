@@ -145,6 +145,49 @@ p {
     background-color: #D51442 !important;
 }
 
+.purple.btn:hover {
+    box-shadow: 0px 0px 12px 0px #d884fd !important;
+    color: #fff !important;
+}
+
+.red.btn:hover {
+    box-shadow: 0px 0px 12px 0px #ff7a99 !important;
+    color: #fff !important;
+}
+
+.magenta.btn:hover {
+    box-shadow: 0px 0px 12px 0px rgb(255, 177, 195) !important;
+    color: #fff !important;
+}
+
+.blue.btn:hover {
+    box-shadow: 0px 0px 12px 0px #87d3ff !important;
+    color: #fff !important;
+}
+
+.green.btn:hover {
+    box-shadow: 0px 0px 12px 0px #25ff96 !important;
+    color: #fff !important;
+}
+
+.dark-grey.btn:hover {
+    box-shadow: 0px 0px 12px 0px #c2c2c2 !important;
+    color: #fff !important;
+}
+
+.dark-black.btn:hover {
+    box-shadow: 0px 0px 12px 0px #757575 !important;
+    color: #fff !important;
+}
+
+
+
+.form-control:hover {
+    box-shadow: 0px 0px 3px 0px #d884fd !important;
+}
+
+
+
 .color-light {
     color: #fff;
 }
