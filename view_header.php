@@ -142,7 +142,7 @@ class sasi_header
 											<h6 class="color-dark">PT.Solo Abadi</h6>
 										</div>
 										<div class="col-xs-4 col-sm-5 pt-sm pl-sm pr-0">
-											<img src="../assets/sasi-ui/img/gading.png">
+											<img src="<?php print($image); ?>">
 										</div>
 									</div>
 								</div>
