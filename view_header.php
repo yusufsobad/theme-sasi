@@ -140,8 +140,8 @@ class sasi_header
 											<h4 class="color-dark font-weight-700"><?php print($name); ?></h4>
 											<h6 class="color-dark">PT.Solo Abadi</h6>
 										</div>
-										<div class="col-xs-4 col-sm-5 pt-sm pl-sm pr-0 radius-circle">
-											<img src="<?php print($image); ?>" style="width: 40px; height:40px">
+										<div class="col-xs-4 col-sm-5 pt-sm pl-sm pr-0">
+											<img src="<?php print($image); ?>" style="width: 40px; height:40px border-radius:30px">
 										</div>
 									</div>
 								</div>
