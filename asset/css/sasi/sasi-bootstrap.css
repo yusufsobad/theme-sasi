@@ -21,21 +21,11 @@
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid #fff;
-    border-radius: 9px !important;
-    -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
-    box-shadow: 0 6px 12px rgb(0 0 0 / 18%) !important;
-}
-
-.icon-user-menu {
-    top: 50px;
-    padding: 10px 15px;
-    border: 1px solid #fff;
     border-radius: 9px;
+    -webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
 }
 
-a.sasi_sidemenu>h4 {
-    text-transform: uppercase;
-}
 
 .sasi-nav-pills>li>a:hover,
 .sasi-nav-pills>li>a:focus {
