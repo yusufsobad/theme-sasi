@@ -2408,9 +2408,9 @@ fieldset[disabled] .btn-default.active {
   background-color: #333;
 }
 
-.btn-default>i {
+/* .btn-default>i {
   color: #aaa;
-}
+} */
 
 .btn-default>i[class^="icon-"],
 .btn-default>i[class*="icon-"] {
