@@ -151,7 +151,7 @@ button.btn.default.dropdown-toggle {
     border-color: #8023B4 !important;
 }
 
-.btn-default>i {
+.action .btn-default>i {
     color: #8023B4 !important;
 }
 
