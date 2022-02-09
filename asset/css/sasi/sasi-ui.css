@@ -3,17 +3,6 @@
     src: url('font/Inter.woff');
 }
 
-/* crazy batman newspaper spinny thing */
-.rotate {
-    transform: rotate(180deg);
-    transition: all 0.5s;
-}
-
-.rotate.in {
-    transform: rotate(1800deg);
-    transition: all 1.5s;
-}
-
 body {
     font-family: 'Inter';
     background-color: #F9FAFB;
@@ -102,72 +91,58 @@ p {
 
 .light {
     background-color: #FFF !important;
-    color: #333333 !important;
 }
 
 .light-grey {
     background-color: #F9FAFB !important;
-    color: #333333 !important;
 }
 
 .primary-grey {
     background-color: #F5F8FA !important;
-    color: #333333 !important;
 }
 
 .secondary-grey {
-    background-color: #F5F5F5 !important;
-    color: #333333 !important;
+    background-color: #F2F3F5 !important;
 }
 
 .dark-grey {
     background-color: #777777 !important;
-    color: #fff !important;
 }
 
 .dark-black {
     background-color: #333333 !important;
-    color: #fff !important;
 }
 
 .purple {
     background-color: #8023B4 !important;
-    color: #fff !important;
 }
 
 .light-purple {
     background-color: #9C28DD !important;
-    color: #fff !important;
 }
 
 .magenta {
     background-color: #DC0F7A !important;
-    color: #fff !important;
 }
 
 .blue {
     background-color: #009EF7 !important;
-    color: #fff !important;
 }
 
 .light-green {
     background-color: #E7FAF1 !important;
-    color: #fff !important;
 }
 
 .green {
     background-color: #15BA6B !important;
-    color: #fff !important;
 }
 
 .orange {
     background-color: #FF8459 !important;
-    color: #fff !important;
 }
 
 .red {
     background-color: #D51442 !important;
-    color: #fff !important;
 }
 
 .color-light {
@@ -225,57 +200,6 @@ p {
 .color-red {
     color: #D51442;
 }
-
-.purple.btn:hover {
-    box-shadow: 0px 0px 12px 0px #d884fd !important;
-    color: #fff !important;
-}
-
-.red.btn:hover {
-    box-shadow: 0px 0px 12px 0px #ff7a99 !important;
-    color: #fff !important;
-}
-
-.magenta.btn:hover {
-    box-shadow: 0px 0px 12px 0px rgb(255, 177, 195) !important;
-    color: #fff !important;
-}
-
-.blue.btn:hover {
-    box-shadow: 0px 0px 12px 0px #87d3ff !important;
-    color: #fff !important;
-}
-
-.green.btn:hover {
-    box-shadow: 0px 0px 12px 0px #25ff96 !important;
-    color: #fff !important;
-}
-
-.dark-grey.btn:hover {
-    box-shadow: 0px 0px 12px 0px #c2c2c2 !important;
-    color: #fff !important;
-}
-
-.dark-black.btn:hover {
-    box-shadow: 0px 0px 12px 0px #757575 !important;
-    color: #fff !important;
-}
-
-
-
-.form-control:hover {
-    box-shadow: 0px 0px 3px 0px #d884fd !important;
-}
-
-.pagination>li>a:hover {
-    box-shadow: 0px 0px 12px 0px #d884fd;
-    color: #DC0F7A !important;
-    background-color: #fff;
-    border-radius: 9px;
-}
-
-
-
 
 .radius-xs {
     border-radius: 4px;
@@ -666,8 +590,8 @@ p {
 .col-19 {
     position: relative;
     width: 100%;
-    padding-right: 13px;
-    padding-left: 13px;
+    padding-right: 7px;
+    padding-left: 7px;
 }
 
 .sasi-col {
@@ -703,6 +627,10 @@ p {
     background-color: #fff;
 }
 
+.containt {
+    display: block;
+}
+
 .footer {
     margin-top: auto;
 }
@@ -710,6 +638,11 @@ p {
 .bg-header {
     background-image: url(../../../asset/img/sasi-topbar-backgroun.png) !important;
     padding: 0px 10px 0px 10px;
+}
+
+button#dropdownMenu1>img {
+    width: 40px;
+    border-radius: 20px !important;
 }
 
 .icon-user {
@@ -720,6 +653,10 @@ p {
     margin-top: 8px;
 }
 
+.icon-user:before {
+    content: unset;
+}
+
 .btn-circle {
     border-radius: 30px;
     padding: 2px;
@@ -728,6 +665,15 @@ p {
 .btn-blue {
     background-color: #009EF7;
     color: #fff;
+}
+
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue.focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: #5fc5ff;
+    box-shadow: 0px 0px 5px 0px #5fc5fe;
 }
 
 .icon-user-content {
@@ -871,8 +817,7 @@ select.form-control.input-sm {
 
 .circle-icon {
     margin-top: -19px;
-    margin-left: 172px;
-    width: 50px;
+    margin-left: 184px;
 }
 
 .card-menu:hover .overlay {
@@ -906,6 +851,14 @@ select.form-control.input-sm {
     background: linear-gradient(115.43deg, rgba(243, 243, 243, 0.51) 5.93%, rgba(243, 243, 243, 0) 98.56%);
     backdrop-filter: blur(3px);
 }
+
+.content-menu,
+a:hover,
+a:focus {
+    color: #DD0F7A !important;
+    text-decoration: unset;
+}
+
 
 
 
@@ -1004,7 +957,6 @@ select.form-control.input-sm {
         margin: 0px;
         padding: 0px;
     }
-
 
     .bg-header {
         background-image: url(../img/sasi-topbar-backgroun.png) !important;
