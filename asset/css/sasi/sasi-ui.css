@@ -191,6 +191,19 @@ p {
     border-radius: 9px !important;
 }
 
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #000000;
+    text-decoration: none;
+    background-color: #fff;
+    border: unset;
+    margin: 4px;
+}
+
 .form-control:hover {
     box-shadow: 0px 0px 3px 0px #d884fd !important;
 }
