@@ -187,8 +187,8 @@ td>.btn.yellow {
     color: #fff;
     cursor: default;
     background-color: #8023b4 !important;
-    border: 1px solid #ddd;
-    border-bottom-color: #ddd !important;
+    border: 0px solid #ddd !important;
+    border-bottom-color: unset !important;
 }
 
 .nav-tabs {
