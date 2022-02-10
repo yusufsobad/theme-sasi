@@ -224,7 +224,7 @@ class sasi_layout extends sasi_template
 
 	private static function _sidebar($menu = array())
 	{
-		self::_head_pagebar();
+		self::_menu_head_pagebar();
 	?>
 		<div class="container sasi-menu">
 			<div class="mt-lg col-lg sasi-menu">

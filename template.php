@@ -307,6 +307,35 @@ abstract class sasi_template extends custom_script
 	<?php
 	}
 
+	protected static function _menu_head_pagebar($link = array(), $date = false)
+	{
+		$check = array_filter($link);
+	?>
+		<div class="sasi-navigation secondary-grey pt-md pl-lg pr-lg">
+			<div class="container-fluid pl-xl pr-xl">
+				<ol class="breadcrumb secondary-grey">
+					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><img src="assets/img/menu-arrow-back.png"></a>
+					<li>
+						<a class="color-dark-grey" href="">Home</a>
+					</li>
+					<?php
+					if (!empty($check)) {
+						foreach ($link as $key => $val) {
+							echo '
+										<li>
+											<a id="sobad_' . $val['func'] . '" class="color-dark-grey" href="javascript:" onclick="sasi_sidemenu(this)" data-uri="' . $key . '">
+												' . $val['label'] . '
+											</a>
+										</li>';
+						}
+					}
+					?>
+				</ol>
+			</div>
+		</div>
+	<?php
+	}
+
 	// ---------------------------------------------
 	// Create Portlet Box --------------------------
 	// ---------------------------------------------
