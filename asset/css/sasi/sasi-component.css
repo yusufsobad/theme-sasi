@@ -181,6 +181,16 @@ td>.btn.yellow {
 }
 
 /* Tabs Nav */
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: #ddd !important;
+}
+
 .nav-tabs {
     display: inline-block;
     background: #fff;
@@ -200,7 +210,6 @@ td>.btn.yellow {
 .nav-tabs>li.active>a,
 .nav-tabs>li>a:hover {
     border-radius: 20px !important;
-    border-bottom-color: 1px #ddd !important;
 }
 
 li.active span.badge.badge-success {
