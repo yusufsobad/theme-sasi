@@ -244,7 +244,7 @@ button.btn.sasi-btn-search.dropdown-toggle {
 
 #dash_pagination li.disabled>a,
 #dash_pagination li.disabled>a:hover {
-    border-radius: 5px !important;
+    border-radius: 9px !important;
 }
 
 div#reduce_portlet .table-responsive {
