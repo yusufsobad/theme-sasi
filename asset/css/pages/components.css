@@ -7211,7 +7211,7 @@ Custom tabs
 
 .tabbable-custom>.tab-content {
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   padding: 10px;
   -webkit-border-radius: 0 0 4px 4px;
   -moz-border-radius: 0 0 4px 4px;
