@@ -314,7 +314,7 @@ abstract class sasi_template extends custom_script
 		<div class="sasi-navigation secondary-grey pt-md pl-lg pr-lg">
 			<div class="container-fluid pl-xl pr-xl">
 				<ol class="breadcrumb secondary-grey">
-					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><img src="asset/img/menu-arrow-back.png"></a>
+					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><img src="theme/sasi/asset/img/menu-arrow-back.png"></a>
 					<li>
 						<a class="color-dark-grey" href="">Home</a>
 					</li>
