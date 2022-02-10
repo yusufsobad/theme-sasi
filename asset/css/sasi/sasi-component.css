@@ -208,6 +208,16 @@ li.active span.badge.badge-success {
     font-weight: 700;
 }
 
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 0px solid #ddd !important;
+    border-bottom-color: transparent;
+}
+
 .nav-tabs>li.active>a:focus {
     background-color: #ddd;
 }
