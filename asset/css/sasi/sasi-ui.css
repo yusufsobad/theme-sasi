@@ -146,8 +146,9 @@ p {
 }
 
 .btn-default:hover {
-    box-shadow: 0px 0px 12px 0px #d884fd !important;
+    box-shadow: 0px 0px 12px 0px #87d3ff !important;
     background-color: #FFF !important;
+    color: #009EF7 !important;
 }
 
 .purple.btn:hover {
