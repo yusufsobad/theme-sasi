@@ -191,6 +191,13 @@ td>.btn.yellow {
     border-bottom-color: unset !important;
 }
 
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 0px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+
 .nav-tabs {
     display: inline-block;
     background: #fff;
