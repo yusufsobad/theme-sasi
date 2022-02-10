@@ -2113,7 +2113,7 @@ Glyphicons Demo
   font-size: 14px;
   line-height: 1.4;
   text-align: center;
-  border: 0px solid #ddd;
+  border: 1px solid #ddd;
 }
 
 .glyphicons-demo .glyphicon {
@@ -4193,7 +4193,7 @@ Custom icon buttons
   height: 60px;
   min-width: 80px;
   margin: 5px 5px 0 0;
-  border: 0px solid #ddd;
+  border: 1px solid #ddd;
   padding: 12px 0px 0px 0px;
   background-color: #fafafa;
   background-image: none;
