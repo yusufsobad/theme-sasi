@@ -195,13 +195,12 @@ td>.btn.yellow {
 
 .nav-tabs>li.active>a {
     color: #fff;
+    border-bottom-color: 1px #ddd !important;
 }
 
 .nav-tabs>li.active>a,
 .nav-tabs>li>a:hover {
     border-radius: 20px !important;
-    border-bottom-color: 1px #ddd !important;
-
 }
 
 li.active span.badge.badge-success {
