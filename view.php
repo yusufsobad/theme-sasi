@@ -224,13 +224,12 @@ class sasi_layout extends sasi_template
 
 	private static function _sidebar($menu = array())
 	{
+		self::_head_pagebar();
 	?>
 		<div class="container sasi-menu">
 			<div class="mt-lg col-lg sasi-menu">
 				<div class="sasi-row justify-content-md-start">
-
 					<?php
-					self::_head_content();
 					foreach ($menu as $key => $val) {
 						self::_sidebar_menu($key, $val);
 					}
@@ -374,6 +373,6 @@ class sasi_layout extends sasi_template
 			parent::{$func}($args);
 		} else {
 		?><div style="text-align:center;"> Tidak ada data yang di Load </div><?php
-																				}
 																			}
 																		}
+																	}
