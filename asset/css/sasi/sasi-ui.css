@@ -883,7 +883,8 @@ select.form-control.input-sm {
 
 .circle-icon {
     margin-top: -19px;
-    margin-left: 184px;
+    margin-left: 172px;
+    width: 50px;
 }
 
 .card-menu:hover .overlay {
