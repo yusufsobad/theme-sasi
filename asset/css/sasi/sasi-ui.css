@@ -873,7 +873,7 @@ select.form-control.input-sm {
     opacity: 0;
     transition: .5s ease;
     background-color: #fff;
-    border-radius: 9px;
+    border-radius: 9px !important;
 }
 
 .card-menu {
