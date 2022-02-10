@@ -132,6 +132,7 @@ span.badge.badge-success,
 #dash_pagination li.disabled>a,
 .ver-inline-menu li.active a {
     background: #8023B4;
+    color: #FFF !important;
 }
 
 /* Button */
