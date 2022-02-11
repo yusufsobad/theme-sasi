@@ -93,16 +93,18 @@ class sasi_header
 	public static function _contain_menu()
 	{
 	?>
-		<div class="container-fluid">
-			<div class="navbar-header">
+		<div class="col-lg-10">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<?php
+					self::_logo();
+					self::_menu_toggle();
+					?>
+				</div>
 				<?php
-				self::_logo();
-				self::_menu_toggle();
+				self::_sasi_menu();
 				?>
 			</div>
-			<?php
-			self::_sasi_menu();
-			?>
 		</div>
 	<?php
 	}
@@ -118,29 +120,30 @@ class sasi_header
 		$image = empty($user) ? 'asset/img/user/no-profile.jpg' : $user;
 
 	?>
-
-		<div class="icon-user">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-xs-11 w-95 pr-md pt-sm m-0 pl-0 text-right">
-						<div class="icon-user-item">
-							<h4 class="font-weight-700 color-light"><?php print($name); ?></h4>
-							<h6 class="color-light"><?php print($dept); ?></h6>
+		<div class="col-lg-2 p-md">
+			<div class="icon-user">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-xs-11 w-95 pr-md pt-sm m-0 pl-0 text-right">
+							<div class="icon-user-item">
+								<h4 class="font-weight-700 color-light"><?php print($name); ?></h4>
+								<h6 class="color-light"><?php print($dept); ?></h6>
+							</div>
 						</div>
-					</div>
-					<div class="col-xs-1 w-5  m-0 pt-md pl-0 pr-0">
-						<div class="dropdown">
-							<button class="btn-circle btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-								<img src="<?php print($image); ?>">
-							</button>
-							<ul class="dropdown-menu icon-user-menu" aria-labelledby="dropdownMenu1">
-								<li><a href="javascript:">My Profile</a></li>
-								<li><a href="javascript:">My Calender</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="javascript:">Lock Screen</a></li>
-								<li role="separator" class="divider"></li>
-								<a href="#myModal" data-toggle="modal" class="btn btn-sm magenta color-light radius-sm mb-md sobad_logout" tabindex="-1" role="button" aria-disabled="true">Logout</a>
-							</ul>
+						<div class="col-xs-1 w-5  m-0 pt-md pl-0 pr-0">
+							<div class="dropdown">
+								<button class="btn-circle btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									<img src="<?php print($image); ?>">
+								</button>
+								<ul class="dropdown-menu icon-user-menu" aria-labelledby="dropdownMenu1">
+									<li><a href="javascript:">My Profile</a></li>
+									<li><a href="javascript:">My Calender</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="javascript:">Lock Screen</a></li>
+									<li role="separator" class="divider"></li>
+									<a href="#myModal" data-toggle="modal" class="btn btn-sm magenta color-light radius-sm mb-md sobad_logout" tabindex="-1" role="button" aria-disabled="true">Logout</a>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>

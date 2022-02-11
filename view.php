@@ -43,11 +43,14 @@ class sasi_layout extends sasi_template
 		<!-- BEGIN HEADER -->
 		<div class="topbar">
 			<nav class="navbar mb-0 navbar-default border-none purple  bg-header">
-				<?php
-				$menu = sasi_header::_create();
-				?>
+				<div class="row">
+					<?php
+					$menu = sasi_header::_create();
+					?>
+				</div>
+			</nav>
 		</div>
-		</nav>
+
 		<!-- END HEADER -->
 	<?php
 	}
