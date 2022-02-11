@@ -134,17 +134,6 @@ class sasi_header
 								<img src="<?php print($image); ?>">
 							</button>
 							<ul class="dropdown-menu icon-user-menu" aria-labelledby="dropdownMenu1">
-								<div class="icon-user-content pt-md">
-									<div class="row">
-										<div class="col-xs-8 col-sm-7 text-right pl-md pr-xs">
-											<h4 class="color-dark font-weight-700"><?php print($name); ?></h4>
-											<h6 class="color-dark">PT.Solo Abadi</h6>
-										</div>
-										<div class="col-xs-4 col-sm-5 pt-sm pl-sm pr-0">
-											<img src="<?php print($image); ?>" style="width: 40px; height:40px; border-radius:30px !important">
-										</div>
-									</div>
-								</div>
 								<li><a href="javascript:">My Profile</a></li>
 								<li><a href="javascript:">My Calender</a></li>
 								<li role="separator" class="divider"></li>
