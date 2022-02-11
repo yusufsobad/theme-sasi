@@ -229,7 +229,7 @@ class sasi_layout extends sasi_template
 		self::_menu_head_pagebar();
 	?>
 		<div class="container-fluid sasi-menu">
-			<div class="mt-lg col-lg sasi-menu">
+			<div class="mt-lg col-lg">
 				<div class="sasi-row justify-content-md-start">
 					<?php
 					foreach ($menu as $key => $val) {
