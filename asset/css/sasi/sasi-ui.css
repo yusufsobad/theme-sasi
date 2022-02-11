@@ -875,7 +875,7 @@ select.form-control.input-sm {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 146px;
+    height: 200px;
     width: 100%;
     opacity: 0;
     transition: .5s ease;
@@ -1004,6 +1004,20 @@ select.form-control.input-sm {
 
     .sasi-card-body {
         height: 146px;
+        border-radius: 9px !important;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 146px;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #fff;
         border-radius: 9px !important;
     }
 }
