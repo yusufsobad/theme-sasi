@@ -748,6 +748,19 @@ button#dropdownMenu1>img {
     box-shadow: 0px 0px 5px 0px #5fc5fe;
 }
 
+.icon-user-menu {
+    top: 73px;
+    padding: 20px 15px;
+    left: -132px;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 9px !important;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+}
+
 .icon-user-content {
     width: 194px;
 }
@@ -991,6 +1004,19 @@ select.form-control.input-sm {
     p {
         font-size: 10px !important;
         font-family: 'Inter';
+    }
+
+    .icon-user-menu {
+        top: 60px;
+        padding: 20px 15px;
+        left: -132px;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border-radius: 9px !important;
+        box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
     }
 
     .table tbody {
