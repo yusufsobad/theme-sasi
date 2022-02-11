@@ -1219,4 +1219,8 @@ select.form-control.input-sm {
         margin-top: -19px;
         margin-left: 230px;
     }
+
+    .col-xs-1.w-5.m-0.pt-md.pl-0.pr-0 {
+        padding-top: 8px;
+    }
 }
