@@ -120,7 +120,7 @@ class sasi_header
 		$image = empty($user) ? 'asset/img/user/no-profile.jpg' : $user;
 
 	?>
-		<div class="col-lg-2 p-md">
+		<div class="col-lg-2">
 			<div class="icon-user">
 				<div class="col-md-12">
 					<div class="row">
