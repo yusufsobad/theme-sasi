@@ -652,6 +652,15 @@ p {
     width: 100%
 }
 
+.w-5 {
+    width: 5%;
+}
+
+.w-95 {
+    width: 95%;
+}
+
+
 .col-lg {
     position: relative;
     width: 100%;
@@ -721,8 +730,7 @@ button#dropdownMenu1>img {
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: 3%;
-    margin-top: 8px;
+    width: 100%;
 }
 
 .icon-user:before {
