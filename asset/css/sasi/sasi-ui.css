@@ -923,6 +923,12 @@ select.form-control.input-sm {
 }
 
 /*=========== Custom ScrollBar ============*/
+
+.scroll-vertical {
+    overflow-y: auto;
+    height: 25vh;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
