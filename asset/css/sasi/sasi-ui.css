@@ -686,7 +686,7 @@ p {
 }
 
 .icon-menu {
-    font-size: 60px;
+    font-size: 88px;
 }
 
 .wrapper {
@@ -996,6 +996,10 @@ select.form-control.input-sm {
     .table tbody {
         background-color: #fff;
         font-size: 14px;
+    }
+
+    .icon-menu {
+        font-size: 60px;
     }
 
     .sasi-card-body {
