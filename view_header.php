@@ -128,7 +128,7 @@ class sasi_header
 							<h6 class="color-light"><?php print($dept); ?></h6>
 						</div>
 					</div>
-					<div class="col-xs-1 w-5  m-0 pt-xs pl-0">
+					<div class="col-xs-1 w-5  m-0 pt-xs pl-0 pr-0">
 						<div class="dropdown">
 							<button class="btn-circle btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 								<img src="<?php print($image); ?>">
