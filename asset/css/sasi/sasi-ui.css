@@ -1163,10 +1163,8 @@ select.form-control.input-sm {
 
     .icon-user {
         position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 95px;
-        margin-top: 9px;
+        top: -79px;
+        right: -27px;
     }
 
     .icon-user-item {
@@ -1219,6 +1217,7 @@ select.form-control.input-sm {
         margin-top: -19px;
         margin-left: 230px;
     }
+
 
     .col-xs-1.w-5.m-0.pt-md.pl-0.pr-0 {
         padding-top: 8px;
