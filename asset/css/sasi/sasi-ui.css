@@ -1073,8 +1073,9 @@ select.form-control.input-sm {
     }
 
     .circle-icon {
-        margin-top: -19px;
-        margin-left: 188px;
+        margin-top: -8%;
+        width: 20%;
+        margin-right: -8%;
     }
 }
 
