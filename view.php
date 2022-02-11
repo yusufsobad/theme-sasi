@@ -201,7 +201,9 @@ class sasi_layout extends sasi_template
 
 	?>
 		<div class="overlay">
-			<img class="circle-icon" src="theme/<?php echo _theme_folder; ?>/asset/img/sasi-logo-circle.png">
+			<div class="p-0 text-right">
+				<img class="circle-icon" src="theme/<?php echo _theme_folder; ?>/asset/img/sasi-logo-circle.png">
+			</div>
 			<div class="content-card-menu"></div>
 			<a id="sobad_<?php echo $func; ?>" href="javascript:" class="sasi_childmenu <?php echo $status; ?>" data-uri="<?php echo $key; ?>" <?php echo $click; ?>>
 				<div class="box-sidemenu">
@@ -226,7 +228,7 @@ class sasi_layout extends sasi_template
 	{
 		self::_menu_head_pagebar();
 	?>
-		<div class="container sasi-menu">
+		<div class="container-fluid sasi-menu">
 			<div class="mt-lg col-lg sasi-menu">
 				<div class="sasi-row justify-content-md-start">
 					<?php

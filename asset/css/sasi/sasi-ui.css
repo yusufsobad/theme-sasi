@@ -3,6 +3,11 @@
     src: url('font/Inter.woff');
 }
 
+.sasi-menu {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
 body {
     font-family: 'Inter';
     background-color: #F9FAFB;
@@ -885,8 +890,8 @@ select.form-control.input-sm {
 
 .circle-icon {
     margin-top: -19px;
-    margin-left: 172px;
     width: 50px;
+    margin-right: -7%;
 }
 
 .card-menu:hover .overlay {
