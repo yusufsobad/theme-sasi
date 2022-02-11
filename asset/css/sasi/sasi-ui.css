@@ -753,7 +753,7 @@ button#dropdownMenu1>img {
 }
 
 .sasi-card-body {
-    height: 146px;
+    height: 200px;
     border-radius: 9px !important;
 }
 
@@ -996,6 +996,11 @@ select.form-control.input-sm {
     .table tbody {
         background-color: #fff;
         font-size: 14px;
+    }
+
+    .sasi-card-body {
+        height: 146px;
+        border-radius: 9px !important;
     }
 }
 
