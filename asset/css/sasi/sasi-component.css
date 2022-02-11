@@ -223,7 +223,7 @@ td>.btn.yellow {
 
 li.active span.badge.badge-success {
     background: #fff;
-    color: #8023B4 !important;
+    color: #8023B4;
     font-weight: 700;
 }
 
