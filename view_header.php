@@ -93,7 +93,7 @@ class sasi_header
 	public static function _contain_menu()
 	{
 	?>
-		<div class="col-lg-9">
+		<div class="col-lg-10">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<?php
