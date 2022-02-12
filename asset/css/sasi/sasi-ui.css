@@ -1060,10 +1060,8 @@ select.form-control.input-sm {
 @media (max-width: 1024px) {
     .icon-user {
         position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 5%;
-        margin-top: 8px;
+        top: 0px;
+        right: 23px;
     }
 
     .icon-user-item {
