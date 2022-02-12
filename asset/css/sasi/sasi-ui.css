@@ -730,7 +730,7 @@ button#dropdownMenu1>img {
     position: absolute;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 15%;
 }
 
 .icon-user:before {
