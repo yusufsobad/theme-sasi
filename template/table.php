@@ -86,10 +86,10 @@ class create_table
 						<div class="sasi-search">
 							<div class="row m-0">
 								<div class="input-group form-search">
-									<div class="col-sm-10 p-0">
+									<div class="col-sm-9 p-0">
 										<input type="text" name="words<?php print($search); ?>" class="form-control sasi-form" data-sobad="<?php print($func); ?>" data-load="<?php print($load); ?>" data-type="<?php print($type); ?>" data-object="<?php print($obj); ?>" value="<?php print($value); ?>" placeholder="Penelusuran">
 									</div>
-									<div class="col-sm-2">
+									<div class="col-sm-3 text-right">
 										<button type="submit" class="btn sasi-btn-search" aria-expanded="false">
 											<i class="fa fa-search" aria-hidden="true"></i>
 										</button>
