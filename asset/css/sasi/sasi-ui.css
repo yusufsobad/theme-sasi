@@ -843,7 +843,7 @@ table.sasi-table {
 }
 
 button#filter-sasi {
-    border-radius: 25px;
+    border-radius: 25px !important;
     padding: 12px 20px 12px 20px;
     border-color: #E7E7E7;
     color: #777777;
