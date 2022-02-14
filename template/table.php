@@ -68,7 +68,7 @@ class create_table
 
 		?>
 		<div class="row search-form-default">
-			<div class="col-lg-4">
+			<div class="col-lg-4 p-0">
 				<form id="sobad-search" class="sobad_form" action="javascript:;">
 					<!-- <div class="input-group">
 						<div class="input-cont">
@@ -82,7 +82,7 @@ class create_table
 							?>
 						</span>
 					</div> -->
-					<div class="col-md-7 pl-0 ml-0 text-right">
+					<div class="col-md-7 pl-0 ml-0 pr-0 text-right">
 						<div class="sasi-search">
 							<div class="row m-0">
 								<div class="input-group form-search">
