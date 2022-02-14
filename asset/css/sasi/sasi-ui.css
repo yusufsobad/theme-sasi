@@ -852,7 +852,7 @@ button#filter-sasi {
 .sasi-btn-search {
     background-color: #8023b4;
     color: #fff;
-    border-radius: 48px;
+    border-radius: 48px !important;
 }
 
 input.form-control.sasi-form {
@@ -870,8 +870,8 @@ input.form-control.sasi-form:hover {
 .form-search {
     border: 1px solid;
     border-color: #E7E7E7;
-    border-radius: 20px;
-    padding: 5px 16px 5px 20px;
+    border-radius: 20px !important;
+    padding: 5px 20px 5px 20px;
 }
 
 .sasi-form {
