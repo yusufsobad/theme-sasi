@@ -869,6 +869,7 @@ input.form-control.sasi-form:hover {
 }
 
 .form-search {
+    width: 100%;
     border: 1px solid;
     border-color: #E7E7E7;
     border-radius: 20px !important;
