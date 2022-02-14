@@ -68,7 +68,7 @@ class create_table
 
 		?>
 		<div class="row search-form-default">
-			<div class="col-md-12">
+			<div class="col-lg-4">
 				<form id="sobad-search" class="sobad_form" action="javascript:;">
 					<!-- <div class="input-group">
 						<div class="input-cont">
@@ -98,11 +98,13 @@ class create_table
 							</div>
 						</div><!-- /input-group -->
 					</div>
-					<?php
-					if (!empty($check)) {
-						self::_dropdown($args, $search, $val_src);
-					}
-					?>
+					<div class="col-md-2 text-right">
+						<?php
+						if (!empty($check)) {
+							self::_dropdown($args, $search, $val_src);
+						}
+						?>
+					</div>
 				</form>
 			</div>
 		</div>
