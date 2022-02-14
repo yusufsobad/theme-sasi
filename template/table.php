@@ -68,7 +68,7 @@ class create_table
 
 		?>
 		<div class="row search-form-default">
-			<div class="col-lg-4">
+			<div class="col-lg-4 p-0">
 				<form id="sobad-search" class="sobad_form" action="javascript:;">
 					<!-- <div class="input-group">
 						<div class="input-cont">

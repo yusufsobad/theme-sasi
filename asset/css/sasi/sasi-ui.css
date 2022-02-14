@@ -849,6 +849,7 @@ button#filter-sasi {
     border-color: #E7E7E7;
     color: #777777;
     margin-top: 0%;
+    margin-left: 10% !important;
 }
 
 .sasi-btn-search {
@@ -1155,6 +1156,7 @@ select.form-control.input-sm {
         border-color: #E7E7E7;
         color: #777777;
         margin-top: 10%;
+        margin-left: 0% !important;
     }
 }
 
@@ -1277,5 +1279,6 @@ select.form-control.input-sm {
         border-color: #E7E7E7;
         color: #777777;
         margin-top: 10%;
+        margin-left: 0% !important
     }
 }
