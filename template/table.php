@@ -82,7 +82,7 @@ class create_table
 							?>
 						</span>
 					</div> -->
-					<div class="col-md-10 text-right">
+					<div class="col-md-10 pl-0 ml-0 text-right">
 						<div class="sasi-search">
 							<div class="row m-0">
 								<div class="input-group form-search">
