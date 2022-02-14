@@ -842,12 +842,36 @@ table.sasi-table {
     font-size: 19px;
 }
 
+button#filter-sasi {
+    border-radius: 25px;
+    padding: 12px 20px 12px 20px;
+    border-color: #E7E7E7;
+    color: #777777;
+}
+
 .sasi-btn-search {
-    padding: 12px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
     background-color: #8023b4;
     color: #fff;
+    border-radius: 48px;
+}
+
+input.form-control.sasi-form {
+    margin: 0px;
+    background-color: #fff;
+    height: 33px;
+    padding: 0px 0px 0px 6px;
+    border: #fff;
+}
+
+input.form-control.sasi-form:hover {
+    box-shadow: unset !important;
+}
+
+.form-search {
+    border: 1px solid;
+    border-color: #E7E7E7;
+    border-radius: 20px;
+    padding: 5px 16px 5px 20px;
 }
 
 .sasi-form {
