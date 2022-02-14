@@ -828,7 +828,8 @@ table.sasi-table {
 
 .table thead th {
     vertical-align: bottom;
-    border: none
+    border: none;
+    font-size: 18px;
 }
 
 .table td,
@@ -839,7 +840,7 @@ table.sasi-table {
 
 .table tbody {
     background-color: #fff;
-    font-size: 19px;
+    font-size: 17px;
 }
 
 button#filter-sasi {
@@ -1049,6 +1050,10 @@ select.form-control.input-sm {
         background-clip: padding-box;
         border-radius: 9px !important;
         box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    }
+
+    .table thead th {
+        font-size: 15px;
     }
 
     .table tbody {
