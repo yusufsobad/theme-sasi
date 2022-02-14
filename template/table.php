@@ -98,7 +98,7 @@ class create_table
 							</div>
 						</div><!-- /input-group -->
 					</div>
-					<div class="col-md-2 text-right">
+					<div class="col-md-4 p-0">
 						<?php
 						if (!empty($check)) {
 							self::_dropdown($args, $search, $val_src);
