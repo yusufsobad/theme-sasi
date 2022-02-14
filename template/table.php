@@ -82,7 +82,7 @@ class create_table
 							?>
 						</span>
 					</div> -->
-					<div class="col-md-7 pl-0 ml-0 text-right">
+					<div class="sasi-form-action">
 						<div class="sasi-search">
 							<div class="row m-0">
 								<div class="input-group form-search">
@@ -98,7 +98,7 @@ class create_table
 							</div>
 						</div><!-- /input-group -->
 					</div>
-					<div class="col-md-4 p-0">
+					<div class="sasi-filter-action">
 						<?php
 						if (!empty($check)) {
 							self::_dropdown($args, $search, $val_src);
