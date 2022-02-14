@@ -848,6 +848,7 @@ button#filter-sasi {
     padding: 12px 20px 12px 20px;
     border-color: #E7E7E7;
     color: #777777;
+    margin-top: 0%;
 }
 
 .sasi-btn-search {
@@ -1147,6 +1148,14 @@ select.form-control.input-sm {
     input.form-control.sasi-form {
         width: 80%;
     }
+
+    button#filter-sasi {
+        border-radius: 25px !important;
+        padding: 12px 20px 12px 20px;
+        border-color: #E7E7E7;
+        color: #777777;
+        margin-top: 10%;
+    }
 }
 
 @media (max-width: 620px) {
@@ -1260,5 +1269,13 @@ select.form-control.input-sm {
 
     input.form-control.sasi-form {
         width: 80%;
+    }
+
+    button#filter-sasi {
+        border-radius: 25px !important;
+        padding: 12px 20px 12px 20px;
+        border-color: #E7E7E7;
+        color: #777777;
+        margin-top: 10%;
     }
 }
