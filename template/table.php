@@ -90,7 +90,7 @@ class create_table
 										<input type="text" name="words<?php print($search); ?>" class="form-control sasi-form" data-sobad="<?php print($func); ?>" data-load="<?php print($load); ?>" data-type="<?php print($type); ?>" data-object="<?php print($obj); ?>" value="<?php print($value); ?>" placeholder="Penelusuran">
 									</div>
 									<div class="col-sm-3 text-right p-0">
-										<button type="button" data-sobad="<?php print($func); ?>" class="btn sasi-btn-search" aria-expanded="false" data-load="<?php print($load); ?>" data-object="<?php print($obj); ?>" data-type="<?php print($type); ?>">
+										<button type="button" data-sobad="<?php print($func); ?>" class="btn sasi-btn-search" aria-expanded="false" data-load="<?php print($load); ?>" data-object="<?php print($obj); ?>" data-type="<?php print($type); ?>" data-load="<?php print($load); ?>">
 											<i class="fa fa-search" aria-hidden="true"></i>
 										</button>
 									</div>
