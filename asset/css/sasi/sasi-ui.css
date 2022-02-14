@@ -829,7 +829,7 @@ table.sasi-table {
 .table thead th {
     vertical-align: bottom;
     border: none;
-    font-size: 18px;
+    font-size: 18px !important;
 }
 
 .table td,
@@ -840,7 +840,7 @@ table.sasi-table {
 
 .table tbody {
     background-color: #fff;
-    font-size: 17px;
+    font-size: 17px !important;
 }
 
 button#filter-sasi {
