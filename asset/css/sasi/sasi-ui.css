@@ -876,6 +876,10 @@ input.form-control.sasi-form:hover {
     padding: 5px 10px 5px 10px;
 }
 
+input.form-control.sasi-form {
+    width: 100%;
+}
+
 .sasi-form {
     padding: 23px 12px;
     font-size: 14px;
@@ -1139,6 +1143,10 @@ select.form-control.input-sm {
         width: 20%;
         margin-right: -8%;
     }
+
+    input.form-control.sasi-form {
+        width: 80%;
+    }
 }
 
 @media (max-width: 620px) {
@@ -1248,5 +1256,9 @@ select.form-control.input-sm {
 
     .col-xs-1.w-5.m-0.pt-md.pl-0.pr-0 {
         padding-top: 8px;
+    }
+
+    input.form-control.sasi-form {
+        width: 80%;
     }
 }
