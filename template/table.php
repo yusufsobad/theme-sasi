@@ -130,9 +130,7 @@ class create_table
 	{
 	?>
 		<div class="btn-group">
-			<button id="filter-sasi" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs mr-xs" aria-hidden="true"></i>
-				<h5 class="filter-title">Filter</h5><span class="caret ml-xs"></span>
-			</button>
+			<button id="filter-sasi" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs mr-xs" aria-hidden="true"></i>Filter<span class="caret ml-xs"></span></button>
 			<div class="dropdown-menu hold-on-click dropdown-radiobuttons" role="menu">
 				<?php
 				foreach ($args as $key => $val) {
