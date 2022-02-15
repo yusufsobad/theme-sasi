@@ -70,7 +70,8 @@ class create_table
 		<div class="row search-form-default">
 			<div class="col-lg-4 p-0">
 				<form id="sobad-search" class="sobad_form" action="javascript:;">
-					<!-- <div class="input-group">
+					<div class="row p-0">
+						<!-- <div class="input-group">
 						<div class="input-cont">
 							<input type="text" name="words<?php print($search); ?>" placeholder="Search..." class="form-control" data-sobad="<?php print($func); ?>" data-load="<?php print($load); ?>" data-type="<?php print($type); ?>" data-object="<?php print($obj); ?>" value="<?php print($value); ?>">
 						</div>
@@ -82,28 +83,29 @@ class create_table
 							?>
 						</span>
 					</div> -->
-					<div class="col-md-7 pl-0 ml-0 pr-0 text-right">
-						<div class="sasi-search">
-							<div class="row m-0">
-								<div class="input-group form-search">
-									<div class="col-sm-9 p-0">
-										<input type="text" name="words<?php print($search); ?>" class="form-control sasi-form" data-sobad="<?php print($func); ?>" data-load="<?php print($load); ?>" data-type="<?php print($type); ?>" data-object="<?php print($obj); ?>" value="<?php print($value); ?>" placeholder="Penelusuran">
-									</div>
-									<div class="col-sm-3 text-right p-0">
-										<button type="button" data-sobad="<?php print($func); ?>" class="btn sasi-btn-search" aria-expanded="false" data-load="<?php print($load); ?>" data-object="<?php print($obj); ?>" onclick="sobad_search(this)" data-type="<?php print($type); ?>" data-load="<?php print($load); ?>" value="<?php print($value); ?>">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
+						<div class="col-md-7 pl-0 ml-0 pr-0 text-right">
+							<div class="sasi-search">
+								<div class="row m-0">
+									<div class="input-group form-search">
+										<div class="col-sm-9 p-0">
+											<input type="text" name="words<?php print($search); ?>" class="form-control sasi-form" data-sobad="<?php print($func); ?>" data-load="<?php print($load); ?>" data-type="<?php print($type); ?>" data-object="<?php print($obj); ?>" value="<?php print($value); ?>" placeholder="Penelusuran">
+										</div>
+										<div class="col-sm-3 text-right p-0">
+											<button type="button" data-sobad="<?php print($func); ?>" class="btn sasi-btn-search" aria-expanded="false" data-load="<?php print($load); ?>" data-object="<?php print($obj); ?>" onclick="sobad_search(this)" data-type="<?php print($type); ?>" data-load="<?php print($load); ?>" value="<?php print($value); ?>">
+												<i class="fa fa-search" aria-hidden="true"></i>
+											</button>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div><!-- /input-group -->
-					</div>
-					<div class="col-md-4 p-0">
-						<?php
-						if (!empty($check)) {
-							self::_dropdown($args, $search, $val_src);
-						}
-						?>
+							</div><!-- /input-group -->
+						</div>
+						<div class="col-md-4 p-0">
+							<?php
+							if (!empty($check)) {
+								self::_dropdown($args, $search, $val_src);
+							}
+							?>
+						</div>
 					</div>
 				</form>
 			</div>
