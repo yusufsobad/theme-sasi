@@ -84,7 +84,7 @@ label.control-label {
 }
 
 .portlet.box.blue-madison {
-    padding: 2em 1em !important;
+    padding: 2em 3em !important;
     border-radius: 20px !important;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
     border: unset !important;
@@ -300,4 +300,17 @@ ul.ver-inline-menu.tabbable,
 
 .ver-inline-menu li.active:after {
     border-left-color: transparent;
+}
+
+/* =======================
+====== Mobile =======
+================ */
+
+@media (max-width: 620px) {
+    .portlet.box.blue-madison {
+        padding: 2em 1em !important;
+        border-radius: 20px !important;
+        box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+        border: unset !important;
+    }
 }
