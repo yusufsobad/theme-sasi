@@ -152,4 +152,9 @@ a.sasi_sidemenu>h4 {
     .container.sasi-menu {
         margin-left: 0;
     }
+
+    .btn-group>.dropdown-menu {
+        margin-top: 10px;
+        left: -114px;
+    }
 }
