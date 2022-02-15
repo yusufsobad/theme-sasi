@@ -1158,6 +1158,18 @@ select.form-control.input-sm {
         margin-top: 10%;
         margin-left: 0% !important;
     }
+
+    .sasi-search-content {
+        width: 40%;
+        float: left;
+        margin: 5px;
+    }
+
+    .sasi-search-filter {
+        width: 30%;
+        float: left;
+        margin: 5px;
+    }
 }
 
 @media (max-width: 620px) {
