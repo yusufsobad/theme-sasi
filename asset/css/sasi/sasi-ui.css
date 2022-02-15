@@ -1270,7 +1270,7 @@ select.form-control.input-sm {
     }
 
     input.form-control.sasi-form {
-        width: 80%;
+        width: 60%;
     }
 
     button#filter-sasi {
@@ -1280,5 +1280,17 @@ select.form-control.input-sm {
         color: #777777;
         margin-top: 10%;
         margin-left: 0% !important
+    }
+
+    .sasi-search-content {
+        width: 70%;
+        float: left;
+        margin: 5px;
+    }
+
+    .sasi-search-filter {
+        width: 20%;
+        float: left;
+        margin: 5px;
     }
 }
