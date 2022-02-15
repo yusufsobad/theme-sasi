@@ -5653,6 +5653,7 @@ Portlets
 
 .portlet.box>.portlet-body {
   background-color: #fff;
+  padding: 10px;
 }
 
 .portlet.box.portlet-fullscreen>.portlet-body {
@@ -17269,4 +17270,15 @@ Transparent Button
 .btn-transparent.btn {
   background: transparent;
   color: #888;
+}
+
+/* =======================
+====== Mobile =======
+================ */
+
+@media (max-width: 620px) {
+  .portlet.box>.portlet-body {
+    background-color: #fff;
+    padding: 0px;
+  }
 }
