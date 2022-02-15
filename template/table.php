@@ -70,7 +70,7 @@ class create_table
 		<div class="row search-form-default">
 			<div class="col-lg-4 p-0">
 				<form id="sobad-search" class="sobad_form" action="javascript:;">
-					<div class="row p-0">
+					<div class="row p-sm">
 						<!-- <div class="input-group">
 						<div class="input-cont">
 							<input type="text" name="words<?php print($search); ?>" placeholder="Search..." class="form-control" data-sobad="<?php print($func); ?>" data-load="<?php print($load); ?>" data-type="<?php print($type); ?>" data-object="<?php print($obj); ?>" value="<?php print($value); ?>">
