@@ -3,14 +3,7 @@
     padding: 3px 11px;
 }
 
-/* TEST */
-
-.icon-user-menu {
-    top: 50px;
-    padding: 10px 15px;
-    border: 1px solid #fff;
-    border-radius: 9px;
-}
+/* Cekk bosssskuu */
 
 a.sasi_sidemenu>h4 {
     text-transform: uppercase;
@@ -122,19 +115,13 @@ a.sasi_sidemenu>h4 {
     .topbar-content,
     .navbar-toggle {
         position: relative;
-        float: right;
-        padding: 9px 10px;
-        margin-top: 18px;
-        margin-right: 5px;
-        margin-bottom: 8px;
-        background-color: transparent;
+        margin-top: -38px;
+        margin-bottom: 5%;
         background-image: none;
-        border: 1px solid transparent;
-        border-radius: 4px;
     }
 
     .icon-user-menu {
-        margin: 24px 0px 0px -160px;
+        margin: 0px 0px 0px 20px;
     }
 
     .navbar-header {
@@ -145,9 +132,6 @@ a.sasi_sidemenu>h4 {
         margin-top: 15px;
     }
 
-    .input-group.form-search {
-        margin-top: 15px;
-    }
 
     .panel-body.p-lg {
         padding: 0px;
@@ -167,5 +151,10 @@ a.sasi_sidemenu>h4 {
 
     .container.sasi-menu {
         margin-left: 0;
+    }
+
+    .btn-group>.dropdown-menu {
+        margin-top: 10px;
+        left: -114px;
     }
 }

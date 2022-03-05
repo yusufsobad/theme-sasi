@@ -3,43 +3,48 @@
     src: url('font/Inter.woff');
 }
 
+.sasi-menu {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
 body {
     font-family: 'Inter';
     background-color: #F9FAFB;
 }
 
 h1 {
-    font-size: 36px !important;
+    font-size: 41px !important;
     font-family: 'Inter';
 }
 
 h2 {
-    font-size: 24px !important;
+    font-size: 29px !important;
     font-family: 'Inter';
 }
 
 h3 {
-    font-size: 16px !important;
+    font-size: 21px !important;
     font-family: 'Inter';
 }
 
 h4 {
-    font-size: 14px !important;
+    font-size: 19px !important;
     font-family: 'Inter';
 }
 
 h5 {
-    font-size: 12px !important;
+    font-size: 17px !important;
     font-family: 'Inter';
 }
 
 h6 {
-    font-size: 9px !important;
+    font-size: 14px !important;
     font-family: 'Inter';
 }
 
 p {
-    font-size: 10px !important;
+    font-size: 15px !important;
     font-family: 'Inter';
 }
 
@@ -144,6 +149,73 @@ p {
 .red {
     background-color: #D51442 !important;
 }
+
+.btn-default:hover {
+    box-shadow: 0px 0px 12px 0px #87d3ff !important;
+    background-color: #009EF7 !important;
+    color: #FFF !important;
+    border-color: #009EF7 !important;
+}
+
+.purple.btn:hover {
+    box-shadow: 0px 0px 12px 0px #d884fd !important;
+    color: #fff !important;
+}
+
+.red.btn:hover {
+    box-shadow: 0px 0px 12px 0px #ff7a99 !important;
+}
+
+.magenta.btn:hover {
+    box-shadow: 0px 0px 12px 0px rgb(255, 177, 195) !important;
+    color: #fff !important;
+}
+
+.blue.btn:hover {
+    box-shadow: 0px 0px 12px 0px #87d3ff !important;
+
+}
+
+.green.btn:hover {
+    box-shadow: 0px 0px 12px 0px #25ff96 !important;
+    color: #fff !important;
+}
+
+.dark-grey.btn:hover {
+    box-shadow: 0px 0px 12px 0px #c2c2c2 !important;
+    color: #fff !important;
+}
+
+.dark-black.btn:hover {
+    box-shadow: 0px 0px 12px 0px #757575 !important;
+    color: #fff !important;
+}
+
+.pagination>li>a:hover {
+    box-shadow: 0px 0px 12px 0px #d884fd;
+    color: #8023B4 !important;
+    background-color: #fff;
+    border-radius: 9px !important;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #000000;
+    text-decoration: none;
+    background-color: #fff;
+    border: unset;
+    margin: 4px;
+}
+
+.form-control:hover {
+    box-shadow: 0px 0px 3px 0px #d884fd !important;
+}
+
+
 
 .color-light {
     color: #fff;
@@ -580,6 +652,15 @@ p {
     width: 100%
 }
 
+.w-5 {
+    width: 5%;
+}
+
+.w-95 {
+    width: 95%;
+}
+
+
 .col-lg {
     position: relative;
     width: 100%;
@@ -590,8 +671,8 @@ p {
 .col-19 {
     position: relative;
     width: 100%;
-    padding-right: 7px;
-    padding-left: 7px;
+    padding-right: 13px;
+    padding-left: 13px;
 }
 
 .sasi-col {
@@ -614,7 +695,7 @@ p {
 }
 
 .icon-menu {
-    font-size: 60px;
+    font-size: 88px;
 }
 
 .wrapper {
@@ -649,8 +730,7 @@ button#dropdownMenu1>img {
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: 3%;
-    margin-top: 8px;
+    width: 15%;
 }
 
 .icon-user:before {
@@ -662,10 +742,10 @@ button#dropdownMenu1>img {
     padding: 2px;
 }
 
-.btn-blue {
+/* .btn-blue {
     background-color: #009EF7;
     color: #fff;
-}
+} */
 
 .btn-blue:hover,
 .btn-blue:focus,
@@ -676,12 +756,25 @@ button#dropdownMenu1>img {
     box-shadow: 0px 0px 5px 0px #5fc5fe;
 }
 
+.icon-user-menu {
+    top: 73px;
+    padding: 20px 15px;
+    left: -132px;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 9px !important;
+    box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+}
+
 .icon-user-content {
     width: 194px;
 }
 
 .sasi-card-body {
-    height: 146px;
+    height: 200px;
     border-radius: 9px !important;
 }
 
@@ -735,7 +828,8 @@ table.sasi-table {
 
 .table thead th {
     vertical-align: bottom;
-    border: none
+    border: none;
+    font-size: 18px;
 }
 
 .table td,
@@ -746,14 +840,46 @@ table.sasi-table {
 
 .table tbody {
     background-color: #fff;
+    font-size: 17px;
+}
+
+button#filter-sasi {
+    border-radius: 25px !important;
+    padding: 12px 20px 12px 20px;
+    border-color: #E7E7E7;
+    color: #777777;
+    margin-top: 0%;
+    margin-left: 10% !important;
 }
 
 .sasi-btn-search {
-    padding: 12px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
     background-color: #8023b4;
     color: #fff;
+    border-radius: 48px !important;
+}
+
+input.form-control.sasi-form {
+    margin: 0px;
+    background-color: #fff;
+    height: 33px;
+    padding: 0px 0px 0px 6px;
+    border: #fff;
+}
+
+input.form-control.sasi-form:hover {
+    box-shadow: unset !important;
+}
+
+.form-search {
+    width: 100%;
+    border: 1px solid;
+    border-color: #E7E7E7;
+    border-radius: 20px !important;
+    padding: 5px 10px 5px 10px;
+}
+
+input.form-control.sasi-form {
+    width: 100%;
 }
 
 .sasi-form {
@@ -802,12 +928,12 @@ select.form-control.input-sm {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 146px;
+    height: 200px;
     width: 100%;
     opacity: 0;
     transition: .5s ease;
     background-color: #fff;
-    border-radius: 9px;
+    border-radius: 9px !important;
 }
 
 .card-menu {
@@ -817,7 +943,8 @@ select.form-control.input-sm {
 
 .circle-icon {
     margin-top: -19px;
-    margin-left: 184px;
+    width: 50px;
+    margin-right: -7%;
 }
 
 .card-menu:hover .overlay {
@@ -837,13 +964,14 @@ select.form-control.input-sm {
     flex-shrink: 1 !important;
 }
 
+
 .content-card-menu {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    border-radius: 9px;
+    border-radius: 9px !important;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -852,23 +980,124 @@ select.form-control.input-sm {
     backdrop-filter: blur(3px);
 }
 
-.content-menu,
-a:hover,
-a:focus {
-    color: #DD0F7A !important;
-    text-decoration: unset;
+/*=========== Custom ScrollBar ============*/
+
+.scroll-vertical {
+    overflow-y: auto;
+    height: 25vh;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #8023B4;
+    border-radius: 20px
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8023B4;
 }
 
 
+@media (max-width: 1500px) {
+    h1 {
+        font-size: 36px !important;
+        font-family: 'Inter';
+    }
+
+    h2 {
+        font-size: 24px !important;
+        font-family: 'Inter';
+    }
+
+    h3 {
+        font-size: 16px !important;
+        font-family: 'Inter';
+    }
+
+    h4 {
+        font-size: 14px !important;
+        font-family: 'Inter';
+    }
+
+    h5 {
+        font-size: 12px !important;
+        font-family: 'Inter';
+    }
+
+    h6 {
+        font-size: 9px !important;
+        font-family: 'Inter';
+    }
+
+    p {
+        font-size: 10px !important;
+        font-family: 'Inter';
+    }
+
+    .icon-user-menu {
+        top: 60px;
+        padding: 20px 15px;
+        left: -132px;
+        font-size: 14px;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border-radius: 9px !important;
+        box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
+    }
+
+    .table thead th {
+        font-size: 15px;
+    }
+
+    .table tbody {
+        background-color: #fff;
+        font-size: 14px;
+    }
+
+    .icon-menu {
+        font-size: 60px;
+    }
+
+    .sasi-card-body {
+        height: 146px;
+        border-radius: 9px !important;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 146px;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #fff;
+        border-radius: 9px !important;
+    }
+}
 
 
 @media (max-width: 1024px) {
     .icon-user {
         position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 5%;
-        margin-top: 8px;
+        top: 0px;
+        right: 23px;
     }
 
     .icon-user-item {
@@ -877,7 +1106,7 @@ a:focus {
 
     .bg-header {
         background-image: url(../img/sasi-topbar-backgroun.png) !important;
-        padding: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
         background: no-repeat;
         background-color: #8023B4;
     }
@@ -912,8 +1141,34 @@ a:focus {
     }
 
     .circle-icon {
-        margin-top: -19px;
-        margin-left: 188px;
+        margin-top: -8%;
+        width: 20%;
+        margin-right: -8%;
+    }
+
+    input.form-control.sasi-form {
+        width: 80%;
+    }
+
+    button#filter-sasi {
+        border-radius: 25px !important;
+        padding: 12px 20px 12px 20px;
+        border-color: #E7E7E7;
+        color: #777777;
+        margin-top: 0%;
+        margin-left: 0% !important;
+    }
+
+    .sasi-search-content {
+        width: 40%;
+        float: left;
+        margin: 5px;
+    }
+
+    .sasi-search-filter {
+        width: 30%;
+        float: left;
+        margin: 5px;
     }
 }
 
@@ -967,10 +1222,7 @@ a:focus {
 
     .icon-user {
         position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 95px;
-        margin-top: 9px;
+        right: 99px;
     }
 
     .icon-user-item {
@@ -1022,5 +1274,39 @@ a:focus {
     .circle-icon {
         margin-top: -19px;
         margin-left: 230px;
+    }
+
+
+    .col-xs-1.w-5.m-0.pt-md.pl-0.pr-0 {
+        padding-top: 8px;
+    }
+
+    input.form-control.sasi-form {
+        width: 60%;
+    }
+
+    button#filter-sasi {
+        border-radius: 25px !important;
+        padding: 12px 20px 12px 20px;
+        border-color: #E7E7E7;
+        color: #777777;
+        margin-top: 0%;
+        margin-left: 0% !important
+    }
+
+    .sasi-search-content {
+        width: 70%;
+        float: left;
+        margin: 5px;
+    }
+
+    .sasi-search-filter {
+        width: 20%;
+        float: left;
+        margin: 5px;
+    }
+
+    .filter-title {
+        display: none;
     }
 }
