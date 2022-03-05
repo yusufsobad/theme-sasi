@@ -255,6 +255,11 @@ class create_form{
 			$id = 'id="'.$val['id'].'"';
 		}
 
+		$onclick = '';
+		if(isset($val['id'])){
+			$onclick = 'onclick="'.$val['onclick'].'"';
+		}
+
 		$btn = '';
 		$cols = self::$col_input;
 		if(isset($val['button'])){
@@ -296,7 +301,7 @@ class create_form{
 			$inp .= '
 				<label class="option_box '.$class.'" for="box_opt'.$val['key'].$ky.'">
 					<div class="control-box">
-						<input type="'.$val['type'].'" id="box_opt'.$val['key'].$ky.'" name="'.$val['key'].'" value="'.$vl['value'].'" '.$check.' '.$required.'>
+						<input type="'.$val['type'].'" id="box_opt'.$val['key'].$ky.'" name="'.$val['key'].'" value="'.$vl['value'].'" '.$check.' '.$onclick.' '.$required.'>
 						'.$vl['title'].' 
 					</div>
 				</label>
