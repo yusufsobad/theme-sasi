@@ -256,7 +256,7 @@ class create_form{
 		}
 
 		$onclick = '';
-		if(isset($val['id'])){
+		if(isset($val['onclick'])){
 			$onclick = 'onclick="'.$val['onclick'].'"';
 		}
 
