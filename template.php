@@ -287,7 +287,7 @@ abstract class sasi_template extends custom_script
 				<ol class="breadcrumb secondary-grey">
 					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><i class="fa fa-arrow-circle-left color-dark-grey"></i></a>
 					<li>
-						<a class="color-dark-grey" href="">Home</a>
+						<a class="color-dark-grey" href="<?php echo '/' . URL ;?>">Home</a>
 					</li>
 					<?php
 					if (!empty($check)) {
@@ -316,7 +316,7 @@ abstract class sasi_template extends custom_script
 				<ol class="breadcrumb secondary-grey">
 					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><img src="theme/sasi/asset/img/menu-arrow-back.png"></a>
 					<li>
-						<a class="color-dark-grey" href="">Home</a>
+						<a class="color-dark-grey" href="<?php echo '/' . URL ;?>">Home</a>
 					</li>
 					<?php
 					if (!empty($check)) {
