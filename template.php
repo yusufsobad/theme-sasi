@@ -254,10 +254,18 @@ abstract class sasi_template extends custom_script
 
 		<script>
 			$(document).ready(function(e) {
-				$("#<?php print($args['id']); ?>").submit(function() {
+				$("form#frm_<?php print($idx) ;?>").submit(function() {
 					sobad_load('<?php print($args['id']); ?>');
 					sobad_import(this, '<?php print($load); ?>');
-					Metronic.unblockUI('<?php print($args['id']); ?>');
+					//Metronic.unblockUI('<?php //print($args['id']); ?>');
+
+					var target = '#<?php print($args['id']) ;?>';
+					$(target).unblock({
+	                    onUnblock: function() {
+	                        $(target).css('position', '');
+	                        $(target).css('zoom', '');
+	                    }
+	                });
 					return false;
 				});
 			});
