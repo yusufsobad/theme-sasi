@@ -232,7 +232,7 @@ abstract class sasi_template extends custom_script
 	<?php
 	}
 
-	private static function _btn_modal_import($args = array())
+	private static function _btn_modal_import($args = array(),$idx='')
 	{
 		$check = array_filter($args);
 		if (empty($check)) {
