@@ -13,6 +13,8 @@ if(!defined('THEMEPATH')){
 	define('THEMEPATH',dirname(__FILE__));
 }
 
+include '../../include/config/hostname.php';
+
 require THEMEPATH.'/class_ajax.php';
 require THEMEPATH.'/template.php';
 require THEMEPATH.'/view.php';
