@@ -162,7 +162,7 @@ abstract class sasi_template extends custom_script
 				$button = $args['button'];
 				if (method_exists('sasi_template', $button)) {
 					self::{$button}($args['status'], $idx);
-				}else if(method_exists($obj, $func)){
+				}else if(method_exists($obj, $button)){
 					$obj::{$button}($args['status'],$idx);
 				}
 				?>
