@@ -302,6 +302,13 @@ ul.ver-inline-menu.tabbable,
     border-left-color: transparent;
 }
 
+/* Form Input Money */
+
+input.form-control.money {
+    width: 118px !important;
+    border-radius: 10px !important;
+}
+
 /* =======================
 ====== Mobile =======
 ================ */
