@@ -309,6 +309,11 @@ input.form-control.money {
     border-radius: 10px !important;
 }
 
+input.form-control.quantity {
+    width: 118px !important;
+    border-radius: 10px !important;
+}
+
 /* =======================
 ====== Mobile =======
 ================ */
