@@ -94,6 +94,10 @@ p {
     font-weight: 900 !important;
 }
 
+.transparent{
+    background-color: transparent;
+}
+
 .light {
     background-color: #FFF !important;
 }
@@ -978,6 +982,85 @@ select.form-control.input-sm {
     text-align: center;
     background: linear-gradient(115.43deg, rgba(243, 243, 243, 0.51) 5.93%, rgba(243, 243, 243, 0) 98.56%);
     backdrop-filter: blur(3px);
+}
+
+.navbar-menu {
+    position: absolute;
+    top:0;
+    right:0;
+    margin-right: 15%;
+}
+
+.navbar-content{
+    width: 20px;
+}
+
+.navbar-section{
+    width: 100%;
+}
+
+.notify{
+    width: 50%;
+    float: left;
+}
+
+.lang{
+    width: 50%;
+    float: left;
+}
+
+.nav-line {
+    display: flex;
+    justify-content: inherit;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.nav-line>li.active {
+    border-bottom: solid 3px #dd0f7a;
+}
+
+.navdrop {
+    width: max-content;
+    padding: 10px;
+    min-width: 300px;
+    border: 0px;
+    margin: 1px -248px 0;
+}
+
+.tab-content {
+    padding: 10px 5px 10px 5px;
+}
+
+img.img-notify {
+    border-radius: 30px;
+}
+
+.text-notify {
+    font-size: 11px;
+}
+
+.time-notify{
+    font-size: 11px;
+}
+
+.nav-line>li>a:hover, .nav-line>li>a:focus {
+    text-decoration: none;
+    background-color: #fff
+}
+
+.number-notify {
+    width: max-content;
+    height: max-content;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    border-radius: 30px;
+    display: grid;
+    align-content: center;
+    text-align: center;
+    padding: 0px 5px 0px 5px;
+    min-width: 22px;
+    min-height: 15px;
 }
 
 /*=========== Custom ScrollBar ============*/

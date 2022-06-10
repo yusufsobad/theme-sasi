@@ -120,6 +120,83 @@ class sasi_header
 		$image = empty($user) ? 'asset/img/user/no-profile.jpg' : $user;
 
 	?>
+		<div class="navbar-menu">
+			<div class="navbar-section">
+				<div class="notify p-md">
+					<div id="myDropDown" class="dropdown">
+						<button class="dropdown-toggle transparent border-none btn-circle" type="button" id="notify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<div class="navbar-content color-light p-0 m-0">
+								<h2 class="m-0"><i class="fa fa-bell-o" aria-hidden="true"></i></h2>
+							</div>
+						</button>
+						<ul id="myTabs" class="dropdown-menu navdrop" role="menu" aria-labelledby="dLabel">
+							<ul class="nav nav-line">
+								<li class="active"><a href="#home" data-toggle="tab">
+										<h4 class="color-dark-black font-weight-600">Notification</h4>
+										<div class="number-notify red"><small>1</small></div>
+									</a>
+								</li>
+								<li><a href=" #profile" data-toggle="tab">
+										<h4 class="color-dark-black font-weight-600">Team Activity</h4>
+										<div class="number-notify red"><small>90</small></div>
+									</a>
+								</li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active" id="home">
+									<li><small class="color-dark-grey mt-md">Today</small></li>
+									<li class="content-notify mt-sm ">
+										<img class="img-notify mr-sm" src="../assets/sasi-ui/img/gading-shape.png">
+										<span class="color-dark-black font-weight-600"><small>Gading
+												Rengga</small>
+										</span>
+										<span class="color-dark-grey"><small> send you a new
+												task</small>
+										</span>
+										<span class="color-dark-black font-weight-600"><small>
+												Project Team</small>
+										</span>
+										<span class="color-dark-grey ml-lg align-right"><small>6
+												min</small>
+										</span>
+									</li>
+								</div>
+								<div class="tab-pane" id="profile">
+									<li><small class="color-dark-grey mt-md">Yesterday</small></li>
+									<li class="content-notify mt-sm ">
+										<img class="img-notify mr-sm" src="../assets/sasi-ui/img/gading-shape.png">
+										<span class="color-dark-black font-weight-600"><small>Ana
+												Trisni</small>
+										</span>
+										<span class="color-dark-grey"><small> send you a new
+												task</small>
+										</span>
+										<span class="color-dark-black font-weight-600"><small>
+												Project Team</small>
+										</span>
+										<span class="color-dark-grey ml-lg align-right"><small>1
+												days ago</small>
+										</span>
+									</li>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="lang p-md">
+					<div class="dropdown">
+						<button class="dropdown-toggle transparent border-light radius-lg btn-circle" type="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<div class="navbar-content color-light p-0 m-0">ID</div>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="lang">
+							<li><a href="#">Indonesia</a></li>
+							<li><a href="#">English</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="icon-user">
 			<div class="row m-0">
 				<div class="col-xs-8 pr-md pt-sm m-0 pl-0 text-right">
