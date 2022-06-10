@@ -122,7 +122,7 @@ class sasi_header
 	?>
 		<div class="navbar-menu">
 			<div class="navbar-section">
-				<div class="notify p-md">
+				<div class="notify">
 					<div id="myDropDown" class="dropdown">
 						<button class="dropdown-toggle transparent border-none btn-circle" type="button" id="notify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 							<div class="navbar-content color-light p-0 m-0">
@@ -184,7 +184,7 @@ class sasi_header
 						</ul>
 					</div>
 				</div>
-				<div class="lang p-md">
+				<div class="lang">
 					<div class="dropdown">
 						<button class="dropdown-toggle transparent border-none" type="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 							<div class="navbar-content border-light content-lang">
