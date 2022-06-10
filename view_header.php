@@ -186,10 +186,12 @@ class sasi_header
 				</div>
 				<div class="lang p-md">
 					<div class="dropdown">
-						<button class="dropdown-toggle transparent border-light radius-lg btn-circle" type="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							<div class="navbar-content color-light p-0 m-0">ID</div>
+						<button class="dropdown-toggle transparent border-none" type="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							<div class="navbar-content border-light content-lang">
+								ID
+							</div>
 						</button>
-						<ul class="langdrop dropdown-menu" aria-labelledby="lang">
+						<ul class="dropdown-menu" aria-labelledby="lang">
 							<li><a href="#">Indonesia</a></li>
 							<li><a href="#">English</a></li>
 						</ul>

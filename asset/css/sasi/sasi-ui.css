@@ -991,8 +991,8 @@ select.form-control.input-sm {
     margin-right: 15%;
 }
 
-.navbar-content{
-    width: 20px;
+.navbar-content {
+    width: 36px;
 }
 
 .navbar-section{
@@ -1004,9 +1004,11 @@ select.form-control.input-sm {
     float: left;
 }
 
-.lang{
+.lang {
     width: 50%;
     float: left;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-line {
@@ -1080,6 +1082,14 @@ ul.langdrop.dropdown-menu {
 .langdrop.dropdown-menu>li>a, .user {
     padding: 3px 11px;
     border-radius: 9px !important;
+}
+
+.navbar-content.border-light.content-lang {
+    width: 26px;
+    height: 26px;
+    border-radius: 30px;
+    display: block;
+    padding: 2px;
 }
 
 /*=========== Custom ScrollBar ============*/
