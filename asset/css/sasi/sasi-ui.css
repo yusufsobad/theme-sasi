@@ -1399,4 +1399,11 @@ img.img-notify {
     .filter-title {
         display: none;
     }
+
+    .navbar-menu {
+        position: absolute;
+        top: 11px;
+        right: 0;
+        margin-right: 33%;
+    }
 }
