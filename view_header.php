@@ -191,7 +191,7 @@ class sasi_header
 								ID
 							</div>
 						</button>
-						<ul class="dropdown-menu" aria-labelledby="lang">
+						<ul class="langdrop dropdown-menu" aria-labelledby="lang">
 							<li><a href="#">Indonesia</a></li>
 							<li><a href="#">English</a></li>
 						</ul>
