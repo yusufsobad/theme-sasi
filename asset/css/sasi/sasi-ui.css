@@ -1066,6 +1066,10 @@ img.img-notify {
     color: white;
 }
 
+.navbar-content .fa.fa-bell-o {
+    font-size: 25px;
+}
+
 /*=========== Custom ScrollBar ============*/
 
 .scroll-vertical {
