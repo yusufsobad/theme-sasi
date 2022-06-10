@@ -1010,7 +1010,7 @@ select.form-control.input-sm {
     float: left;
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 25%;
 }
 
 .nav-line {
@@ -1204,6 +1204,14 @@ ul.langdrop.dropdown-menu {
         transition: .5s ease;
         background-color: #fff;
         border-radius: 9px !important;
+    }
+
+    .lang {
+        width: 45%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        margin-top: 20%;
     }
 }
 
