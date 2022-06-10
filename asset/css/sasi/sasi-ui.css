@@ -1000,12 +1000,12 @@ select.form-control.input-sm {
 }
 
 .notify{
-    width: 50%;
+    width: 40%;
     float: left;
 }
 
 .lang {
-    width: 50%;
+    width: 40%;
     float: left;
     display: flex;
     justify-content: center;
@@ -1085,11 +1085,12 @@ ul.langdrop.dropdown-menu {
 }
 
 .navbar-content.border-light.content-lang {
-    width: 26px;
-    height: 26px;
-    border-radius: 30px;
-    display: block;
-    padding: 2px;
+    width: 28px;
+    height: 28px;
+    border-radius: 30px !important;
+    padding: 3px;
+    border: 1px solid white;
+    color: white;
 }
 
 /*=========== Custom ScrollBar ============*/
