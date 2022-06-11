@@ -147,7 +147,7 @@ class sasi_header
 								<div class="tab-pane active" id="home">
 									<li><small class="color-dark-grey mt-md">Today</small></li>
 									<li class="content-notify mt-sm ">
-										<img class="img-notify mr-sm" src="../assets/sasi-ui/img/gading-shape.png">
+										<img class="img-notify mr-sm" src="<?php print($image); ?>">
 										<span class="color-dark-black font-weight-600"><small>Gading
 												Rengga</small>
 										</span>
