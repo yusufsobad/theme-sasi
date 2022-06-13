@@ -89,7 +89,7 @@ class theme_script
 			'themes-dropdown'		=> $loc . 'js/pages/components-dropdowns.js',
 			'themes-editor'			=> $loc . 'js/pages/components-editors.js',
 			'themes-dropdown-nav'	=> $loc . 'js/pages/dropdown-nav.js',
-			'themes-newtab'			=> $loc . 'js/pages/newtab.js',
+			'themes-contextmenu'	=> $loc . 'js/pages/contextmenu.js',
 		);
 
 		$check = array_filter($idx);
