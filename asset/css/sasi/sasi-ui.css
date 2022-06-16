@@ -358,6 +358,56 @@ p {
     border-bottom-left-radius: 20px !important;
 }
 
+.border-bottom-xs{
+    border-bottom: 1px solid #a7a7a7;
+}
+.border-bottom-sm{
+    border-bottom: 2px solid #a7a7a7;
+}
+.border-bottom-md{
+    border-bottom: 3px solid #a7a7a7;
+}
+.border-bottom-lg{
+    border-bottom: 4px solid #a7a7a7;
+}
+.border-top-xs{
+    border-top: 1px solid #a7a7a7;
+}
+.border-top-sm{
+    border-top: 2px solid #a7a7a7;
+}
+.border-top-md{
+    border-top: 3px solid #a7a7a7;
+}
+.border-top-lg{
+    border-top: 4px solid #a7a7a7;
+}
+.border-left-xs{
+    border-left: 1px solid #a7a7a7;
+}
+.border-left-sm{
+    border-left: 2px solid #a7a7a7;
+}
+.border-left-md{
+    border-left: 3px solid #a7a7a7;
+}
+.border-left-lg{
+    border-left: 4px solid #a7a7a7;
+}
+.border-right-xs{
+    border-right: 1px solid #a7a7a7;
+}
+.border-right-sm{
+    border-right: 2px solid #a7a7a7;
+}
+.border-right-md{
+    border-right: 3px solid #a7a7a7;
+}
+.border-right-lg{
+    border-right: 4px solid #a7a7a7;
+}
+
+
 .border-none {
     border-radius: unset;
     border-top: unset;
