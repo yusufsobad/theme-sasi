@@ -16,6 +16,7 @@ button#dropdown-action {
 .btn-default.dropdown-action:hover {
   background-color: #f0f0f0 !important;
   border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .dropdown-action.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
