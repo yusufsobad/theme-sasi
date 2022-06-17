@@ -164,35 +164,44 @@ p {
 .purple.btn:hover {
     box-shadow: 0px 0px 12px 0px #d884fd !important;
     color: #fff !important;
+    color: #fff !important;
 }
 
 .red.btn:hover {
     box-shadow: 0px 0px 12px 0px #ff7a99 !important;
+    color: #fff !important;
+    background-color: #D51442 !important;
 }
 
 .magenta.btn:hover {
     box-shadow: 0px 0px 12px 0px rgb(255, 177, 195) !important;
     color: #fff !important;
+    background-color: #DC0F7A !important;
 }
 
 .blue.btn:hover {
     box-shadow: 0px 0px 12px 0px #87d3ff !important;
+    background-color: #009EF7 !important;
+    color: #fff !important;
 
 }
 
 .green.btn:hover {
     box-shadow: 0px 0px 12px 0px #25ff96 !important;
     color: #fff !important;
+    background-color: #15BA6B !important;
 }
 
 .dark-grey.btn:hover {
     box-shadow: 0px 0px 12px 0px #c2c2c2 !important;
     color: #fff !important;
+    background-color: #777777 !important;
 }
 
 .dark-black.btn:hover {
     box-shadow: 0px 0px 12px 0px #757575 !important;
     color: #fff !important;
+    background-color: #333333 !important;
 }
 
 .pagination>li>a:hover {
