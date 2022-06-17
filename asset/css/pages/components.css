@@ -8,18 +8,18 @@ button#dropdown-action {
 }
 
 .btn-default.dropdown-action {
-  background-color: transparent;
-  border-radius: 9px;
+  background-color: transparent !important;
+  border-radius: 9px !important;
 }
 
 .btn-default.dropdown-action:hover {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0 !important;
   border-color: transparent !important;
 }
 
 .dropdown-action.btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn.active.focus {
-  outline: unset;
-  outline-offset: unset;
+  outline: unset !important;
+  outline-offset: unset !important;
 }
 
 
