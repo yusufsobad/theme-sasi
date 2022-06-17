@@ -14,7 +14,7 @@ button#dropdown-action {
   border:none !important
 }
 
-.btn-default.dropdown-action:hover {
+.dropdown-action:hover {
   background-color: #f0f0f0 !important;
   border-color: transparent !important;
   box-shadow: none !important;
