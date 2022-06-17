@@ -10,6 +10,7 @@ button#dropdown-action {
 .btn-default.dropdown-action {
   background-color: transparent !important;
   border-radius: 9px !important;
+  border:none !important
 }
 
 .btn-default.dropdown-action:hover {
