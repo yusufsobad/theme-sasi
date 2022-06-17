@@ -86,6 +86,11 @@ button#dropdown-action {
     border-radius: 9px;
 }
 
+.btn-default.dropdown-action {
+    background-color: transparent;
+    border-radius: 9px;
+}
+
 .btn-default.dropdown-action:hover {
     background-color: #f0f0f0;
     border-color: transparent !important;
