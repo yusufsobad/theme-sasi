@@ -3,8 +3,9 @@
 ======================================*/
 
 button#dropdown-action {
-  border-color: transparent;
-  border-radius: 9px;
+  background-color: transparent !important;
+  border-radius: 9px !important;
+  border:none !important
 }
 
 .btn-default.dropdown-action {
