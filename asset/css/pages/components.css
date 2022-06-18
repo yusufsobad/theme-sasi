@@ -19,6 +19,14 @@
   border-color: transparent !important;
 }
 
+ul.dropdown-menu.action-menu {
+  padding: 10px !important;
+  box-shadow: 0px 3px 14px -6px !important;
+  border-radius: 9px !important;
+  min-width: 120px !important;
+  left: -13px !important;
+}
+
 
 /*********************************
  METRONIC SQUARE STYLE COMPONENTS 
