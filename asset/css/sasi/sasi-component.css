@@ -273,7 +273,7 @@ div#reduce_portlet .table-responsive {
 }
 
 /* inline menu */
-ul.ver-inline-menu.tabbable {
+/* ul.ver-inline-menu.tabbable {
     background: #F5F5F5;
     padding: 3px;
 }
@@ -300,7 +300,7 @@ ul.ver-inline-menu.tabbable,
 
 .ver-inline-menu li.active:after {
     border-left-color: transparent;
-}
+} */
 
 /* Form Input Money */
 
