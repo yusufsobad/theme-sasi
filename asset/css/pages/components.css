@@ -19024,8 +19024,8 @@ Custom vertical inline menu
 
 .ver-inline-menu li {
   position: relative;
-  margin-bottom: 7px;
-  margin-top: 7px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
 
 .ver-inline-menu li i {
