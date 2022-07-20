@@ -4,6 +4,8 @@
 class create_table
 {
 
+	protected static $check = false;
+
 	public static function _table($args = array())
 	{
 
@@ -12,9 +14,10 @@ class create_table
 			$class .= $args['class'];
 		}
 
-		$id = '';
-		if (isset($args['id'])) {
+		$id = '';$_idx = '';
+		if(isset($args['id'])){
 			$id = $args['id'];
+			$_idx = '#'.$id.' ';
 		}
 
 		if (isset($args['search'])) {
@@ -42,6 +45,20 @@ class create_table
 				self::thead($args['table']);
 				self::tbody($args['table']); ?>
 			</table>
+			<?php if(self::$check): ?>
+				<script>
+	                  function sobad_check_all(){
+	                    $('<?php print($_idx) ;?>.check-sobad').each(function () {
+	                      if($(this).is(":checked")){
+	                        $(this).prop('checked', false);	
+	                      } else {
+	                        $(this).prop('checked', true);	
+	                      }
+	                    });
+	                  return false;
+	                  }
+	            </script>
+	        <?php endif ;?>
 		</div>
 		<?php
 
@@ -188,6 +205,12 @@ class create_table
 						$rowspan = 'rowspan="' . $val[5] . '"';
 					}
 
+					if(strtolower($key)=='check'){
+						$key = '<input onchange="sobad_check_all()" type="checkbox" id="sobad-check-all" >';
+						self::$check = true;
+
+					}
+
 					print('<th ' . $colspan . ' ' . $rowspan . ' ' . $att . ' style="text-align:left;width:' . $val[1] . ';">' . $key . '</th>');
 				}
 				?>
@@ -224,6 +247,10 @@ class create_table
 					$rowspan = '';
 					if (isset($val[5])) {
 						$rowspan = 'rowspan="' . $val[5] . '"';
+					}
+
+					if(strtolower($key)=='check'){
+						$val[2] = '<input name="checked_ids" type="checkbox" class="check-sobad" value="'.$val[2].'">';
 					}
 
 					echo '<td ' . $colspan . ' ' . $rowspan . ' style="text-align:' . $val[0] . '">' . $val[2] . '</td>';
