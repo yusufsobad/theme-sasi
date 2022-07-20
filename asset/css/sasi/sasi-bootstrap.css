@@ -76,6 +76,13 @@ a.sasi_sidemenu>h4 {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
+.dropdown-menu.dropdown-radiobuttons {
+    border-radius: 12px !important;
+    box-shadow: 0px 4px 17px -7px;
+}
+
+
+
 
 
 @media (max-width: 865px) {

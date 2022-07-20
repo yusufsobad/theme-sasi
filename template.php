@@ -133,7 +133,7 @@ abstract class sasi_template extends custom_script
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
 				<h4 class="modal-title"><?php print($args['title']); ?></h4>
 			</div>
-
+			<div class="mr-xl ml-xl mb-lg mt-sm border-top-xs"></div>
 			<?php if ($form) : ?>
 				<form id="frm_<?php print($idx); ?>" role="form" method="post" class="form-horizontal" enctype="multipart/form-data" novalidate="novalidate">
 				<?php endif; ?>
@@ -162,8 +162,8 @@ abstract class sasi_template extends custom_script
 				$button = $args['button'];
 				if (method_exists('sasi_template', $button)) {
 					self::{$button}($args['status'], $idx);
-				}else if(method_exists($obj, $button)){
-					$obj::{$button}($args['status'],$idx);
+				} else if (method_exists($obj, $button)) {
+					$obj::{$button}($args['status'], $idx);
 				}
 				?>
 			</div>
@@ -234,7 +234,7 @@ abstract class sasi_template extends custom_script
 	<?php
 	}
 
-	private static function _btn_modal_import($args = array(),$idx='')
+	private static function _btn_modal_import($args = array(), $idx = '')
 	{
 		$check = array_filter($args);
 		if (empty($check)) {
@@ -256,18 +256,19 @@ abstract class sasi_template extends custom_script
 
 		<script>
 			$(document).ready(function(e) {
-				$("form#frm_<?php print($idx) ;?>").submit(function() {
-					sobad_load('frm_<?php print($idx) ;?>');
+				$("form#frm_<?php print($idx); ?>").submit(function() {
+					sobad_load('frm_<?php print($idx); ?>');
 					sobad_import(this, '<?php print($load); ?>');
-					//Metronic.unblockUI('<?php //print($args['id']); ?>');
+					//Metronic.unblockUI('<?php //print($args['id']); 
+											?>');
 
-					var target = '#<?php print($args['id']) ;?>';
+					var target = '#<?php print($args['id']); ?>';
 					$(target).unblock({
-	                    onUnblock: function() {
-	                        $(target).css('position', '');
-	                        $(target).css('zoom', '');
-	                    }
-	                });
+						onUnblock: function() {
+							$(target).css('position', '');
+							$(target).css('zoom', '');
+						}
+					});
 					return false;
 				});
 			});
@@ -297,7 +298,7 @@ abstract class sasi_template extends custom_script
 				<ol class="breadcrumb secondary-grey">
 					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><i class="fa fa-arrow-circle-left color-dark-grey"></i></a>
 					<li>
-						<a class="color-dark-grey" href="<?php echo '/' . URL ;?>">Home</a>
+						<a class="color-dark-grey" href="<?php echo '/' . URL; ?>">Home</a>
 					</li>
 					<?php
 					if (!empty($check)) {
@@ -326,7 +327,7 @@ abstract class sasi_template extends custom_script
 				<ol class="breadcrumb secondary-grey">
 					<a class="ml-sm mr-sm" href="javascript:" onclick="sasi_backmenu()"><img src="theme/sasi/asset/img/menu-arrow-back.png"></a>
 					<li>
-						<a class="color-dark-grey" href="<?php echo '/' . URL ;?>">Home</a>
+						<a class="color-dark-grey" href="<?php echo '/' . URL; ?>">Home</a>
 					</li>
 					<?php
 					if (!empty($check)) {
