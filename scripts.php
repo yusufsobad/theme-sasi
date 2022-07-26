@@ -16,7 +16,7 @@ class theme_script
 
 	private function lokasi()
 	{
-		return 'theme/' . _theme_folder . '/asset/';
+		return SITE .'://' . HOSTNAME . '/' . URL . '/theme/' . _theme_folder . '/asset/';
 	}
 	// BEGIN PAGE LEVEL STYLES ---->
 

@@ -21,11 +21,12 @@ class sasi_header
 
 	public static function _logo()
 	{
+		$loc = SITE .'://' . HOSTNAME . '/' . URL;
 	?>
 		<!-- BEGIN LOGO -->
 		<div class="navbar-header">
 			<a class="navbar-brand" href="#">
-				<img src="theme/<?php echo _theme_folder; ?>/asset/img/sasi-logo.png" width="50" height="50">
+				<img src="<?php echo $loc ;?>/theme/<?php echo _theme_folder; ?>/asset/img/sasi-logo.png" width="50" height="50">
 			</a>
 		</div>
 		<!-- END LOGO -->
@@ -112,12 +113,13 @@ class sasi_header
 
 	public static function menu_user()
 	{
+		$loc = SITE .'://' . HOSTNAME . '/' . URL;
 		$name = get_name_user();
 		$id = get_id_user();
 
 		$user = get_picture_user();
 		$dept = get_divisi_user();
-		$image = empty($user) ? 'asset/img/user/no-profile.jpg' : $user;
+		$image = empty($user) ? $loc . '/asset/img/user/no-profile.jpg' : $user;
 
 	?>
 		<div class="navbar-menu">
