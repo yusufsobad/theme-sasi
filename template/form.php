@@ -50,6 +50,11 @@ class create_form{
 		self::$col_input = $input;
 		return self::$func($args);
 	}
+
+	private static function _conv_column($value=1){
+		$args = array(0,12,6,4,3,2,2,1,1,1,1,1,1);
+		return isset($args[$value]) ? $args[$value] : 12;
+	}
 	
 	public static function get_form($args,$status=false){
 		$check = array_filter($args);
@@ -80,6 +85,16 @@ class create_form{
 					<form id="<?php print($id) ;?>" role="form" method="post" class="form-horizontal" enctype="multipart/form-data">
 					<?php 
 				endif;
+
+						if(isset($args['column'])){
+							foreach ($args['column'] as $ky => $vl) {
+								?>
+									<div class="col-lg-<?php self::_conv_column(count($args['column'])) ;?>">
+										<?php self::option_form($vl); ?>
+									</div>
+								<?php
+							}
+						}
 
 						self::option_form($args);
 						if(!isset($_SESSION[_prefix.'input_form'])){
