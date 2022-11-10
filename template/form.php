@@ -19,6 +19,14 @@ class create_form{
 			if($key === 'cols'){
 				//self::$col_label = $val[0];
 				//self::$col_input = $val[1];
+			}else if($key === 'column'){
+				foreach ($args['column'] as $ky => $vl) {
+					?>
+						<div class="col-lg-<?= self::_conv_column(count($args['column'])) ;?>">
+							<?php self::option_form($vl); ?>
+						</div>
+					<?php
+				}
 			}else{
 				if(is_callable(array(new self(),$val['func']))){
 					$func = $val['func'];
@@ -85,16 +93,6 @@ class create_form{
 					<form id="<?php print($id) ;?>" role="form" method="post" class="form-horizontal" enctype="multipart/form-data">
 					<?php 
 				endif;
-
-						if(isset($args['column'])){
-							foreach ($args['column'] as $ky => $vl) {
-								?>
-									<div class="col-lg-<?php self::_conv_column(count($args['column'])) ;?>">
-										<?php self::option_form($vl); ?>
-									</div>
-								<?php
-							}
-						}
 
 						self::option_form($args);
 						if(!isset($_SESSION[_prefix.'input_form'])){
