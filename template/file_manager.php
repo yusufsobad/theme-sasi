@@ -15,6 +15,8 @@ class create_file_manager{
 	}
 	
 	private static function _upload_file($args=array()){
+		$index = isset($args['index']) ? $args['index'] : '';
+
 		?>
 			<div class="col-md-12">
 				<p>
@@ -24,6 +26,7 @@ class create_file_manager{
 				<form class="dropzone dz-clickable" id="<?php print($args['id']) ;?>">
 					<input type="hidden" name="ajax" value="<?php print($args['func']) ;?>">
 					<input type="hidden" name="object" value="<?php print($args['object']) ;?>">
+					<input type="hidden" name="index" value="<?php print($index) ;?>">
 					<input type="hidden" name="data" value="upload_file">
 					<div class="dz-default dz-message">
 						<span>Drop files here to upload</span>

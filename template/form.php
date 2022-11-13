@@ -756,4 +756,34 @@ class create_form{
 
 		return $inp;
 	}
+
+	private static function opt_dropzone($val=array()){
+		// id, func , object , accept, load, data, value
+		// index
+
+		$inp = '';
+		if(isset($val['label'])){
+			$inp .= self::opt_label($val['label']);
+		}else{
+			$inp .= '<div class="col-md-'. self::$col_label .'"></div>';
+		}
+		
+		$id = '';
+		if(isset($val['id'])){
+			$id = 'id="'.$val['id'].'"';
+		}
+
+		// Get layout dropzone
+		ob_start();
+		create_file_manager::_layout(array(
+			'func'	=> '_upload_file',
+			'data'	=> $val
+		));
+		$upload = ob_get_clean();
+		
+		$inp .= '<div class="col-md-'. self::$col_input .'">';
+		$inp .= $upload;
+		$inp .= '</div>';
+		return $inp;
+	}	
 }
