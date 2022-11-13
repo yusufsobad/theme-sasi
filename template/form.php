@@ -445,6 +445,33 @@ class create_form{
 		return $inp;
 	}
 
+	private static function opt_switch_toggle($val=array()){
+		// id, key , class , label, value, type, data
+		$inp = '';
+		if(isset($val['label'])){
+			$inp .= self::opt_label($val['label']);
+		}else{
+			$inp .= '<div class="col-md-'. self::$col_label .'"></div>';
+		}
+		
+		$id = '';
+		if(isset($val['id'])){
+			$id = 'id="'.$val['id'].'"';
+		}
+
+		$data = isset($val['data']) ? $val['data'] : '';
+		
+		$inp .= '<div class="col-md-'. self::$col_input .'">';
+		$inp .= '<div class="form-check '.$val['class'].'">
+            		<label>
+        	    	  <input '.$id.' type="checkbox" name="'.$val['key'].'" value="'.$val['value'].'">
+        	    	  <span>'.$data.'</span>
+    	        	</label>
+	        	</div>';
+		$inp .= '</div>';
+		return $inp;
+	}
+
 	private static function opt_select_tags($val=array()){
 		// id , class , key , data, select
 		// label (optional)
