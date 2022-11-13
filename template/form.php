@@ -770,6 +770,7 @@ class create_form{
 
 		// Get layout dropzone
 		$val['func'] = $val['callback'];
+		$val['tag'] = 'div';
 
 		ob_start();
 		sasi_layout::sobad_file_manager(array(

@@ -16,6 +16,7 @@ class create_file_manager{
 	
 	private static function _upload_file($args=array()){
 		$index = isset($args['index']) ? $args['index'] : '';
+		$tag = isset($args['tag']) ? $args['tag'] : 'form';
 
 		?>
 			<div class="col-md-12">
@@ -23,7 +24,7 @@ class create_file_manager{
 					<span class="label label-danger">NOTE: </span>
 					max upload file 2MB
 				</p>
-				<form class="dropzone dz-clickable" id="<?php print($args['id']) ;?>">
+				<<?=$tag ;?> class="dropzone dz-clickable" id="<?php print($args['id']) ;?>">
 					<input type="hidden" name="ajax" value="<?php print($args['func']) ;?>">
 					<input type="hidden" name="object" value="<?php print($args['object']) ;?>">
 					<input type="hidden" name="index" value="<?php print($index) ;?>">
@@ -31,7 +32,7 @@ class create_file_manager{
 					<div class="dz-default dz-message">
 						<span>Drop files here to upload</span>
 					</div>
-				</form>
+				</<?=$tag ;?>>
 			</div>
 		<?php
 
