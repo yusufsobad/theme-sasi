@@ -758,7 +758,7 @@ class create_form{
 	}
 
 	private static function opt_dropzone($val=array()){
-		// id, func , object , accept, load, data, value
+		// id, func, callback, object , accept, load, data, value
 		// index
 
 		$inp = '';
@@ -767,13 +767,10 @@ class create_form{
 		}else{
 			$inp .= '<div class="col-md-'. self::$col_label .'"></div>';
 		}
-		
-		$id = '';
-		if(isset($val['id'])){
-			$id = 'id="'.$val['id'].'"';
-		}
 
 		// Get layout dropzone
+		$val['func'] = $val['callback'];
+
 		ob_start();
 		create_file_manager::_layout(array(
 			'func'	=> '_upload_file',
