@@ -772,7 +772,7 @@ class create_form{
 		$val['func'] = $val['callback'];
 
 		ob_start();
-		create_file_manager::_layout(array(
+		sasi_layout::sobad_file_manager(array(
 			'func'	=> '_upload_file',
 			'data'	=> $val
 		));
