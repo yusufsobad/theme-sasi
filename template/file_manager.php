@@ -135,6 +135,26 @@ class create_file_manager{
 						acceptedFiles:'<?php print($args['accept']) ?>'
 					});
 
+				// view thumbnail
+				<?php 
+					if(isset($args['image']) && !empty($args['image'])){
+						foreach ($args['image'] as $key => $val) {
+							$name_img = isset($val['name']) ? $val['name'] : '';
+							$size = isset($val['size']) ? $val['size'] : 1234;
+							$url_img = isset($val['url']) ? $val['url'] : '';
+
+							$url_img .= $name_img;
+							?>
+								var mockFile = { name: "<?= $name_img ;?>", size: <?= $size ;?> };
+								myDropzone.options.addedfile.call(myDropzone, mockFile);
+								myDropzone.options.thumbnail.call(myDropzone, mockFile, "<?= $url_img ;?>");
+								
+							<?php
+						}
+					}
+				?>
+
+				// view Load
 				<?php if(isset($args['load']) && !empty($args['load'])): ?>
 
 				myDropzone.on("success",function(file,response){
