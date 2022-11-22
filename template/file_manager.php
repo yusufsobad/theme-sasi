@@ -148,9 +148,6 @@ class create_file_manager{
 								var mockFile = { name: "<?= $name_img ;?>", size: <?= $size ;?> };
 								myDropzone.options.addedfile.call(myDropzone, mockFile);
 								myDropzone.options.thumbnail.call(myDropzone, mockFile, "<?= $url_img ;?>");
-								myDropzone.options = {
-									previewTemplate: Dropzone.createElement("<button class='btn btn-sm btn-block'>Remove file</button>"),
-								};
 							<?php
 						}
 					}
