@@ -10,6 +10,10 @@ require dirname(__FILE__) . '/template/login.php';
 require dirname(__FILE__) . '/template/form.php';
 require dirname(__FILE__) . '/template/table.php';
 
+
+// Config By Gading
+require dirname(__FILE__) . '/template/custom_form.php';
+
 abstract class sasi_template extends custom_script
 {
 
@@ -604,5 +608,14 @@ abstract class sasi_template extends custom_script
 		}
 
 		$chart = create_chart::_layout($args);
+	}
+
+
+	//--------------------------------------------
+	//Custom Form --------------------------------
+	//--------------------------------------------
+	public static function custom_form($args = array())
+	{
+		$custom_form = custom_form::config_form($args);
 	}
 }
