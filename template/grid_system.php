@@ -18,11 +18,13 @@ class grid_system
             <?php foreach ($data as $value) { ?>
                 <div class="col-md-<?= $value['col'] ?>">
                     <?php foreach ($value['data'] as $val) { ?>
-                        <?php if (is_array($val['content'])) { ?>
-                            <?= sasi_template::components($val['content']) ?>
-                        <?php } else {
-                            echo $val['content'];
-                        } ?>
+                        <div>
+                            <?php if (is_array($val['content'])) { ?>
+                                <?= sasi_template::components($val['content']) ?>
+                            <?php } else {
+                                echo $val['content'];
+                            } ?>
+                        </div>
                     <?php } ?>
                 </div>
             <?php } ?>
