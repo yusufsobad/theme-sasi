@@ -13,6 +13,9 @@ require dirname(__FILE__) . '/template/table.php';
 
 // Config By Gading
 require dirname(__FILE__) . '/template/custom_form.php';
+require dirname(__FILE__) . '/template/form_wizard.php';
+require dirname(__FILE__) . '/template/grid_system.php';
+require dirname(__FILE__) . '/template/components.php';
 
 abstract class sasi_template extends custom_script
 {
@@ -616,6 +619,32 @@ abstract class sasi_template extends custom_script
 	//--------------------------------------------
 	public static function custom_form($args = array())
 	{
-		$custom_form = custom_form::config_form($args);
+		custom_form::config_form($args);
+	}
+
+	//--------------------------------------------
+	//Form Wizard--------------------------------
+	//--------------------------------------------
+	public static function form_wizard($args = array())
+	{
+		form_wizard::config_form_wizard($args);
+	}
+
+
+	//--------------------------------------------
+	//Grid System---------------------------------
+	//--------------------------------------------
+	public static function grid_system($args = array())
+	{
+		grid_system::create_grid($args);
+	}
+
+
+	//--------------------------------------------
+	//Components---------------------------------
+	//--------------------------------------------
+	public static function components($args = array())
+	{
+		create_components::components($args);
 	}
 }
