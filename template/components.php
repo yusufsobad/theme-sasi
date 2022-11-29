@@ -38,7 +38,7 @@ class create_components
                         <?php foreach ($data['data'] as $value) {
                             $i++;
                         ?>
-                            <div class="item <?= $i == 1 ? 'active' : '' ?>">
+                            <div class="item <?= $i == 0 ? 'active' : '' ?>">
                                 <img src="<?= $value['img_url'] ?>">
                             </div>
                         <?php } ?>
