@@ -11,11 +11,9 @@ class create_components
 
             <!-- TEXT -->
             <?php if ($data['components'] == 'text') { ?>
-                <p class="<?= isset($data['class']) ? $data['class'] : '' ?>" style="font-size: <?= $data['size'] ?> !important;">
-                    <?= $data['content'] ?>
-                </p>
+                <h3 class="bold mb-xs mt-xs"><?= $data['title'] ?></h3>
+                <h4><?= $data['value'] ?></h4>
             <?php } ?>
-
 
 
             <!-- Carousel -->
@@ -26,7 +24,7 @@ class create_components
                         <ol class="carousel-indicators">
                             <?php $i = -1 ?>
                             <?php foreach ($data['data'] as $val) {
-                                $i++
+                                $i++;
                             ?>
                                 <li data-target="#carousel-<?= $data['id'] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>"></li>
                             <?php } ?>
@@ -54,6 +52,7 @@ class create_components
                     </a>
                 </div>
             <?php } ?>
+
 
             <?php if ($data['components'] == 'progress_bar') { ?>
                 <div class="progress" style="border-radius: 30px !important;">
