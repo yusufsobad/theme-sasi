@@ -15,7 +15,7 @@ class custom_form
                 <?php if ($key['input-type'] == 'text') { ?>
                     <div class="form-group">
                         <label><?= $key['title'] ?></label>
-                        <input type="text" class="form-control" required="<?= $key['required'] == 'true' ? 'required' : 'false' ?>" placeholder="<?= $key['placeholder'] ?>" <?= $key['readonly'] == 'true' ? 'readonly' : '' ?> id="<?= $key['id'] ?>" name="<?= $key['name'] ?>" value="<?= $key['value'] ?>">
+                        <input type="<?= $key['input-type'] ?>" class="form-control" required="<?= $key['required'] == 'true' ? 'required' : 'false' ?>" placeholder="<?= $key['placeholder'] ?>" <?= $key['readonly'] == 'true' ? 'readonly' : '' ?> id="<?= $key['id'] ?>" name="<?= $key['name'] ?>" value="<?= $key['value'] ?>">
                         <small class="form-text text-muted"><?= isset($key['note']) ? $key['note'] : '' ?></small>
                     </div>
                 <?php } ?>
@@ -68,8 +68,11 @@ class custom_form
                     <div class="form-group">
                         <label><?= $key['title'] ?></label>
                         <div class="range-slider">
-                            <input class="range-slider__range" type="range" value="<?= $key['value'] ?>" min="0" max="100" step="<?= isset($key['step']) ? $key['step'] : '1' ?>" id="<?= $key['id'] ?>" name="<?= $key['name'] ?>">
-                            <span class="range-slider__value"><?= $key['value'] ?></span>
+                            <div class="row">
+                                <div class="col-md-11 p-0"><input class="range-slider__range" type="range" value="<?= $key['value'] ?>" min="0" max="100" step="<?= isset($key['range']) ? $key['range'] : '1' ?>" id="<?= $key['id'] ?>" name="<?= $key['name'] ?>" style="height: 20px;"></div>
+                                <div class="col-md-1 "><span class="range-slider__value"><?= $key['value'] ?></span>%</div>
+                            </div>
+
                         </div>
                         <small class="form-text text-muted"><?= $key['note'] ?></small>
                     </div>
