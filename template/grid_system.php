@@ -8,24 +8,22 @@ class grid_system
 
 
 ?>
-        <style>
-            .italic {
-                font-style: italic;
-            }
-        </style>
-
         <div class="row">
             <?php foreach ($data as $value) { ?>
                 <div class="col-md-<?= $value['col'] ?>">
-                    <?php foreach ($value['data'] as $val) { ?>
-                        <div>
-                            <?php if (is_array($val['content'])) { ?>
-                                <?= sasi_template::components($val['content']) ?>
-                            <?php } else {
-                                echo $val['content'];
-                            } ?>
-                        </div>
-                    <?php } ?>
+                    <div class="row">
+                        <?php foreach ($value['data'] as $val) { ?>
+                            <div class="col-md-<?= $val['col'] ?>">
+                                <div class="m-md">
+                                    <?php if (is_array($val['content'])) { ?>
+                                        <?= sasi_template::components($val['content']) ?>
+                                    <?php } else {
+                                        echo $val['content'];
+                                    } ?>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
                 </div>
             <?php } ?>
         </div>
