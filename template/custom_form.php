@@ -12,6 +12,14 @@ class custom_form
             <?php foreach ($data as $key) { ?>
 
                 <!-- Form Input Text -->
+                <?php if ($key['input-type'] == 'hidden') { ?>
+                    <div class="form-group">
+                        <input type="<?= $key['input-type'] ?>" class="form-control" id="<?= $key['id'] ?>" name="<?= $key['name'] ?>" value="<?= $key['value'] ?>">
+                    </div>
+                <?php } ?>
+                <!-- End Form Input Text -->
+
+                <!-- Form Input Text -->
                 <?php if ($key['input-type'] == 'text') { ?>
                     <div class="form-group">
                         <label><?= $key['title'] ?></label>
