@@ -16,7 +16,7 @@ class grid_system
                             <div class="col-md-<?= $val['col'] ?>">
                                 <div class="m-md">
                                     <?php if (is_array($val['content'])) { ?>
-                                        <?= sasi_template::components($val['content']) ?>
+                                        <?= sasi_template::{$val['func']}($val['content']) ?>
                                     <?php } else {
                                         echo $val['content'];
                                     } ?>
