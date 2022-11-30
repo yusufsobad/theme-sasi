@@ -15,7 +15,7 @@ class grid_system
                         <?php foreach ($value['data'] as $val) { ?>
                             <div class="col-md-<?= $val['col'] ?>">
                                 <div class="m-md">
-                                    <?php if (is_array($val['content'])) { ?>
+                                    <?php if ($val['func'] !== '') { ?>
                                         <?= sasi_template::{$val['func']}($val['content']) ?>
                                     <?php } else {
                                         echo $val['content'];
