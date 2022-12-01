@@ -10,7 +10,7 @@ class create_component
             if (is_callable(array(new self(), $val['func']))) {
                 self::begin_component($val);
             } else {
-                echo  '<h3 style="color:red">Function Tidak Ada!</h3>';
+                echo  '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' . $val['func'] . '</span> Tidak Ada!</h3>';
             }
         }
     }
