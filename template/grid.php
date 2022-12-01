@@ -7,7 +7,7 @@ class sobad_grid
     public static function create_grid($data)
     {
 ?>
-        <div class="container">
+        <div class="p-lg">
             <div class="row">
                 <?php foreach ($data as $value) {
                     if ($value['func'] == 'grid') {
@@ -28,9 +28,10 @@ class sobad_grid
                     <?php foreach ($value['data'] as $val) { ?>
                         <?php if ($val['func'] == 'grid') { ?>
                             <?= self::grid(array($val)); ?>
-                        <?php } elseif ($val['func'] == '') {
-                            echo $val['data'];
-                        ?>
+                        <?php } elseif ($val['func'] == '') { ?>
+                            <div class="p-md">
+                                <?php echo $val['data']; ?>
+                            </div>
                         <?php } else {
                             sasi_template::{$val['func']}($val['data']);
                         } ?>
