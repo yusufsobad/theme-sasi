@@ -26,6 +26,9 @@ class sobad_grid
                     <?php foreach ($value['data'] as $val) { ?>
                         <?php if ($val['func'] == 'grid') { ?>
                             <?= self::grid(array($val)); ?>
+                        <?php } elseif ($val['func'] == '') {
+                            echo $val['data'];
+                        ?>
                         <?php } else {
                             sasi_template::{$val['func']}($val['data']);
                         } ?>
