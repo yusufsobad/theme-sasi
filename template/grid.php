@@ -7,12 +7,14 @@ class sobad_grid
     public static function create_grid($data)
     {
 ?>
-        <div class="row">
-            <?php foreach ($data as $value) {
-                if ($value['func'] == 'grid') {
-                    self::grid(array($value));
-                }
-            } ?>
+        <div class="container">
+            <div class="row">
+                <?php foreach ($data as $value) {
+                    if ($value['func'] == 'grid') {
+                        self::grid(array($value));
+                    }
+                } ?>
+            </div>
         </div>
     <?php
     }
