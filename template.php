@@ -15,7 +15,7 @@ require dirname(__FILE__) . '/template/table.php';
 require dirname(__FILE__) . '/template/custom_form.php';
 require dirname(__FILE__) . '/template/form_wizard.php';
 require dirname(__FILE__) . '/template/grid.php';
-require dirname(__FILE__) . '/template/components.php';
+require dirname(__FILE__) . '/template/component.php';
 
 abstract class sasi_template extends custom_script
 {
@@ -643,8 +643,8 @@ abstract class sasi_template extends custom_script
 	//--------------------------------------------
 	//Grid System---------------------------------
 	//--------------------------------------------
-	public static function components($args = array())
+	public static function component($args = array())
 	{
-		create_components::components($args);
+		create_component::component($args);
 	}
 }
