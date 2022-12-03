@@ -60,7 +60,7 @@ class form_wizard
                 border-radius: 7px;
             }
         </style>
-        <div class="container">
+        <div class="col-md-12">
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
                     <?php foreach ($data as $val) {
