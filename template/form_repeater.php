@@ -28,7 +28,7 @@ class form_repeater
             </div>
             <div class='repeater'>
                 <!-- Make sure the repeater list value is different from the first repeater  -->
-                <div data-repeater-list="group-1">
+                <div data-repeater-list="<?= $value['id'] ?>">
                     <div data-repeater-item>
                         <div class="row flex-center-bottom mb-sm">
                             <div class="col-md-11">
