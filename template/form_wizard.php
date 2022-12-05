@@ -7,7 +7,7 @@ class form_wizard
     {
         $i = 0;
         $x = 0;
-        $count = count($data);
+        $count = count($data['data']);
 ?>
         <style>
             .stepwizard-step p {
@@ -60,10 +60,10 @@ class form_wizard
                 border-radius: 7px;
             }
         </style>
-        <div class="col-md-12">
+        <div class="">
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
-                    <?php foreach ($data as $val) {
+                    <?php foreach ($data['data'] as $val) {
                         $i = ++$i;
                     ?>
                         <div class="stepwizard-step">
@@ -78,8 +78,11 @@ class form_wizard
                 </div>
             </div>
             <form role="form">
-                <?php foreach ($data as $value) {
+                <?php foreach ($data['data'] as $index => $value) {
                     $x = ++$x;
+                    $idx = date('d-m-Y H:i:s');
+                    $idx = strtotime($idx);
+                    $idx = strval($idx);
                 ?>
                     <div class="row setup-content" id="step-<?= $x ?>">
                         <div class="col-md-12">
@@ -92,13 +95,45 @@ class form_wizard
                                 }
                             } ?>
                             <div class="col-md-12 mt-lg">
-                                <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" type="<?= $x == $count ? 'submit' : 'button' ?>"><?= $x == $count ? 'Save' : 'Next' ?></button>
+                                <?php if ($x !== $count) {  ?>
+                                    <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" type="button">Next</button>
+                                <?php } else { ?>
+                                    <button type="button" id="btn_<?= $idx ?>" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" onclick="metronicSubmit_<?php print($idx); ?>()" data-index="#frm_<?php print($idx); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md">Save</button>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
                 <?php } ?>
             </form>
         </div>
+
+        <script type="text/javascript">
+            function metronicSubmit_<?php print($idx); ?>() {
+                $("form#frm_<?php print($idx); ?>").validate({
+                    errorElement: 'span', //default input error message container
+                    errorClass: 'help-block help-block-error', // default input error message class
+                    focusInvalid: false, // do not focus the last invalid input
+                    highlight: function(element) { // hightlight error inputs
+                        $(element)
+                            .closest('.form-group').addClass('has-error'); // set error class to the control group   
+                    },
+                    success: function(label, element) {
+                        $(element)
+                            .closest('.form-group').removeClass('has-error'); // set success class 
+                    },
+                    submitHandler: function(form) {
+                        sobad_submitLoad('#btn_<?php print($idx); ?>');
+                    }
+                });
+
+                $("form#frm_<?php print($idx); ?>>button.metronic-submit").trigger("click");
+
+                setTimeout(function() {
+                    $("form#frm_<?php print($idx); ?>>button.metronic-submit").removeAttr("type").attr("type", "submit");
+                    $("form#frm_<?php print($idx); ?>>button.metronic-submit").trigger("click");
+                }, 200);
+            }
+        </script>
 
         <script>
             $(document).ready(function() {
