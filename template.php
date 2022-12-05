@@ -16,6 +16,7 @@ require dirname(__FILE__) . '/template/custom_form.php';
 require dirname(__FILE__) . '/template/form_wizard.php';
 require dirname(__FILE__) . '/template/grid.php';
 require dirname(__FILE__) . '/template/component.php';
+require dirname(__FILE__) . '/template/form_repeater.php';
 
 abstract class sasi_template extends custom_script
 {
@@ -641,10 +642,18 @@ abstract class sasi_template extends custom_script
 
 
 	//--------------------------------------------
-	//Grid System---------------------------------
+	//Component---------------------------------
 	//--------------------------------------------
 	public static function component($args = array())
 	{
 		create_component::component($args);
+	}
+
+	//--------------------------------------------
+	//Form Repeater---------------------------------
+	//--------------------------------------------
+	public static function form_repeater($args = array())
+	{
+		form_repeater::create_form_repeater($args);
 	}
 }
