@@ -46,7 +46,7 @@ class create_component
                     $i++;
                 ?>
                     <div class="item <?= $i == 0 ? 'active' : '' ?>">
-                        <img src="<?= $value['img_url'] ?>">
+                        <img src="<?= $value ?>">
                     </div>
                 <?php } ?>
             </div>
