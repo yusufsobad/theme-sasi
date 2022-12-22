@@ -148,7 +148,7 @@ class create_file_manager
 			myDropzone.on("removedfile", function(file) {
 				allerts = confirm('Do you want to delete?');
 				if (allerts == true) {
-					$.post('ajax.php', {
+					$.post('include/ajax.php', {
 							ajax: '<?php print $args['func'] ?>',
 							object: '<?php print $args['object'] ?>',
 							index: <?php print $args['index'] ?>,
@@ -156,7 +156,7 @@ class create_file_manager
 							data: 'remove_file'
 						},
 						function(data, status) {
-							alert('file deleted');
+
 						});
 				}
 			});
