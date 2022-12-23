@@ -133,13 +133,15 @@ class create_file_manager
 
 	private static function _script_upload($args = array())
 	{
+		$max_size = isset($args['max_size']) ? $args['max_size'] : 2; // Default 2 MB
+
 		?>
 		<script type="text/javascript">
 			var myDropzone = new Dropzone("#<?php print($args['id']); ?>", {
 				url: "include/ajax.php",
 				paramName: "file", // The name that will be used to transfer the file
 				addRemoveLinks: true,
-				maxFilesize: 2, // MB
+				maxFilesize: <?php print($max_size) ;?>, // MB
 				acceptedFiles: '<?php print($args['accept']) ?>',
 
 			});
@@ -166,6 +168,10 @@ class create_file_manager
 			<?php
 			if (isset($args['image']) && !empty($args['image'])) {
 				foreach ($args['image'] as $key => $val) {
+					if(empty($args['image'])){
+						continue;
+					}
+
 					$name_img = isset($val['name']) ? $val['name'] : '';
 					$size = isset($val['size']) ? $val['size'] : 1234;
 					$url_img = isset($val['url']) ? $val['url'] : '';
