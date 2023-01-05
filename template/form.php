@@ -159,11 +159,18 @@ class create_form
 	{
 		// label
 		$req = $req ? '<span class="required" aria-required="true"> * </span>' : '';
-		return '<label class="col-md-' . self::$col_label . ' control-label">' . $val . $req . '</label>';
+		return '<label class="col-md-' . self::$col_label . ' control-label pt-md">' . $val . $req . '</label>';
 	}
 
 	private static function opt_hidden($val = array())
 	{
+	?>
+		<style>
+			.form-group {
+				margin-bottom: 0px !important;
+			}
+		</style>
+		<?php
 		$id = '';
 		if (isset($val['id'])) {
 			$id = 'id="' . $val['id'] . '"';
@@ -544,7 +551,7 @@ class create_form
 		$_data = json_encode($_data);
 
 		ob_start();
-	?>
+		?>
 		<script type="text/javascript">
 			var <?php print($_id); ?> = new Bloodhound({
 				datumTokenizer: Bloodhound.tokenizers.obj.whitespace('text'),
