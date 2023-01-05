@@ -190,7 +190,9 @@ class create_table
 			<tr role="row">
 				<?php
 				$thead = isset($args[0]['td']) ? $args[0]['td'] : $args[0];
+
 				foreach ($thead as $key => $val) {
+
 					$att = '';
 					if ($val[3] == true && isset($val[3])) {
 						$att = 'class="sorting"';
@@ -212,7 +214,11 @@ class create_table
 					}
 
 
-					print('<th ' . $colspan . ' ' . $rowspan . ' ' . $att . ' style="text-align:left;width:' . $val[1] . ';">' . $key . '</th>');
+					if ($key == 'accordion') {
+						print('<th ' . $colspan . ' ' . $rowspan . ' ' . $att . ' style="text-align:left;width:' . $val[1] . ';"></th>');
+					} else {
+						print('<th ' . $colspan . ' ' . $rowspan . ' ' . $att . ' style="text-align:left;width:' . $val[1] . ';">' . $key  . '</th>');
+					}
 				}
 				?>
 			</tr>
