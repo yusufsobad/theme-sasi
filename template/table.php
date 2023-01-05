@@ -14,10 +14,11 @@ class create_table
 			$class .= $args['class'];
 		}
 
-		$id = '';$_idx = '';
-		if(isset($args['id'])){
+		$id = '';
+		$_idx = '';
+		if (isset($args['id'])) {
 			$id = $args['id'];
-			$_idx = '#'.$id.' ';
+			$_idx = '#' . $id . ' ';
 		}
 
 		if (isset($args['search'])) {
@@ -45,20 +46,20 @@ class create_table
 				self::thead($args['table']);
 				self::tbody($args['table']); ?>
 			</table>
-			<?php if(self::$check): ?>
+			<?php if (self::$check) : ?>
 				<script>
-	                  function sobad_check_all(){
-	                    $('<?php print($_idx) ;?>.check-sobad').each(function () {
-	                      if($(this).is(":checked")){
-	                        $(this).prop('checked', false);	
-	                      } else {
-	                        $(this).prop('checked', true);	
-	                      }
-	                    });
-	                  return false;
-	                  }
-	            </script>
-	        <?php endif ;?>
+					function sobad_check_all() {
+						$('<?php print($_idx); ?>.check-sobad').each(function() {
+							if ($(this).is(":checked")) {
+								$(this).prop('checked', false);
+							} else {
+								$(this).prop('checked', true);
+							}
+						});
+						return false;
+					}
+				</script>
+			<?php endif; ?>
 		</div>
 		<?php
 
@@ -205,11 +206,11 @@ class create_table
 						$rowspan = 'rowspan="' . $val[5] . '"';
 					}
 
-					if(strtolower($key)=='check'){
+					if (strtolower($key) == 'check') {
 						$key = '<input onchange="sobad_check_all()" type="checkbox" id="sobad-check-all" >';
 						self::$check = true;
-
 					}
+
 
 					print('<th ' . $colspan . ' ' . $rowspan . ' ' . $att . ' style="text-align:left;width:' . $val[1] . ';">' . $key . '</th>');
 				}
@@ -222,7 +223,43 @@ class create_table
 	private static function tbody($args = array())
 	{
 		$len = count($args);
+
+
 	?>
+		<style>
+			.loader {
+				border: 5px solid #f3f3f3;
+				border-radius: 30px !important;
+				border-top: 5px solid #3498db;
+				width: 30px;
+				height: 30px;
+				-webkit-animation: spin 2s linear infinite;
+				animation: spin 2s linear infinite;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			/* Safari */
+			@-webkit-keyframes spin {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
 		<tbody>
 			<?php
 			for ($i = 0; $i < $len; $i++) {
@@ -232,13 +269,20 @@ class create_table
 				//	$cls = 'even';
 				//}
 
+				$acordion = false;
 				$cls1 = isset($args[$i]['tr']) ? $args[$i]['tr'] : '';
 				$cls1 = isset($cls1[0]) ? $cls1[0] : '';
 
 				echo '<tr role="row" class="' . $cls . ' ' . $cls1 . '">';
 
 				$tbody = isset($args[0]['td']) ? $args[0]['td'] : $args[0];
+				$config_accordion = array();
 				foreach ($args[$i]['td'] as $key => $val) {
+
+					// echo '<pre>' . print_r($val[2], true) . '</pre>';
+					// die();
+
+
 					$colspan = '';
 					if (isset($val[4])) {
 						$colspan = 'colspan="' . $val[4] . '"';
@@ -249,15 +293,46 @@ class create_table
 						$rowspan = 'rowspan="' . $val[5] . '"';
 					}
 
-					if(strtolower($key)=='check'){
-						$val[2] = '<input name="checked_ids" type="checkbox" class="check-sobad" value="'.$val[2].'">';
+					if (strtolower($key) == 'check') {
+						$val[2] = '<input name="checked_ids" type="checkbox" class="check-sobad" value="' . $val[2] . '">';
+					}
+
+
+					if (strtolower($key) == 'accordion') {
+						$check = array_filter($val[2]);
+						if (!empty($check)) {
+							$acordion = true;
+							$config_accordion = $val[2];
+							$val[2] = '<a onclick="sobad_button(this,false)" class="accordion-toggle" data-toggle="collapse" data-load="' . $config_accordion['ID'] . '"  data-target="#' . $config_accordion['ID'] . '"  data-sobad="' . $config_accordion['func'] . '"  data-type="' . $config_accordion['type'] . '" href="javascript:"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>';
+						}
 					}
 
 					echo '<td ' . $colspan . ' ' . $rowspan . ' style="text-align:' . $val[0] . '">' . $val[2] . '</td>';
 				}
 				echo '</tr>';
+
+
+				if ($acordion) {
+
+					echo '<tr class="accordian-body collapse"  id="' . $config_accordion['ID'] . '"><td colspan="100%">';
+					echo '<div class="loader"></div>';
+					echo '	</td></tr>';
+				}
 			}
+
 			?>
+			<script>
+				$(function() {
+					$(".fold-table tr.view").on("click", function() {
+						if ($(this).hasClass("open")) {
+							$(this).removeClass("open").next(".fold").removeClass("open");
+						} else {
+							$(".fold-table tr.view").removeClass("open").next(".fold").removeClass("open");
+							$(this).addClass("open").next(".fold").addClass("open");
+						}
+					});
+				});
+			</script>
 		</tbody>
 	<?php
 	}
