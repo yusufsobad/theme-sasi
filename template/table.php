@@ -303,7 +303,7 @@ class create_table
 						if (!empty($check)) {
 							$acordion = true;
 							$config_accordion = $val[2];
-							$val[2] = '<a onclick="sobad_button(this,false)" class="accordion-toggle" data-toggle="collapse" data-load="' . $config_accordion['ID'] . '"  data-target="#' . $config_accordion['ID'] . '"  data-sobad="' . $config_accordion['func'] . '"  data-type="' . $config_accordion['type'] . '" href="javascript:"><i class="fa fa-arrow-down" aria-hidden="true"></i></a>';
+							$val[2] = '<a onclick="sobad_button(this,false)" class="accordion-toggle" data-toggle="collapse" data-load="' . $config_accordion['ID'] . '"  data-target="#' . $config_accordion['ID'] . '"  data-sobad="' . $config_accordion['func'] . '"  data-type="' . $config_accordion['type'] . '" href="javascript:"><i class="fa fa-angle-down" aria-hidden="true"></i></a>';
 						}
 					}
 
