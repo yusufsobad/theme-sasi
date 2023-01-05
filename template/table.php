@@ -320,7 +320,7 @@ class create_table
 
 				if ($acordion) {
 
-					echo '<tr class="accordian-body collapse"  id="' . $config_accordion['ID'] . '"><td colspan="100%">';
+					echo '<tr style="order-top: 10px solid #f5f5f5; border-bottom: 10px solid #f5f5f5;" class="accordian-body collapse"  id="' . $config_accordion['ID'] . '"><td colspan="100%">';
 					echo '<div class="loader"></div>';
 					echo '	</td></tr>';
 				}
