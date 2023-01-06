@@ -50,7 +50,7 @@ class form_repeater
                             </div>
                             <div class="col-md-1 p-0">
                                 <!-- <input onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button" value="Delete" /> -->
-                                <a href="javascript:" onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button" value="Delete"></a>
+                                <a href="javascript:" onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button">Delete</a>
                             </div>
 
                         </div>
