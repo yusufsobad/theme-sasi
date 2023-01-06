@@ -5,6 +5,7 @@ class form_repeater
 {
     public static function create_form_repeater($data)
     {
+
 ?>
         <style>
             .float-right {
@@ -20,7 +21,14 @@ class form_repeater
             .radius-xs {
                 border-radius: 7px !important;
             }
+
+            .col-auto {
+                flex: 0 0 auto;
+                width: auto;
+                max-width: none;
+            }
         </style>
+
 
         <?php foreach ($data as $value) { ?>
             <div class="col-md-12 pl-0 pb-md pt-0">
@@ -41,7 +49,8 @@ class form_repeater
                                 <?php } ?>
                             </div>
                             <div class="col-md-1 p-0">
-                                <input class="btn btn-danger m-sm float-right m-0 radius-xs" data-repeater-delete type="button" value="Delete" />
+                                <!-- <input onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button" value="Delete" /> -->
+                                <a href="javascript:" onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button" value="Delete"></a>
                             </div>
 
                         </div>
