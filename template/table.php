@@ -43,8 +43,16 @@ class create_table
 					);
 				}
 
-				self::thead($args['table']);
-				self::tbody($args['table']); ?>
+				$thead = isset($args['thead']) ? $args['thead'] : true;
+				$tbody = isset($args['tbody']) ? $args['tbody'] : true;
+
+				if ($thead) {
+					self::thead($args['table']);
+				}
+				if ($tbody) {
+					self::tbody($args['table']);
+				}
+				?>
 			</table>
 			<?php if (self::$check) : ?>
 				<script>
@@ -283,6 +291,7 @@ class create_table
 
 				$tbody = isset($args[0]['td']) ? $args[0]['td'] : $args[0];
 				$config_accordion = array();
+				$cols_accordion = count($args[$i]['td']);
 				foreach ($args[$i]['td'] as $key => $val) {
 
 					// echo '<pre>' . print_r($val[2], true) . '</pre>';
@@ -320,8 +329,8 @@ class create_table
 
 				if ($acordion) {
 
-					echo '<tr style="border-top: 10px solid #f5f5f5; border-bottom: 10px solid #f5f5f5;" class="accordian-body collapse"  id="' . $config_accordion['ID'] . '">';
-					echo '<td colspan="100%">';
+					echo '<tr  style="border-top: 10px solid #f5f5f5; border-bottom: 10px solid #f5f5f5;" class="accordian-body collapse"  id="' . $config_accordion['ID'] . '">';
+					echo '<td colspan="' . $cols_accordion . '">';
 					echo '<div class="loader"></div>';
 					echo '</td>';
 					echo '</tr>';
