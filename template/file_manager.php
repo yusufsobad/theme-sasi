@@ -134,6 +134,7 @@ class create_file_manager
 	private static function _script_upload($args = array())
 	{
 		$max_size = isset($args['max_size']) ? $args['max_size'] : 2; // Default 2 MB
+		$index = isset($args['index']) ? $args['index'] : 0;
 
 		?>
 		<script type="text/javascript">
@@ -153,7 +154,7 @@ class create_file_manager
 					$.post('include/ajax.php', {
 							ajax: '<?php print $args['func'] ?>',
 							object: '<?php print $args['object'] ?>',
-							index: <?php print $args['index'] ?>,
+							index: <?php print $index ?>,
 							file: file.name,
 							data: 'remove_file'
 						},
