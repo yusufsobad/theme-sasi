@@ -23,7 +23,7 @@ class sobad_grid
     {
     ?>
         <?php foreach ($data as $value) { ?>
-            <div class="col-md-<?= $value['col'] ?>">
+            <div id="<?= isset($value['id']) ? $value['id'] : '' ?>" class="col-md-<?= $value['col'] ?>">
                 <div class="row">
                     <?php foreach ($value['data'] as $val) { ?>
                         <?php if ($val['func'] == 'grid') { ?>
