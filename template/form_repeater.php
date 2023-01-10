@@ -49,14 +49,13 @@ class form_repeater
                                 <?php } ?>
                             </div>
                             <div class="col-md-1 p-0">
-                                <!-- <input onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button" value="Delete" /> -->
-                                <a href="javascript:" onclick="sobad_button(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button">Delete</a>
+                                <a id='<?= $value['load'] ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func_del'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button">Delete</a>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <input class="btn btn-primary m-sm radius-xs" data-repeater-create type="button" value="Add" />
+                <a data-load="<?= $value['load'] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $value['func_add'] ?>" data-type="<?= $value['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
             </div>
 
         <?php } ?>
@@ -109,9 +108,44 @@ class form_repeater
                     // (Optional)
                     // Removes the delete button from the first list item,
                     // defaults to false.
-                    isFirstItemUndeletable: true
+                    isFirstItemUndeletable: false
                 })
+                $('.repeater').repeaterVal();
             });
+
+            // function button
+            function repeat_button_add(val, spin) {
+                var id = $(val).attr('data-load');
+
+                var ajx = $(val).attr("data-sobad");
+                var lbl = $(val).attr('id');
+                var msg = $(val).attr('data-alert');
+                var tp = $(val).attr('data-type');
+
+                var pg = $('#dash_pagination li.disabled a').attr('data-qty');
+                var data = $("form").serializeArray();
+                data = conv_array_submit(data);
+
+                sobad_load_togle($(val).attr('href'));
+
+                // loading	
+                var html = $(val).html();
+                if (spin) {
+                    $(val).html('<i class="fa fa-spinner fa-spin"></i>');
+                    $(val).attr('disabled', '');
+                }
+
+                data = "ajax=" + ajx + "&object=" + object + "&data=" + lbl + "&args=" + data + "&type=" + tp + "&page=" + pg + "&filter=" + filter;
+                sobad_ajax('#' + id, data, call_repeat, msg, val, html);
+            }
+
+            function call_repeat(data, id) {
+
+                hasTag = id.replace('#', '');
+                $(id).attr('id', hasTag + data);
+                // console.log(data);
+                // console.log(id);
+            }
         </script>
 <?php
     }
