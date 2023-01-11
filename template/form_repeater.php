@@ -122,8 +122,6 @@ class form_repeater
                 var msg = $(val).attr('data-alert');
                 var tp = $(val).attr('data-type');
 
-                repeater = JSON.stringify($('.repeater').repeaterVal());
-
                 var pg = $('#dash_pagination li.disabled a').attr('data-qty');
                 var data = $("form").serializeArray();
                 data = conv_array_submit(data);
@@ -145,6 +143,11 @@ class form_repeater
 
                 hasTag = id.replace('#', '');
                 $(id).attr('id', hasTag + data);
+            }
+
+            function repeater_submit(val){
+                repeater = JSON.stringify($('.repeater').repeaterVal());
+                sobad_submitLoad(val);
             }
         </script>
 <?php
