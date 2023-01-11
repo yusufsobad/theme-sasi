@@ -122,9 +122,7 @@ class form_repeater
                 var msg = $(val).attr('data-alert');
                 var tp = $(val).attr('data-type');
 
-                var rpt = $('.repeater').repeaterVal();
-
-                rpt = JSON.stringify(rpt);
+                repeater = $('.repeater').repeaterVal();
 
                 var pg = $('#dash_pagination li.disabled a').attr('data-qty');
                 var data = $("form").serializeArray();
@@ -139,7 +137,7 @@ class form_repeater
                     $(val).attr('disabled', '');
                 }
 
-                data = "ajax=" + ajx + "&object=" + object + "&data=" + lbl + "&args=" + data + "&type=" + tp + "&page=" + pg + "&filter=" + filter + "&repeater=" + rpt;
+                data = "ajax=" + ajx + "&object=" + object + "&data=" + lbl + "&args=" + data + "&type=" + tp + "&page=" + pg + "&filter=" + filter;
                 sobad_ajax('#' + id, data, call_repeat, msg, val, html);
             }
 
@@ -147,8 +145,6 @@ class form_repeater
 
                 hasTag = id.replace('#', '');
                 $(id).attr('id', hasTag + data);
-                // console.log(data);
-                // console.log(id);
             }
         </script>
 <?php
