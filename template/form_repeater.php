@@ -110,7 +110,7 @@ class form_repeater
                     // defaults to false.
                     isFirstItemUndeletable: false
                 })
-                $('.repeater').repeaterVal();
+
             });
 
             // function button
@@ -121,6 +121,10 @@ class form_repeater
                 var lbl = $(val).attr('id');
                 var msg = $(val).attr('data-alert');
                 var tp = $(val).attr('data-type');
+
+                var rpt = $('.repeater').repeaterVal();
+
+                rpt = JSON.stringify(rpt);
 
                 var pg = $('#dash_pagination li.disabled a').attr('data-qty');
                 var data = $("form").serializeArray();
@@ -135,7 +139,7 @@ class form_repeater
                     $(val).attr('disabled', '');
                 }
 
-                data = "ajax=" + ajx + "&object=" + object + "&data=" + lbl + "&args=" + data + "&type=" + tp + "&page=" + pg + "&filter=" + filter;
+                data = "ajax=" + ajx + "&object=" + object + "&data=" + lbl + "&args=" + data + "&type=" + tp + "&page=" + pg + "&filter=" + filter + "&repeater=" + rpt;
                 sobad_ajax('#' + id, data, call_repeat, msg, val, html);
             }
 
