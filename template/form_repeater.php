@@ -122,7 +122,7 @@ class form_repeater
                 var msg = $(val).attr('data-alert');
                 var tp = $(val).attr('data-type');
 
-                repeater = $('.repeater').repeaterVal();
+                repeater = JSON.stringify($('.repeater').repeaterVal());
 
                 var pg = $('#dash_pagination li.disabled a').attr('data-qty');
                 var data = $("form").serializeArray();
