@@ -83,6 +83,14 @@ class form_repeater
                     // have $(this).show() called on it.
                     show: function() {
                         $(this).slideDown();
+
+                        // This Solution Fix Crash Selectpicker with Form Repeater
+                        $('.bs-select').selectpicker('refresh');
+                        $('.btn-group:last').remove();
+
+
+
+
                     },
                     // (Optional)
                     // "hide" is called when a user clicks on a data-repeater-delete
@@ -145,7 +153,7 @@ class form_repeater
                 $(id).attr('id', hasTag + data);
             }
 
-            function repeater_submit(val){
+            function repeater_submit(val) {
                 repeater = JSON.stringify($('.repeater').repeaterVal());
                 sobad_submitLoad(val);
             }
