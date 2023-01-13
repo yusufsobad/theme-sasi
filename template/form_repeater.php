@@ -63,7 +63,9 @@ class form_repeater
 
         <script>
             $(document).ready(function() {
+
                 $('.repeater').repeater({
+
                     // (Optional)
                     // start with an empty list of repeaters. Set your first (and only)
                     // "data-repeater-item" with style="display:none;" and pass the
@@ -82,13 +84,14 @@ class form_repeater
                     // at this point.  If a show callback is not given the item will
                     // have $(this).show() called on it.
                     show: function() {
+
+
                         $(this).slideDown();
+                        $('.bs-select').selectpicker('refresh');
+                        $(".btn-group.bootstrap-select.form-control.bs-select:nth-child(3)").remove();
 
                         // This Solution Fix Crash Selectpicker with Form Repeater
-                        $('.bs-select').selectpicker('refresh');
-                        $('.btn-group:last').remove();
-
-
+                        // $('select').selectpicker('refresh');
 
 
                     },
