@@ -108,7 +108,11 @@ class sasi_layout extends sasi_template
 
 					if (class_exists($func)) {
 						if (is_callable(array($func, '_sidemenu'))) {
-							echo $func::_sidemenu($data);
+							$uri = uri;
+							unset($uri[0]);
+
+							$uri = implode('/',$uri);
+							echo $func::_sidemenu($uri);
 						}
 					}
 				} else {
