@@ -108,7 +108,7 @@ class sasi_layout extends sasi_template
 
 					if (class_exists($func)) {
 						if (is_callable(array($func, '_sidemenu'))) {
-							$uri = uri;
+							$uri = defined('uri') ? uri : array();
 							unset($uri[0]);
 
 							$uri = implode('/',$uri);
