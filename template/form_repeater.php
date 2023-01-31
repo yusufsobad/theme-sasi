@@ -3,7 +3,7 @@
 
 class form_repeater
 {
-    public static function create_form_repeater($data)
+    public static function create_form_repeater($data=array())
     {
 
 ?>
@@ -29,37 +29,29 @@ class form_repeater
             }
         </style>
 
-
-        <?php foreach ($data as $value) { ?>
-            <div class="col-md-12 pl-0 pb-md pt-0">
-                <h3><?= isset($value['title']) ? $value['title'] : '' ?></h3>
-            </div>
             <div class='repeater'>
                 <!-- Make sure the repeater list value is different from the first repeater  -->
                 <div data-repeater-list="<?= $value['id'] ?>">
-                    <div data-repeater-item>
-                        <div class="row flex-center-bottom mb-sm">
-                            <div class="col-md-11">
-                                <?php foreach ($value['data'] as $val) { ?>
+                    <?php foreach ($data as $key => $val) { ?>
+                        <div data-repeater-item>
+                            <div class="row flex-center-bottom mb-sm">
+                                <div class="col-md-11">
                                     <?php if ($val['func'] !== '') {
                                         sasi_template::{$val['func']}($val['data']);
                                     } else {
                                         echo $val['data'];
                                     } ?>
-                                <?php } ?>
-                            </div>
-                            <div class="col-md-1 p-0">
-                                <a id='<?= $value['load'] ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func_del'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button">Delete</a>
-                            </div>
+                                </div>
+                                <div class="col-md-1 p-0">
+                                    <a id='<?= $value['load'] ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $value['load'] ?>" data-sobad="<?= $value['func_del'] ?>" data-type="<?= $value['type'] ?>" data-repeater-delete type="button">Delete</a>
+                                </div>
 
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
                 <a data-load="<?= $value['load'] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $value['func_add'] ?>" data-type="<?= $value['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
             </div>
-
-        <?php } ?>
-
 
         <script>
             $(document).ready(function() {

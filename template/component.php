@@ -3,28 +3,23 @@
 
 class create_component
 {
-    public static function component($data)
+    public static function component($data=array())
     {
         $data = array($data);
         foreach ($data as $val) {
             if (is_callable(array(new self(), $val['func']))) {
-                self::begin_component($val);
+                ?>
+                    <div class="p-md">
+                        <?php self::{$val['func']}($val['data']); ?>
+                    </div>
+                <?php
             } else {
                 echo  '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' . $val['func'] . '</span> Tidak Ada!</h3>';
             }
         }
     }
 
-    private static function begin_component($data)
-    {
-?>
-        <div class="p-md">
-            <?php self::{$data['func']}($data); ?>
-        </div>
-    <?php
-    }
-
-    private static function image_carousel($data)
+    private static function image_carousel($data=array())
     {
     ?>
         <div id="carousel-<?= $data['id'] ?>" class="carousel slide" data-ride="carousel">
@@ -63,20 +58,33 @@ class create_component
     <?php
     }
 
-    private static function title_label($data)
+    private static function box_card($data=array())
+    {
+        if(isset($data['title'])){
+            self::title_label($data);
+        }
+
+        $func = $args['func'];
+        if (method_exists('sasi_template', $func)) {
+            sasi_template::{$func}($args['data']);
+        }
+    }
+
+    private static function title_label($data=array())
     {
     ?>
         <h3 class="bold mb-xs mt-xs"><?= $data['title'] ?></h3>
-        <h4><?= $data['value'] ?></h4>
+        <h4><?= $data['label'] ?></h4>
     <?php
     }
 
-    private static function progress_bar($data)
+    private static function progress_bar($data=array())
     {
+        $value = isset($data['value']) ? $data['value'] : 0;
     ?>
         <div class="progress" style="border-radius: 30px !important;">
-            <div class="progress-bar" role="progressbar" aria-valuenow="<?= $data['value'] ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $data['value'] ?>%;">
-                <?= $data['value'] ?>%
+            <div class="progress-bar" role="progressbar" aria-valuenow="<?= $value; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $value ?>%;">
+                <?= $value ?>%
             </div>
         </div>
 <?php

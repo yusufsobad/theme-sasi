@@ -379,7 +379,9 @@ class sasi_layout extends sasi_template
 			// get content
 			parent::{$func}($args);
 		} else {
-		?><div style="text-align:center;"> Tidak ada data yang di Load </div><?php
-																			}
-																		}
-																	}
+			?>
+				<div style="text-align:center;"> Tidak ada data yang di Load </div>
+			<?php
+		}
+	}
+}
