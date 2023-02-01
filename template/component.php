@@ -73,11 +73,23 @@ class create_component
             self::title_label($data);
         }
 
-        $func = $data['func'];
+        $func = $data['data']['func'];
         if (method_exists('sasi_template', $func)) {
-            sasi_template::{$func}($data['data']);
+            sasi_template::{$func}($data['data']['data']);
         }
     }
+
+    // private static function box_card($data = [])
+    // {
+    //     if (isset($data['title'])) {
+    //         self::title_label($data);
+    //     }
+
+    //     $func = $data['func'];
+    //     if (method_exists('sasi_template', $func)) {
+    //         sasi_template::{$func}($data['data']);
+    //     }
+    // }
 
     private static function title_label($data = [])
     {
