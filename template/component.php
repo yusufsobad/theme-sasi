@@ -69,14 +69,19 @@ class create_component
 
     private static function box_card($data = [])
     {
-        if (isset($data['title'])) {
-            self::title_label($data);
-        }
+        $id = isset($data['id']) ? $data['id'] : ''; ?>
+        <div id='<?= $id ?>'> 
+            <?php
+            if (isset($data['title'])) {
+                self::title_label($data);
+            }
 
-        $func = $data['data']['func'];
-        if (method_exists('sasi_template', $func)) {
-            sasi_template::{$func}($data['data']['data']);
-        }
+            $func = $data['data']['func'];
+            if (method_exists('sasi_template', $func)) {
+                sasi_template::{$func}($data['data']['data']);
+            }?> 
+</div>
+<?php
     }
 
     // private static function box_card($data = [])
