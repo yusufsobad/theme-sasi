@@ -6,7 +6,7 @@ class sobad_grid
     public static function create_grid($data = [])
     {
         ?>
-        <div class="p-lg">
+        <div>
             <div class="row">
                 <?php foreach ($data as $key => $val) {
                     self::grid($val);
