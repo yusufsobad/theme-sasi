@@ -48,7 +48,7 @@ class form_repeater
                                         'load'
                                     ] ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="<?= $data[
     'load'
-] ?>" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data[
+] ?>" data-sobad="<?= $data[0]['func_del'] ?>" data-type="<?= $data[
     'type'
 ] ?>" data-repeater-delete type="button">Delete</a>
                                 </div>
@@ -59,7 +59,7 @@ class form_repeater
                 </div>
                 <a data-load="<?= $data[
                     'load'
-                ] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $data['func_add'] ?>" data-type="<?= $data['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
+                ] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $data[0]['func_add'] ?>" data-type="<?= $data['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
             </div>
 
         <script>
