@@ -1,56 +1,64 @@
 <?php
-(!defined('THEMEPATH')) ? exit : '';
+!defined('THEMEPATH') ? exit() : '';
 
 class create_component
 {
-    public static function component($data=array())
+    public static function component($data = [])
     {
-        $data = array($data);
+        $data = [$data];
         foreach ($data as $val) {
-            if (is_callable(array(new self(), $val['func']))) {
-                ?>
+            if (is_callable([new self(), $val['func']])) { ?>
                     <div class="p-md">
                         <?php self::{$val['func']}($val['data']); ?>
                     </div>
-                <?php
-            } else {
-                echo  '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' . $val['func'] . '</span> Tidak Ada!</h3>';
-            }
+                <?php } else {echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
+                    $val['func'] .
+                    '</span> Tidak Ada!</h3>';}
         }
     }
 
-    private static function image_carousel($data=array())
+    private static function image_carousel($data = [])
     {
-    ?>
-        <div id="carousel-<?= $data['id'] ?>" class="carousel slide" data-ride="carousel">
+        ?>
+        <div id="carousel-<?= $data[
+            'id'
+        ] ?>" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <?php if ($data['dots'] == 'true') { ?>
                 <ol class="carousel-indicators">
-                    <?php $i = -1 ?>
+                    <?php $i = -1; ?>
                     <?php foreach ($data['data'] as $val) {
-                        $i++;
-                    ?>
-                        <li data-target="#carousel-<?= $data['id'] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0 ? 'active' : '' ?>"></li>
-                    <?php } ?>
+                        $i++; ?>
+                        <li data-target="#carousel-<?= $data[
+                            'id'
+                        ] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0
+    ? 'active'
+    : '' ?>"></li>
+                    <?php
+                    } ?>
                 </ol>
             <?php } ?>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <?php $i = -1 ?>
+                <?php $i = -1; ?>
                 <?php foreach ($data['data'] as $value) {
-                    $i++;
-                ?>
+                    $i++; ?>
                     <div class="item <?= $i == 0 ? 'active' : '' ?>">
                         <img src="<?= $value ?>">
                     </div>
-                <?php } ?>
+                <?php
+                } ?>
             </div>
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#carousel-<?= $data['id'] ?>" data-slide="prev">
+            <a class="left carousel-control" href="#carousel-<?= $data[
+                'id'
+            ] ?>" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#carousel-<?= $data['id'] ?>" data-slide="next">
+            <a class="right carousel-control" href="#carousel-<?= $data[
+                'id'
+            ] ?>" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -58,32 +66,31 @@ class create_component
     <?php
     }
 
-    private static function box_card($data=array())
+    private static function box_card($data = [])
     {
-        if(isset($data['title'])){
+        if (isset($data['title'])) {
             self::title_label($data);
         }
 
-        $func = $args['func'];
+        $func = $data['func'];
         if (method_exists('sasi_template', $func)) {
-            sasi_template::{$func}($args['data']);
+            sasi_template::{$func}($data['data']);
         }
     }
 
-    private static function title_label($data=array())
+    private static function title_label($data = [])
     {
-    ?>
+        ?>
         <h3 class="bold mb-xs mt-xs"><?= $data['title'] ?></h3>
         <h4><?= $data['label'] ?></h4>
     <?php
     }
 
-    private static function progress_bar($data=array())
+    private static function progress_bar($data = [])
     {
-        $value = isset($data['value']) ? $data['value'] : 0;
-    ?>
+        $value = isset($data['value']) ? $data['value'] : 0; ?>
         <div class="progress" style="border-radius: 30px !important;">
-            <div class="progress-bar" role="progressbar" aria-valuenow="<?= $value; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $value ?>%;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="<?= $value ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?= $value ?>%;">
                 <?= $value ?>%
             </div>
         </div>
