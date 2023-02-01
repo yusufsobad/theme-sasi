@@ -6,10 +6,11 @@ class create_component
     public static function component($data = [])
     {
         $data = [$data];
+
         foreach ($data as $val) {
             if (is_callable([new self(), $val['func']])) { ?>
                     <div class="p-md">
-                        <?php self::{$val['func']}($val['data']); ?>
+                        <?php self::{$val['func']}($data[0]); ?>
                     </div>
                 <?php } else {echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
                     $val['func'] .
