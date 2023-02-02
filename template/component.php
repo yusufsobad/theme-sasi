@@ -5,16 +5,15 @@ class create_component
 {
     public static function component($data = [])
     {
-        $data = [$data];
-
-        foreach ($data as $val) {
-            if (is_callable([new self(), $val['func']])) { ?>
-                    <div class="p-md">
-                        <?php self::{$val['func']}($data[0]); ?>
-                    </div>
-                <?php } else {echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
-                    $val['func'] .
-                    '</span> Tidak Ada!</h3>';}
+        if (is_callable([new self(), $val['func']])) { ?>
+            <div class="p-md">
+                <?php self::{$val['func']}($val['data']); ?>
+            </div>
+    <?php 
+        } else {
+            echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
+                $val['func'] .
+            '</span> Tidak Ada!</h3>';
         }
     }
 
@@ -76,25 +75,13 @@ class create_component
                 self::title_label($data);
             }
 
-            $func = $data['data']['func'];
+            $func = $data['func'];
             if (method_exists('sasi_template', $func)) {
-                sasi_template::{$func}($data['data']['data']);
+                sasi_template::{$func}($data['data']);
             }?> 
-</div>
-<?php
+        </div>
+    <?php
     }
-
-    // private static function box_card($data = [])
-    // {
-    //     if (isset($data['title'])) {
-    //         self::title_label($data);
-    //     }
-
-    //     $func = $data['func'];
-    //     if (method_exists('sasi_template', $func)) {
-    //         sasi_template::{$func}($data['data']);
-    //     }
-    // }
 
     private static function title_label($data = [])
     {
