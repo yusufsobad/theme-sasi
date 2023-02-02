@@ -5,14 +5,14 @@ class create_component
 {
     public static function component($data = [])
     {
-        if (is_callable([new self(), $val['func']])) { ?>
+        if (is_callable([new self(), $data['func']])) { ?>
             <div class="p-md">
-                <?php self::{$val['func']}($val['data']); ?>
+                <?php self::{$data['func']}($data['data']); ?>
             </div>
     <?php 
         } else {
             echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
-                $val['func'] .
+                $data['func'] .
             '</span> Tidak Ada!</h3>';
         }
     }
