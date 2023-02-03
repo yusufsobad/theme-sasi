@@ -78,7 +78,7 @@ class form_wizard
                 </div>
             </div>
             <form role="form">
-                <?php foreach ($data['data'] as $index => $value) {
+                <?php foreach ($data as $index => $value) {
                     $x = ++$x;
                     $idx = date('d-m-Y H:i:s');
                     $idx = strtotime($idx);
