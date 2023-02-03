@@ -7,7 +7,7 @@ class form_wizard
     {
         $i = 0;
         $x = 0;
-        $count = count($data['data']);
+        $count = count($data);
 ?>
         <style>
             .stepwizard-step p {
@@ -63,7 +63,7 @@ class form_wizard
         <div class="">
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
-                    <?php foreach ($data['data'] as $val) {
+                    <?php foreach ($data as $val) {
                         $i = ++$i;
                     ?>
                         <div class="stepwizard-step">
