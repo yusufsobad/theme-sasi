@@ -5,7 +5,7 @@ class create_component
 {
     public static function component($data = [])
     {
-        if ($data !== '') {
+        if ($data['func'] !== '') {
             if (is_callable([new self(), $data['func']])) { ?>
                 <div class="p-md">
                     <?php self::{$data['func']}($data['data']); ?>
