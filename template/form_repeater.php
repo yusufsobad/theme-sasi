@@ -5,8 +5,6 @@ class form_repeater
 {
     public static function create_form_repeater($data = [])
     {
-
-        $data = $data[0];
 ?>
         <style>
             .float-right {
