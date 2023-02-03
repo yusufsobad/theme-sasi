@@ -34,7 +34,6 @@ class form_repeater
                     <?php foreach ($data['data'] as $key => $val) { 
                             $load = $key == 0 ? $data['load'] : $data['load'] . $val['id'];
                         ?>
-                        
                         <div data-repeater-item>
                             <div class="row flex-center-bottom mb-sm">
                                 <div class="col-md-11">
@@ -46,14 +45,9 @@ class form_repeater
                                         echo $val['data'];
                                     } ?>
                                 </div>
-
-                                <?php if($key>0): ?>
-
-                                    <div class="col-md-1 p-0">
-                                        <a id='<?= $load ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data['type'] ?>" data-repeater-delete type="button">Delete</a>
-                                    </div>
-
-                                <?php endif; ?>
+                                <div class="col-md-1 p-0">
+                                    <a id='<?= $load ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data['type'] ?>" data-repeater-delete type="button">Delete</a>
+                                </div>
 
                             </div>
                         </div>
