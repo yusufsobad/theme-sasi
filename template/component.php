@@ -20,9 +20,9 @@ class create_component
     private static function image($data = [])
     {
         $alt = isset($data['alt']) ? $data['alt'] : '';
-        $class =  isset($data['class']) ? $data['class'] : '';
+        $id =  isset($data['id']) ? $data['id'] : '';
         ?>
-        <img class="<?= $class ?>" src="<?= $data['url'] ?>" alt="<?= $alt ?>" width="<?= $data['width'] ?>" height="<?= $data['height'] ?>">
+        <img id="<?= $id ?>" src="<?= $data['url'] ?>" alt="<?= $alt ?>" width="<?= $data['width'] ?>" height="<?= $data['height'] ?>" style="border-radius: 20px !important;">
     <?php
     }
 
@@ -37,8 +37,8 @@ class create_component
                     <?php foreach ($data['data'] as $val) {
                         $i++; ?>
                         <li data-target="#carousel-<?= $data['id'] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0
-                                                                    ? 'active'
-                                                                    : '' ?>"></li>
+                                                                                                            ? 'active'
+                                                                                                            : '' ?>"></li>
                     <?php
                     } ?>
                 </ol>
