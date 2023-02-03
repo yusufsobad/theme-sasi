@@ -5,7 +5,9 @@ class form_repeater
 {
     public static function create_form_repeater($data = [])
     {
-        ?>
+
+        $data = $data[0];
+?>
         <style>
             .float-right {
                 float: right;
@@ -28,33 +30,33 @@ class form_repeater
             }
         </style>
 
-            <div class='repeater'>
-                <!-- Make sure the repeater list value is different from the first repeater  -->
-                <div data-repeater-list="<?= $data['id'] ?>">
-                    <?php foreach ($data['data'] as $key => $val) { 
-                            $load = $key == 0 ? $data['load'] : $data['load'] . $val['id'];
-                        ?>
-                        <div data-repeater-item>
-                            <div class="row flex-center-bottom mb-sm">
-                                <div class="col-md-11">
-                                    <?php if ($val['func'] !== '') {
-                                        sasi_template::{$val['func']}(
-                                            $val['data']
-                                        );
-                                    } else {
-                                        echo $val['data'];
-                                    } ?>
-                                </div>
-                                <div class="col-md-1 p-0">
-                                    <a id='<?= $load ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data['type'] ?>" data-repeater-delete type="button">Delete</a>
-                                </div>
-
+        <div class='repeater'>
+            <!-- Make sure the repeater list value is different from the first repeater  -->
+            <div data-repeater-list="<?= $data['id'] ?>">
+                <?php foreach ($data['data'] as $key => $val) {
+                    $load = $key == 0 ? $data['load'] : $data['load'] . $val['id'];
+                ?>
+                    <div data-repeater-item>
+                        <div class="row flex-center-bottom mb-sm">
+                            <div class="col-md-11">
+                                <?php if ($val['func'] !== '') {
+                                    sasi_template::{$val['func']}(
+                                        $val['data']
+                                    );
+                                } else {
+                                    echo $val['data'];
+                                } ?>
                             </div>
+                            <div class="col-md-1 p-0">
+                                <a id='<?= $load ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data['type'] ?>" data-repeater-delete type="button">Delete</a>
+                            </div>
+
                         </div>
-                    <?php } ?>
-                </div>
-                <a data-load="<?= $data['load'] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $data['func_add'] ?>" data-type="<?= $data['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
+                    </div>
+                <?php } ?>
             </div>
+            <a data-load="<?= $data['load'] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $data['func_add'] ?>" data-type="<?= $data['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
+        </div>
 
         <script>
             $(document).ready(function() {
