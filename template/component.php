@@ -5,15 +5,19 @@ class create_component
 {
     public static function component($data = [])
     {
-        if (is_callable([new self(), $data['func']])) { ?>
-            <div class="p-md">
-                <?php self::{$data['func']}($data['data']); ?>
-            </div>
+        if ($data !== '') {
+            if (is_callable([new self(), $data['func']])) { ?>
+                <div class="p-md">
+                    <?php self::{$data['func']}($data['data']); ?>
+                </div>
         <?php
+            } else {
+                echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
+                    $data['func'] .
+                    '</span> Tidak Ada!</h3>';
+            }
         } else {
-            echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
-                $data['func'] .
-                '</span> Tidak Ada!</h3>';
+            echo $data['data'];
         }
     }
 
