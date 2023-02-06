@@ -370,15 +370,7 @@ abstract class sasi_template extends custom_script
 			$_id = $args['ID'];
 		}
 
-		if (isset($args['object'])) {
-			if (class_exists($args['object'])) {
-				$object = $args['object'];
-			} else {
-				return '';
-			}
-		} else {
-			$object = 'sasi_template';
-		}
+		$object = _object;
 
 	?>
 		<div class="col-md-12">
@@ -400,7 +392,9 @@ abstract class sasi_template extends custom_script
 					<div id="<?php print($_id); ?>" class="dataTables_wrapper no-footer">
 						<?php
 						$func = $args['func'];
-						if (method_exists($object, $func)) {
+						if (method_exists('sasi_template', $func)) {
+							self::{$func}($args['data']);
+						} else if (method_exists($object, $func)) {
 							$object::{$func}($args['data']);
 						}
 						?>
