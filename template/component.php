@@ -5,35 +5,44 @@ class create_component
 {
     public static function component($data = [])
     {
-        if (is_callable([new self(), $data['func']])) { ?>
-            <div class="p-md">
-                <?php self::{$data['func']}($data['data']); ?>
-            </div>
-    <?php 
+        if ($data['func'] !== '') {
+            if (is_callable([new self(), $data['func']])) { ?>
+                <div class="p-md">
+                    <?php self::{$data['func']}($data['data']); ?>
+                </div>
+        <?php
+            } else {
+                echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
+                    $data['func'] .
+                    '</span> Tidak Ada!</h3>';
+            }
         } else {
-            echo '<h3 style="color:red">Function <span style="font-style:italic;text-decoration:underline">' .
-                $data['func'] .
-            '</span> Tidak Ada!</h3>';
+            echo $data['data'];
         }
+    }
+
+    private static function image($data = [])
+    {
+        $alt = isset($data['alt']) ? $data['alt'] : '';
+        $id =  isset($data['id']) ? $data['id'] : '';
+        ?>
+        <img id="<?= $id ?>" src="<?= $data['url'] ?>" alt="<?= $alt ?>" width="<?= $data['width'] ?>" height="<?= $data['height'] ?>" style="border-radius: 20px !important;">
+    <?php
     }
 
     private static function image_carousel($data = [])
     {
-        ?>
-        <div id="carousel-<?= $data[
-            'id'
-        ] ?>" class="carousel slide" data-ride="carousel">
+    ?>
+        <div id="carousel-<?= $data['id'] ?>" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <?php if ($data['dots'] == 'true') { ?>
                 <ol class="carousel-indicators">
                     <?php $i = -1; ?>
                     <?php foreach ($data['data'] as $val) {
                         $i++; ?>
-                        <li data-target="#carousel-<?= $data[
-                            'id'
-                        ] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0
-    ? 'active'
-    : '' ?>"></li>
+                        <li data-target="#carousel-<?= $data['id'] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0
+                                                                                                            ? 'active'
+                                                                                                            : '' ?>"></li>
                     <?php
                     } ?>
                 </ol>
@@ -50,15 +59,11 @@ class create_component
                 } ?>
             </div>
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#carousel-<?= $data[
-                'id'
-            ] ?>" data-slide="prev">
+            <a class="left carousel-control" href="#carousel-<?= $data['id'] ?>" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#carousel-<?= $data[
-                'id'
-            ] ?>" data-slide="next">
+            <a class="right carousel-control" href="#carousel-<?= $data['id'] ?>" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -69,7 +74,7 @@ class create_component
     private static function box_card($data = [])
     {
         $id = isset($data['id']) ? $data['id'] : ''; ?>
-        <div id='<?= $id ?>'> 
+        <div id='<?= $id ?>'>
             <?php
             if (isset($data['title'])) {
                 self::title_label($data);
@@ -78,14 +83,14 @@ class create_component
             $func = $data['func'];
             if (method_exists('sasi_template', $func)) {
                 sasi_template::{$func}($data['data']);
-            }?> 
+            } ?>
         </div>
     <?php
     }
 
     private static function title_label($data = [])
     {
-        ?>
+    ?>
         <h3 class="bold mb-xs mt-xs"><?= $data['title'] ?></h3>
         <h4><?= $data['label'] ?></h4>
     <?php
