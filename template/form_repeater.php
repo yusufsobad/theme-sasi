@@ -5,6 +5,7 @@ class form_repeater
 {
     public static function create_form_repeater($data = [])
     {
+        $load_add = isset($data['load_add']) ? $data['load_add'] : 'repeat_add';
 ?>
         <style>
             .float-right {
@@ -149,6 +150,8 @@ class form_repeater
 
                 hasTag = id.replace('#', '');
                 $(id).attr('id', hasTag + data);
+                $('#<?= $load_add ?>').val(data);
+                $('#<?= $load_add ?>').attr('id','<?= $load_add ?>' + data);
             }
 
             function repeater_submit(val) {
