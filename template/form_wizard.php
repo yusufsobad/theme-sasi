@@ -5,9 +5,10 @@ class form_wizard
 {
     public static function config_form_wizard($data)
     {
+
         $i = 0;
         $x = 0;
-        $count = count($data);
+        $count = count($data['data']);
 ?>
         <style>
             .stepwizard-step p {
@@ -63,7 +64,7 @@ class form_wizard
         <div class="">
             <div class="stepwizard">
                 <div class="stepwizard-row setup-panel">
-                    <?php foreach ($data as $val) {
+                    <?php foreach ($data['data'] as $val) {
                         $i = ++$i;
                     ?>
                         <div class="stepwizard-step">
@@ -78,7 +79,8 @@ class form_wizard
                 </div>
             </div>
             <form role="form">
-                <?php foreach ($data as $index => $value) {
+                <?php foreach ($data['data'] as $index => $value) {
+
                     $x = ++$x;
                     $idx = date('d-m-Y H:i:s');
                     $idx = strtotime($idx);
@@ -98,7 +100,8 @@ class form_wizard
                                 <?php if ($x !== $count) {  ?>
                                     <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" type="button">Next</button>
                                 <?php } else { ?>
-                                    <button type="button" id="btn_<?= $idx ?>" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" onclick="metronicSubmit_<?php print($idx); ?>()" data-index="#frm_<?php print($idx); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md">Save</button>
+                                    <!-- <button type="button" id="btn_<?= $idx ?>" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" onclick="metronicSubmit_<?php print($idx); ?>()" data-index="#frm_<?php print($idx); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md">Save</button> -->
+                                    <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" data-type="<?= $idx ?>" type="button" class="btn blue" data-dismiss="modal" data-index="" onclick="wizard_submit(this)">Save</button>
                                 <?php } ?>
                             </div>
                         </div>
@@ -179,6 +182,11 @@ class form_wizard
 
                 $('div.setup-panel div a.btn-primary').trigger('click');
             });
+
+            function wizard_submit(val) {
+                repeater = JSON.stringify($('.repeater').repeaterVal());
+                sobad_submitLoad(val);
+            }
         </script>
 <?php
     }
