@@ -370,7 +370,7 @@ abstract class sasi_template extends custom_script
 			$_id = $args['ID'];
 		}
 
-		$object = _object;
+		$object = defined("_object") ? _object : '';
 
 	?>
 		<div class="col-md-12">
