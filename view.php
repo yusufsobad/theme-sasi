@@ -96,6 +96,7 @@ class sasi_layout extends sasi_template
 			$data = $child['label'];
 		}
 
+		define('_object',$func);
 	?>
 		<div id="here_content" class="containt">
 			<?php
