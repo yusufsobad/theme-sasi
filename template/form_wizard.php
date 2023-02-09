@@ -101,7 +101,7 @@ class form_wizard
                                     <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" type="button">Next</button>
                                 <?php } else { ?>
                                     <!-- <button type="button" id="btn_<?= $idx ?>" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" onclick="metronicSubmit_<?php print($idx); ?>()" data-index="#frm_<?php print($idx); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md">Save</button> -->
-                                    <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" data-type="<?= $idx ?>" type="button" class="btn blue" data-dismiss="modal" data-index="" onclick="wizard_submit(this)">Save</button>
+                                    <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" data-type="<?= $data['type'] ?>" type="button" class="btn blue" data-dismiss="modal" data-index="" onclick="wizard_submit(this)">Save</button>
                                 <?php } ?>
                             </div>
                         </div>
