@@ -186,7 +186,9 @@ class form_wizard
             });
 
             function wizard_submit(val) {
-                repeater = JSON.stringify($('.repeater').repeaterVal());
+                if ($(".repeater").length > 0) {
+                    repeater = JSON.stringify($('.repeater').repeaterVal());
+                }
                 sobad_submitLoad(val);
             }
         </script>
