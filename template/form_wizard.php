@@ -90,15 +90,15 @@ class form_wizard
                         <div class="col-md-12">
                             <h2 class="bold mb-md pl-xs"> <?= $value['title'] ?></h2>
                             <?php foreach ($value['data'] as $val) {
-                            ?> <div id="<?= isset($val['id']) ? $val['id'] : '' ?>"> <?php
-                                                                                        if ($val['func'] !== '') {
+                            ?> <div id="<?= isset($value['id']) ? $value['id'] : '' ?>"> <?php
+                                                                                            if ($val['func'] !== '') {
 
-                                                                                            sasi_template::{$val['func']}($val['data']);
-                                                                                        } else {
-                                                                                            echo $val['data'];
-                                                                                        }
-                                                                                        ?> </div> <?php
-                                                                                                } ?>
+                                                                                                sasi_template::{$val['func']}($val['data']);
+                                                                                            } else {
+                                                                                                echo $val['data'];
+                                                                                            }
+                                                                                            ?> </div> <?php
+                                                                                                    } ?>
                             <div class="col-md-12 mt-lg">
                                 <?php if ($x !== $count) {  ?>
                                     <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" type="button">Next</button>
