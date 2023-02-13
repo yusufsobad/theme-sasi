@@ -35,7 +35,7 @@ class form_repeater
                 <?php foreach ($data['data'] as $key => $val) {
                     $load = $key == 0 ? $data['load'] : $data['load'] . $val['id'];
                 ?>
-                    <div data-repeater-item>
+                    <div class="sobad_repeater" data-repeater-item>
                         <div class="row flex-center-bottom mb-sm">
                             <div class="col-md-11">
                                 <?php if ($val['func'] !== '') {
@@ -151,7 +151,7 @@ class form_repeater
                 hasTag = id.replace('#', '');
                 $(id).attr('id', hasTag + data);
                 $('#<?= $load_add ?>').val(data);
-                $('#<?= $load_add ?>').attr('id','<?= $load_add ?>' + data);
+                $('#<?= $load_add ?>').attr('id', '<?= $load_add ?>' + data);
             }
 
             function repeater_submit(val) {
