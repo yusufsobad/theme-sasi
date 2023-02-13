@@ -687,8 +687,9 @@ class create_form
 
 		self::$_types[$val['key']] = 'select';
 
+		$onchange = isset($val['onchange']) ? $val['onchange'] : 'sobad_options(this)';
 		$inp .= '<div class="col-md-' . $cols . '">';
-		$inp .= '<select ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" ' . $status . ' onchange="sobad_options(this)" ' . $required . '>' . $func . '</select>';
+		$inp .= '<select ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" ' . $status . ' onchange="' . $onchange . '" ' . $required . '>' . $func . '</select>';
 		$inp .= '</div>';
 
 		return $inp . $btn;
