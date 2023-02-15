@@ -20,8 +20,9 @@ class sobad_grid
     {
         $id = isset($data['id']) ? $data['id'] : '';
         $col = isset($data['col']) ? $data['col'] : 12;
+        $class = isset($data['class']) ? $data['class'] : '';
         ?>
-            <div id="<?= $id ?>" class="col-md-<?= $col ?>">
+            <div id="<?= $id ?>" class="col-md-<?= $col ?> <?= $class ?>">
                 <?php
                 $func = isset($data['func']) ? $data['func'] : '';
                 if (method_exists('sasi_template', $func)) {
