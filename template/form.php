@@ -197,7 +197,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -275,7 +275,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -362,7 +362,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -408,7 +408,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		// Insert type data --->
@@ -452,7 +452,7 @@ class create_form
 		if (isset($val['label'])) {
 			$inp .= self::opt_label($val['label']);
 		} else {
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -473,7 +473,7 @@ class create_form
 		if (isset($val['label'])) {
 			$inp .= self::opt_label($val['label']);
 		} else {
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -510,7 +510,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = 'tag-blood';
@@ -657,7 +657,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$status = '';
@@ -720,7 +720,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -796,7 +796,7 @@ class create_form
 		if (isset($val['label'])) {
 			$inp .= self::opt_label($val['label']);
 		} else {
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		// Get layout dropzone
@@ -841,7 +841,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 		$range = '1';
 		if (isset($val['range'])) {
