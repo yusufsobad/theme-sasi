@@ -708,7 +708,7 @@ class create_form
 							sobad_loading(\'.bs-select ul.selectpicker\');
 
 							data = "ajax='.$src_func.'&object=" + object + "&data=" + this.value;
-							sobad_ajax(\'#'.$id.'\', data, sobad_selectOption_search, false);
+							sobad_ajax(\'#'.$idx.'\', data, sobad_selectOption_search, false);
 						});
 					</script>
 				';
