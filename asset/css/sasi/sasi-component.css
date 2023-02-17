@@ -305,12 +305,12 @@ ul.ver-inline-menu.tabbable,
 /* Form Input Money */
 
 input.form-control.money {
-    width: 118px !important;
+    /*width: 118px !important;*/
     border-radius: 10px !important;
 }
 
 input.form-control.quantity {
-    width: 118px !important;
+    /*width: 118px !important;*/
     border-radius: 10px !important;
 }
 
