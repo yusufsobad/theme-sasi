@@ -47,7 +47,7 @@ class form_wizard
                 padding: 2px;
             }
 
-            .btn-circle {
+/*            .btn-circle {
                 width: 30px;
                 height: 30px;
                 text-align: center;
@@ -59,7 +59,7 @@ class form_wizard
 
             .radius-sm {
                 border-radius: 7px;
-            }
+            }*/
         </style>
         <div class="">
             <div class="stepwizard">
