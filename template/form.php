@@ -695,24 +695,10 @@ class create_form
 			
 			$sobad = isset($ajax['on_func']) ? 'data-sobad="'.$ajax['on_func'].'"' : '';
 			$load = isset($ajax['on_load']) ? 'data-load="'.$ajax['on_load'].'"' : '';
-			$attr = isset($ajax['on_attribute']) ? 'data-attribute="'.$ajax['on_attribute'].'"' : ''; 
+			$attr = isset($ajax['on_attribute']) ? 'data-attribute="'.$ajax['on_attribute'].'"' : '';
+			$change = isset($ajax['src_func']) ? 'data-change="'.$ajax['src_func'].'"' : '';
 			
-			$load_select = $sobad.' '.$load.' '.$attr;
-
-			if($ajax['src_func']){
-				$src_func = $ajax['src_func'];
-
-				$script = '
-					<script type="text/javascript">
-						$(\'#'.$idx.'\').parent().children(\'.bs-select\').children(\'div.dropdown-menu\').children(\'.bs-searchbox\').children().on(\'change\', function() {
-							sobad_loading(\'.bs-select ul.selectpicker\');
-
-							data = "ajax='.$src_func.'&object=" + object + "&data=" + this.value;
-							sobad_ajax(\'#'.$idx.'\', data, sobad_selectOption_search, false);
-						});
-					</script>
-				';
-			}
+			$load_select = $sobad.' '.$load.' '.$attr.' '.$change;
 		}
 
 		$onchange = isset($val['onchange']) ? $val['onchange'] : 'sobad_options(this)';
