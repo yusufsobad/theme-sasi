@@ -437,6 +437,8 @@ abstract class sasi_template extends custom_script
 					}
 
 					$active = isset($args['active']) ? $args['active'] : '';
+					$load = isset($args['load']) ? $args['load'] : 'tab_malika';
+
 					$li_cls = 'active';
 					foreach ($args['tab'] as $key => $val) {
 						$li_cls = empty($active) ? $li_cls : $active == $val['key'] ? 'active' : '';
@@ -445,7 +447,7 @@ abstract class sasi_template extends custom_script
 
 						echo '
 								<li class="' . $li_cls . '">
-									<a onclick="' . $script . '" id="' . $val['key'] . '" data-sobad="' . $func . '" data-load="tab_malika" data-toggle="tab" href="#tab_malika' . $key . '" aria-expanded="true">
+									<a onclick="' . $script . '" id="' . $val['key'] . '" data-sobad="' . $func . '" data-load="'.$load.'" data-toggle="tab" href="#'. $load . $key . '" aria-expanded="true">
 									' . $val['label'] . ' 
 									<span class="badge ' . $info . '">' . $val['qty'] . '</span>
 									</a>
@@ -461,7 +463,7 @@ abstract class sasi_template extends custom_script
 					$no_tab = 0;
 					foreach ($args['tab'] as $key => $val) {
 					?>
-						<div class="tab-pane active" id="tab_malika">
+						<div class="tab-pane active" id="<?= $load ;?>">
 							<div class="row">
 
 								<?php
