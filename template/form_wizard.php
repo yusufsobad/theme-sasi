@@ -9,6 +9,8 @@ class form_wizard
         $i = 0;
         $x = 0;
         $count = count($data['data']);
+
+        $socket = isset($data['socket']) ? $data['socket'] : '';
 ?>
         <style>
             .stepwizard-step p {
@@ -104,7 +106,7 @@ class form_wizard
                                 <?php if ($x !== $count) {  ?>
                                     <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" type="button">Next</button>
                                 <?php } else { ?>
-                                    <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" data-type="<?= $data['type'] ?>" type="button" class="btn blue" data-dismiss="modal" data-index="" onclick="wizard_submit(this)">Save</button>
+                                    <button class="btn btn-primary nextBtn radius-sm btn-lg pull-right mt-md" data-sobad="<?= $data['link'] ?>" data-load="<?= $data['load'] ?>" data-type="<?= $data['type'] ?>" data-socket="<?= $socket ?>" type="button" class="btn blue" data-dismiss="modal" data-index="" onclick="wizard_submit(this)">Save</button>
                                 <?php } ?>
                             </div>
                         </div>
