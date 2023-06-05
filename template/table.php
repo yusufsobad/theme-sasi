@@ -6,6 +6,10 @@ class create_table
 
 	protected static $check = false;
 
+	protected static $thead = true;
+
+	protected static $tbody = true;
+
 	public static function _table($args = array())
 	{
 
@@ -45,6 +49,9 @@ class create_table
 
 				$thead = isset($args['thead']) ? $args['thead'] : true;
 				$tbody = isset($args['tbody']) ? $args['tbody'] : true;
+
+				self::$thead = $thead;
+				self::$tbody = $tbody;
 
 				if ($thead) {
 					self::thead($args['table']);
@@ -324,10 +331,10 @@ class create_table
 						}
 					}
 
-					echo '<td ' . $colspan . ' ' . $rowspan . ' style="text-align:' . $val[0] . '">' . $val[2] . '</td>';
+					$width = self::$thead == false ? "width:" . $val[1] : '';
+					echo '<td ' . $colspan . ' ' . $rowspan . ' style="text-align:' . $val[0] . ';' . $width . '">' . $val[2] . '</td>';
 				}
 				echo '</tr>';
-
 
 				if ($acordion) {
 
