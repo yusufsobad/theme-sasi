@@ -6,6 +6,7 @@ class form_repeater
     public static function create_form_repeater($data = [])
     {
         $load_add = isset($data['load_add']) ? $data['load_add'] : 'repeat_add';
+        $default = $data['default'] ?? [];
 ?>
         <style>
             .float-right {
@@ -47,19 +48,20 @@ class form_repeater
                                 } ?>
                             </div>
                             <div class="col-md-1 p-0">
-                                <a id='<?= $load ?>' href="javascript:" onclick="repeat_button_add(this,false)" class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data['type'] ?>" data-repeater-delete type="button">Delete</a>
+                                <a id='<?= $load ?>' href="javascript:"  class="btn btn-danger m-sm float-right m-0 radius-xs" data-load="" data-sobad="<?= $data['func_del'] ?>" data-type="<?= $data['type'] ?>" data-repeater-delete type="button">Delete</a>
                             </div>
 
                         </div>
                     </div>
                 <?php } ?>
             </div>
-            <a data-load="<?= $data['load'] ?>" href="javascript:" onclick="repeat_button_add(this,false)" data-sobad="<?= $data['func_add'] ?>" data-type="<?= $data['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
+            <a data-load="<?= $data['load'] ?>" href="javascript:"  data-sobad="<?= $data['func_add'] ?>" data-type="<?= $data['type'] ?>" class="btn btn-primary m-sm radius-xs" data-repeater-create type="button">Add</a>
         </div>
 
         <script>
             $(document).ready(function() {
-
+                let defaultValues = <?= json_encode($default) ?>;
+                
                 $('.repeater').repeater({
 
                     // (Optional)
@@ -72,9 +74,7 @@ class form_repeater
                     // defaultValues refer to the value of the input's name attribute.
                     // If a default value is not specified for an input, then it will
                     // have its value cleared.
-                    defaultValues: {
-                        'text-input': ''
-                    },
+                    defaultValues: defaultValues,
                     // (Optional)
                     // "show" is called just after an item is added.  The item is hidden
                     // at this point.  If a show callback is not given the item will
