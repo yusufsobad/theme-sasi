@@ -106,4 +106,86 @@ class create_component
         </div>
 <?php
     }
+
+    // ---------------------------------------------
+    // Create Tabs ---------------------------------
+    // ---------------------------------------------
+    public static function list_tab($args = array())
+    {
+        $check = array_filter($args);
+        if (empty($check)) {
+            return '';
+        }
+
+        if (isset($args['object'])) {
+            if (class_exists($args['object'])) {
+                $object = $args['object'];
+            } else {
+                return '';
+            }
+        } else {
+            $object = 'sasi_template';
+        }
+
+    ?>
+        <div class="col-md-12">
+            <div id="sobad_tabs" class="tabbable">
+                <ul class="nav nav-tabs nav-tabs-lg">
+                    <?php
+
+                    $script = 'sobad_tabs(this)';
+                    if (isset($args['script'])) {
+                        $script = $args['script'];
+                    }
+
+                    $active = isset($args['active']) ? $args['active'] : '';
+
+                    $li_cls = 'active';
+                    foreach ($args['tab'] as $key => $val) {
+                        $li_cls = empty($active) ? $li_cls : $active == $val['key'] ? 'active' : '';
+                        $info = isset($val['info']) ? $val['info'] : "badge-success";
+                        $load = isset($val['load']) ? $val['load'] : "tab_sasi";
+
+                        echo '
+                                <li class="' . $li_cls . '">
+                                    <a id="' . $val['key'] . '" data-toggle="tab" href="#'. $load . $key . '" aria-expanded="true">
+                                    ' . $val['label'] . ' 
+                                    <span class="badge ' . $info . '">' . $val['qty'] . '</span>
+                                    </a>
+                                </li>
+                            ';
+
+                        $li_cls = '';
+                    }
+                    ?>
+                </ul>
+                <div class="tab-content">
+                    <?php
+                    $no_tab = 0;
+                    foreach ($args['tab'] as $key => $val) {
+                    $li_cls = empty($active) ? $li_cls : $active == $val['key'] ? 'active' : '';
+                    $load = isset($val['load']) ? $val['load'] : "tab_sasi";
+                    
+                    ?>
+                        <div class="tab-pane <?= $li_cls ;?>" id="<?= $load . $key;?>">
+                            <div class="row">
+
+                                <?php
+                                $func = $args['func'];
+                                if (method_exists($object, $func)) {
+                                    $object::{$func}($args['data']);
+                                }
+                                ?>
+
+                            </div>
+                        </div>
+                    <?php
+                        $no_tab += 1;
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    <?php
+    }
 }
