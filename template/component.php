@@ -171,9 +171,9 @@ class create_component
                             <div class="row">
 
                                 <?php
-                                $func = $args['func'];
+                                $func = $val['func'];
                                 if (method_exists($object, $func)) {
-                                    $object::{$func}($args['data']);
+                                    $object::{$func}($val['data']);
                                 }
                                 ?>
 
