@@ -99,15 +99,15 @@ class create_form
 			endif;
 
 			self::option_form($args);
-			// if (!isset($_SESSION[_prefix . 'input_form'])) {
-			// 	$_SESSION[_prefix . 'input_form'] = array();
-			// }
+			if (!isset($_SESSION[_prefix . 'input_form'])) {
+				$_SESSION[_prefix . 'input_form'] = array();
+			}
 
 			// if (!isset($_SESSION[_prefix . 'require_form'])) {
 			// 	$_SESSION[_prefix . 'require_form'] = array();
 			// }
 
-			// $_SESSION[_prefix . 'input_form'] = array_merge($_SESSION[_prefix . 'input_form'], self::$_types);
+			$_SESSION[_prefix . 'input_form'] = array_merge($_SESSION[_prefix . 'input_form'], self::$_types);
 			// $_SESSION[_prefix . 'require_form'] = array_merge($_SESSION[_prefix . 'require_form'], self::$_require); ?>
 				<!--<button id="metronic-submit" type="submit" class="btn" style="display: none;"></button>-->
 
