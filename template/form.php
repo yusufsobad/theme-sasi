@@ -411,6 +411,11 @@ class create_form
 //			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
+		$data = '';
+		if (isset($val['data'])) {
+			$data = $val['data'];
+		}
+
 		// Insert type data --->
 		self::$_require[$val['key']] = array(
 			'name'		=> $val['label'],
@@ -420,7 +425,7 @@ class create_form
 		self::$_types[$val['key']] = 'textarea';
 
 		$inp .= '<div class="col-md-' . self::$col_input . '">';
-		$inp .= '<textarea ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" rows="' . $val['rows'] . '" ' . $required . '>' . $val['value'] . '</textarea>';
+		$inp .= '<textarea ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" rows="' . $val['rows'] . '" ' . $data .' '. $required . '>' . $val['value'] . '</textarea>';
 		$inp .= '</div>';
 		return $inp;
 	}
