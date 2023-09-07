@@ -30,44 +30,124 @@ class create_component
     <?php
     }
 
-    private static function image_carousel($data = [])
+    public static function image_carousel($data)
     {
+        $class = isset($data['class']) ? $data['class'] : '';
+        $count_data = count($data['data']);
+        $show = isset($data['show']) ? $data['show'] : '6';
+        switch ($show) {
+            case '1':
+                $width = '100%';
+                break;
+            case '2':
+                $width = '50%';
+                break;
+            case '3':
+                $width = '33.3%';
+                break;
+            case '4':
+                $width = '25%';
+                break;
+            case '5':
+                $width = '20%';
+                break;
+            case '6':
+                $width = '16.6%';
+                break;
+            case '7':
+                $width = '14.2%';
+                break;
+            case '8':
+                $width = '12.5%';
+                break;
+            case '9':
+                $width = '11.1%';
+                break;
+            case '10':
+                $width = '10%';
+                break;
+
+            default:
+                $width = '100%';
+        }
+
     ?>
-        <div id="carousel-<?= $data['id'] ?>" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <?php if ($data['dots'] == 'true') { ?>
-                <ol class="carousel-indicators">
-                    <?php $i = -1; ?>
-                    <?php foreach ($data['data'] as $val) {
-                        $i++; ?>
-                        <li data-target="#carousel-<?= $data['id'] ?>" data-slide-to="<?= $i ?>" class="<?= $i == 0
-                                                                                                            ? 'active'
-                                                                                                            : '' ?>"></li>
-                    <?php
-                    } ?>
-                </ol>
-            <?php } ?>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <?php $i = -1; ?>
-                <?php foreach ($data['data'] as $value) {
-                    $i++; ?>
-                    <div class="item <?= $i == 0 ? 'active' : '' ?>">
-                        <img src="<?= $value ?>">
-                    </div>
-                <?php
-                } ?>
+        <style>
+            #slide_carousel {
+                position: relative;
+            }
+
+            #slide_carousel .MS-content {
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            #slide_carousel .MS-content .item {
+                display: inline-block;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                vertical-align: top;
+                padding: 0 10px;
+                width: <?= $width ?>;
+            }
+
+            #slide_carousel .MS-controls button {
+                position: absolute;
+                border: none;
+                background: transparent;
+                font-size: 30px;
+                outline: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+            #slide_carousel .MS-controls .MS-right {
+                right: -10px;
+            }
+
+            #slide_carousel .MS-controls .MS-left {
+                left: -10px;
+            }
+        </style>
+        <?php if (isset($data['data'][0])) { ?>
+            <div id="slide_carousel">
+                <div class="MS-content">
+                    <?php foreach ($data['data'] as $value) { ?>
+                        <div class="item <?= $class ?>">
+                            <img style="width:100%" height="auto" src="<?= $value ?>">
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="MS-controls">
+                    <button type='button' class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                    <button type='button' class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
             </div>
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#carousel-<?= $data['id'] ?>" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-<?= $data['id'] ?>" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+        <?php } else { ?>
+            <h2>Data Image Kosong !</h2>
+        <?php } ?>
+
+        <script>
+            var show = <?= $show; ?>;
+            var data = <?= $count_data; ?>;
+
+            $('#slide_carousel').multislider({
+                continuous: false,
+                slideAll: false,
+                interval: 2000,
+                duration: 500,
+                hoverPause: true,
+                pauseAbove: null,
+                pauseBelow: null
+            })
+
+            if (show > data) {
+                $('#slide_carousel').multislider('pause')
+            } else {
+                $('#slide_carousel').multislider('unPause')
+            }
+        </script>
     <?php
     }
 
@@ -104,7 +184,7 @@ class create_component
                 <?= $value ?>%
             </div>
         </div>
-<?php
+    <?php
     }
 
     // ---------------------------------------------
@@ -148,7 +228,7 @@ class create_component
 
                         echo '
                                 <li class="' . $li_cls . '">
-                                    <a id="' . $val['key'] . '" data-toggle="tab" href="#'. $load . $key . '" aria-expanded="true">
+                                    <a id="' . $val['key'] . '" data-toggle="tab" href="#' . $load . $key . '" aria-expanded="true">
                                     ' . $val['label'] . ' 
                                     <span class="badge ' . $info . '">' . $val['qty'] . '</span>
                                     </a>
@@ -163,11 +243,11 @@ class create_component
                     <?php
                     $no_tab = 0;
                     foreach ($args['tab'] as $key => $val) {
-                    $li_cls = empty($active) ? $li_cls : $active == $val['key'] ? 'active' : '';
-                    $load = isset($val['load']) ? $val['load'] : "tab_sasi";
-                    
+                        $li_cls = empty($active) ? $li_cls : $active == $val['key'] ? 'active' : '';
+                        $load = isset($val['load']) ? $val['load'] : "tab_sasi";
+
                     ?>
-                        <div class="tab-pane <?= $li_cls ;?>" id="<?= $load . $key;?>">
+                        <div class="tab-pane <?= $li_cls; ?>" id="<?= $load . $key; ?>">
                             <div class="row">
 
                                 <?php
@@ -186,6 +266,6 @@ class create_component
                 </div>
             </div>
         </div>
-    <?php
+<?php
     }
 }

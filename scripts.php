@@ -16,7 +16,7 @@ class theme_script
 
 	private function lokasi()
 	{
-		return SITE .'://' . HOSTNAME . '/' . URL . '/theme/' . _theme_folder . '/asset/';
+		return SITE . '://' . HOSTNAME . '/' . URL . '/theme/' . _theme_folder . '/asset/';
 	}
 	// BEGIN PAGE LEVEL STYLES ---->
 
@@ -90,6 +90,7 @@ class theme_script
 			'themes-editor'			=> $loc . 'js/pages/components-editors.js',
 			'themes-dropdown-nav'	=> $loc . 'js/pages/dropdown-nav.js',
 			'themes-contextmenu'	=> $loc . 'js/pages/contextmenu.js',
+			'multislider-carousel'	=> $loc . 'js/pages/multislider.min.js',
 		);
 
 		$check = array_filter($idx);
