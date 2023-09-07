@@ -161,12 +161,15 @@ class form_repeater
                 sobad_submitLoad(val);
             }
 
-            function conv_array_repeater(arr){
-                for(var ky in arr){
+            function conv_array_repeater(dt_repeat){
+                var arr = [];
+                for(var ky in dt_repeat['product']){
+                    arr = dt_repeat['product'];
                     arr[ky]['note'] = ("note" in arr[ky]) ? ascii_to_hexa(arr[ky]['note'].replace(/\+/g,'-plus-')) : arr[ky]['note'];
                 }
 
-                return JSON.stringify(arr);
+                dt_repeat['product'] = arr;
+                return JSON.stringify(dt_repeat);
             }
         </script>
 <?php
