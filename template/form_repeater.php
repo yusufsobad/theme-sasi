@@ -155,8 +155,18 @@ class form_repeater
             }
 
             function repeater_submit(val) {
-                repeater = JSON.stringify($('.repeater').repeaterVal());
+                var dt_repeat = $('.repeater').repeaterVal();
+                repeater = conv_array_repeater(dt_repeat);
+
                 sobad_submitLoad(val);
+            }
+
+            function conv_array_repeater(arr){
+                for(var ky in arr){
+                    arr[ky]['note'] = ("note" in arr[ky]) ? ascii_to_hexa(arr[ky]['note'].replace(/\+/g,'-plus-')) : arr[ky]['note'];
+                }
+
+                return JSON.stringify(arr);
             }
         </script>
 <?php
