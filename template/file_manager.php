@@ -139,7 +139,7 @@ class create_file_manager
 		?>
 		<script type="text/javascript">
 			var myDropzone = new Dropzone("#<?php print($args['id']); ?>", {
-				url: "include/ajax.php",
+				url: server+'/'+url_ajax,
 				paramName: "file", // The name that will be used to transfer the file
 				addRemoveLinks: true,
 				maxFilesize: <?php print($max_size) ;?>, // MB
@@ -151,7 +151,7 @@ class create_file_manager
 			myDropzone.on("removedfile", function(file) {
 				allerts = confirm('Do you want to delete?');
 				if (allerts == true) {
-					$.post('include/ajax.php', {
+					$.post(server+'/'+url_ajax, {
 							ajax: '<?php print $args['func'] ?>',
 							object: '<?php print $args['object'] ?>',
 							index: <?php print $index ?>,
