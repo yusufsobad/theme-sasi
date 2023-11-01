@@ -125,8 +125,12 @@ class create_form
 				mask_decimal('.decimal');
 			});
 
-			$('.quantity').on('keydown', function() {
-				mask_quantity('.quantity');
+			$('.number').on('keydown', function() {
+				mask_quantity('.number');
+			});
+
+			$('.decimal3').on('keydown', function() {
+				mask_quantity('.decimal3');
 			});
 
 			<?php
@@ -235,6 +239,11 @@ class create_form
 				$val['type'] = 'text';
 				$val['class'] .= ' number';
 				break;
+
+			case 'decimal3':
+				$val['type'] = 'text';
+				$val['class'] .= ' decimal3';
+				break;	
 
 			case 'clock':
 				$val['type'] = 'text';
