@@ -1244,6 +1244,26 @@ ul.langdrop.dropdown-menu {
         font-size: 14px;
     }
 
+    .table_head_freeze {
+        height: 350px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .table_head_freeze table {
+        position: relative;
+        table-layout: fixed;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    .table_head_freeze table>thead {
+        position: relative;
+        display: block;
+    }
+
     .icon-menu {
         font-size: 60px;
     }

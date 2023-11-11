@@ -339,7 +339,7 @@ class create_table
 				if ($acordion) {
 
 					echo '<tr>';
-					echo '<td colspan="' . $cols_accordion . '">';
+					echo '<td colspan="' . $cols_accordion . '" style="padding:0px;">';
 					echo '<div  class="accordian-body collapse"  id="' . $config_accordion['ID'] . '">';
 					echo '<div class="loader"></div>';
 					echo '</div>';

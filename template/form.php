@@ -256,7 +256,65 @@ class create_form
 		}
 
 		$inp .= '<div class="col-md-' . $cols . '">';
+		// prefix atau suffix
+			if(isset($val['prefix']) || isset($val['suffix'])){
+				$inp .= '<div class="input-group mb-3">';
+			}
+
+		// prefix
+			if(isset($val['prefix'])){
+				if(gettype($val['prefix'])=='array'){
+					$key_select = isset($val['setting_prefix']) ? $val['setting_prefix'] : ['key' => 'prefix_'.rand(100), 0];
+
+					$opt_group = '';
+					foreach ($val['prefix'] as $ky => $vl) {
+						$select_group = $ky == $key_select['value'] ? 'selected' : '';
+						$opt_group .= '<option value="'.$ky.'" '.$select_group.'>'.$val.'</option>';
+					}
+
+					$inp_group = '<select class="custom-select" name="'.$key_select['key'].'">
+									'.$opt_group.'
+  							 	  </select>';
+				}else{
+					$inp_group = '<span class="input-group-text">'.$val['prefix'].'</span>';
+				}
+
+				$inp .= '<div class="input-group-prepend">
+						 	'.$inp_group.'
+						 </div>';
+			}
+		// ------
+
 		$inp .= '<input ' . $id . ' type="' . $val['type'] . '" class="form-control ' . $val['class'] . '" name="' . $val['key'] . '" value="' . $val['value'] . '" ' . $val['data'] . ' ' . $required . '>';
+
+		// suffix
+			if(isset($val['suffix'])){
+				if(gettype($val['suffix'])=='array'){
+					$key_select = isset($val['setting_suffix']) ? $val['setting_suffix'] : ['key' => 'suffix_'.rand(100), 0];
+
+					$opt_group = '';
+					foreach ($val['suffix'] as $ky => $vl) {
+						$select_group = $ky == $key_select['value'] ? 'selected' : '';
+						$opt_group .= '<option value="'.$ky.'" '.$select_group.'>'.$val.'</option>';
+					}
+
+					$inp_group = '<select class="custom-select" name="'.$key_select['key'].'">
+									'.$opt_group.'
+  							 	  </select>';
+				}else{
+					$inp_group = '<span class="input-group-text">'.$val['suffix'].'</span>';
+				}
+
+				$inp .= '<div class="input-group-append">
+						 	'.$inp_group.'
+						 </div>';
+			}
+		// ------
+
+			if(isset($val['prefix']) || isset($val['suffix'])){
+				$inp .= '</div>';
+			}
+		// ------
 
 		$inp .= '</div>';
 		return $inp . $btn;
