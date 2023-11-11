@@ -906,6 +906,33 @@ table.sasi-table {
     font-size: 17px;
 }
 
+.table-head-freeze {
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.table-head-freeze table {
+    position: relative;
+    table-layout: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.table-head-freeze table>thead {
+    position: relative;
+    display: block;
+}
+
+.table-head-freeze tbody {
+    flex: 1;
+    position: relative;
+    display: block;
+    overflow: auto;
+}
+
 button#filter-sasi {
     border-radius: 25px !important;
     padding: 12px 20px 12px 20px;
@@ -1242,26 +1269,6 @@ ul.langdrop.dropdown-menu {
     .table tbody {
         background-color: #fff;
         font-size: 14px;
-    }
-
-    .table_head_freeze {
-        height: 350px;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .table_head_freeze table {
-        position: relative;
-        table-layout: fixed;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
-
-    .table_head_freeze table>thead {
-        position: relative;
-        display: block;
     }
 
     .icon-menu {
