@@ -108,7 +108,8 @@ class create_form
 			// }
 
 			$_SESSION[_prefix . 'input_form'] = array_merge($_SESSION[_prefix . 'input_form'], self::$_types);
-			// $_SESSION[_prefix . 'require_form'] = array_merge($_SESSION[_prefix . 'require_form'], self::$_require); ?>
+			// $_SESSION[_prefix . 'require_form'] = array_merge($_SESSION[_prefix . 'require_form'], self::$_require); 
+				?>
 				<!--<button id="metronic-submit" type="submit" class="btn" style="display: none;"></button>-->
 
 				<?php if ($status) : ?>
@@ -201,7 +202,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -243,7 +244,7 @@ class create_form
 			case 'decimal3':
 				$val['type'] = 'text';
 				$val['class'] .= ' decimal3';
-				break;	
+				break;
 
 			case 'clock':
 				$val['type'] = 'text';
@@ -257,63 +258,59 @@ class create_form
 
 		$inp .= '<div class="col-md-' . $cols . '">';
 		// prefix atau suffix
-			if(isset($val['prefix']) || isset($val['suffix'])){
-				$inp .= '<div class="input-group mb-3">';
-			}
+		if (isset($val['prefix']) || isset($val['suffix'])) {
+			$inp .= '<div class="input-group mb-3">';
+		}
 
 		// prefix
-			if(isset($val['prefix'])){
-				if(gettype($val['prefix'])=='array'){
-					$key_select = isset($val['setting_prefix']) ? $val['setting_prefix'] : ['key' => 'prefix_'.rand(100), 0];
+		if (isset($val['prefix'])) {
+			if (gettype($val['prefix']) == 'array') {
+				$key_select = isset($val['setting_prefix']) ? $val['setting_prefix'] : ['key' => 'prefix_' . rand(100), 0];
 
-					$opt_group = '';
-					foreach ($val['prefix'] as $ky => $vl) {
-						$select_group = $ky == $key_select['value'] ? 'selected' : '';
-						$opt_group .= '<option value="'.$ky.'" '.$select_group.'>'.$val.'</option>';
-					}
-
-					$inp_group = '<select class="custom-select" name="'.$key_select['key'].'">
-									'.$opt_group.'
-  							 	  </select>';
-				}else{
-					$inp_group = '<span class="input-group-text">'.$val['prefix'].'</span>';
+				$opt_group = '';
+				foreach ($val['prefix'] as $ky => $vl) {
+					$select_group = $ky == $key_select['value'] ? 'selected' : '';
+					$opt_group .= '<option value="' . $ky . '" ' . $select_group . '>' . $val . '</option>';
 				}
 
-				$inp .= '<div class="input-group-prepend">
-						 	'.$inp_group.'
-						 </div>';
+				$inp_group = '<select class="custom-select" name="' . $key_select['key'] . '">
+									' . $opt_group . '
+  							 	  </select>';
+			} else {
+				$inp_group = '<span class="input-group-addon radius-left-sm">' . $val['prefix'] . '</span>';
 			}
+
+			$inp .= $inp_group;
+		}
 		// ------
 
 		$inp .= '<input ' . $id . ' type="' . $val['type'] . '" class="form-control ' . $val['class'] . '" name="' . $val['key'] . '" value="' . $val['value'] . '" ' . $val['data'] . ' ' . $required . '>';
 
 		// suffix
-			if(isset($val['suffix'])){
-				if(gettype($val['suffix'])=='array'){
-					$key_select = isset($val['setting_suffix']) ? $val['setting_suffix'] : ['key' => 'suffix_'.rand(100), 0];
+		if (isset($val['suffix'])) {
+			if (gettype($val['suffix']) == 'array') {
+				$key_select = isset($val['setting_suffix']) ? $val['setting_suffix'] : ['key' => 'suffix_' . rand(100), 0];
 
-					$opt_group = '';
-					foreach ($val['suffix'] as $ky => $vl) {
-						$select_group = $ky == $key_select['value'] ? 'selected' : '';
-						$opt_group .= '<option value="'.$ky.'" '.$select_group.'>'.$val.'</option>';
-					}
-
-					$inp_group = '<select class="custom-select" name="'.$key_select['key'].'">
-									'.$opt_group.'
-  							 	  </select>';
-				}else{
-					$inp_group = '<span class="input-group-text">'.$val['suffix'].'</span>';
+				$opt_group = '';
+				foreach ($val['suffix'] as $ky => $vl) {
+					$select_group = $ky == $key_select['value'] ? 'selected' : '';
+					$opt_group .= '<option value="' . $ky . '" ' . $select_group . '>' . $val . '</option>';
 				}
 
-				$inp .= '<div class="input-group-append">
-						 	'.$inp_group.'
-						 </div>';
+				$inp_group = '<select class="custom-select" name="' . $key_select['key'] . '">
+									' . $opt_group . '
+  							 	  </select>';
+			} else {
+				$inp_group = '<span class="input-group-addon radius-right-sm">' . $val['suffix'] . '</span>';
 			}
+
+			$inp .=  $inp_group;
+		}
 		// ------
 
-			if(isset($val['prefix']) || isset($val['suffix'])){
-				$inp .= '</div>';
-			}
+		if (isset($val['prefix']) || isset($val['suffix'])) {
+			$inp .= '</div>';
+		}
 		// ------
 
 		$inp .= '</div>';
@@ -342,7 +339,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -429,7 +426,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -475,7 +472,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$data = '';
@@ -492,7 +489,7 @@ class create_form
 		self::$_types[$val['key']] = 'textarea';
 
 		$inp .= '<div class="col-md-' . self::$col_input . '">';
-		$inp .= '<textarea ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" rows="' . $val['rows'] . '" ' . $data .' '. $required . '>' . $val['value'] . '</textarea>';
+		$inp .= '<textarea ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" rows="' . $val['rows'] . '" ' . $data . ' ' . $required . '>' . $val['value'] . '</textarea>';
 		$inp .= '</div>';
 		return $inp;
 	}
@@ -524,7 +521,7 @@ class create_form
 		if (isset($val['label'])) {
 			$inp .= self::opt_label($val['label']);
 		} else {
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -545,7 +542,7 @@ class create_form
 		if (isset($val['label'])) {
 			$inp .= self::opt_label($val['label']);
 		} else {
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -582,7 +579,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = 'tag-blood';
@@ -729,7 +726,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$status = '';
@@ -760,22 +757,23 @@ class create_form
 		self::$_types[$val['key']] = 'select';
 
 		// Load ajax select
-		$load_select = '';$script = '';
-		if(isset($val['ajax'])){
+		$load_select = '';
+		$script = '';
+		if (isset($val['ajax'])) {
 			$ajax = $val['ajax'];
 			$idx = isset($val['id']) ? $val['id'] : '';
-			
-			$sobad = isset($ajax['on_func']) ? 'data-sobad="'.$ajax['on_func'].'"' : '';
-			$load = isset($ajax['on_load']) ? 'data-load="'.$ajax['on_load'].'"' : '';
-			$attr = isset($ajax['on_attribute']) ? 'data-attribute="'.$ajax['on_attribute'].'"' : '';
-			$change = isset($ajax['src_func']) ? 'data-change="'.$ajax['src_func'].'"' : '';
-			
-			$load_select = $sobad.' '.$load.' '.$attr.' '.$change;
+
+			$sobad = isset($ajax['on_func']) ? 'data-sobad="' . $ajax['on_func'] . '"' : '';
+			$load = isset($ajax['on_load']) ? 'data-load="' . $ajax['on_load'] . '"' : '';
+			$attr = isset($ajax['on_attribute']) ? 'data-attribute="' . $ajax['on_attribute'] . '"' : '';
+			$change = isset($ajax['src_func']) ? 'data-change="' . $ajax['src_func'] . '"' : '';
+
+			$load_select = $sobad . ' ' . $load . ' ' . $attr . ' ' . $change;
 		}
 
 		$onchange = isset($val['onchange']) ? $val['onchange'] : 'sobad_options(this)';
 		$inp .= '<div class="col-md-' . $cols . '">';
-		$inp .= '<select ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" ' . $status . ' onchange="' . $onchange . '" ' . $required . $load_select .'>' . $func . '</select>';
+		$inp .= '<select ' . $id . ' name="' . $val['key'] . '" class="form-control ' . $val['class'] . '" ' . $status . ' onchange="' . $onchange . '" ' . $required . $load_select . '>' . $func . '</select>';
 		$inp .= '</div>';
 
 		$inp .= $script;
@@ -808,7 +806,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		$id = '';
@@ -884,7 +882,7 @@ class create_form
 		if (isset($val['label'])) {
 			$inp .= self::opt_label($val['label']);
 		} else {
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 
 		// Get layout dropzone
@@ -929,7 +927,7 @@ class create_form
 			$inp .= self::opt_label($val['label'], $req);
 		} else {
 			$val['label'] = '';
-//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
+			//			$inp .= '<div class="col-md-' . self::$col_label . '"></div>';
 		}
 		$range = '1';
 		if (isset($val['range'])) {
