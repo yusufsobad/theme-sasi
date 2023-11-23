@@ -139,10 +139,10 @@ class create_file_manager
 		?>
 		<script type="text/javascript">
 			var myDropzone = new Dropzone("#<?php print($args['id']); ?>", {
-				url: server+'/'+url_ajax,
+				url: server + '/' + url_ajax,
 				paramName: "file", // The name that will be used to transfer the file
 				addRemoveLinks: true,
-				maxFilesize: <?php print($max_size) ;?>, // MB
+				maxFilesize: <?php print($max_size); ?>, // MB
 				acceptedFiles: '<?php print($args['accept']) ?>',
 
 			});
@@ -151,10 +151,10 @@ class create_file_manager
 			myDropzone.on("removedfile", function(file) {
 				allerts = confirm('Do you want to delete?');
 				if (allerts == true) {
-					$.post(server+'/'+url_ajax, {
+					$.post(server + '/' + url_ajax, {
 							ajax: '<?php print $args['func'] ?>',
 							object: '<?php print $args['object'] ?>',
-							index: <?php print $index ?>,
+							index: '<?php print $index ?>',
 							file: file.name,
 							data: 'remove_file'
 						},
@@ -169,7 +169,7 @@ class create_file_manager
 			<?php
 			if (isset($args['image']) && !empty($args['image'])) {
 				foreach ($args['image'] as $key => $val) {
-					if(empty($args['image'])){
+					if (empty($args['image'])) {
 						continue;
 					}
 
