@@ -743,8 +743,9 @@ class create_form
 
 		if (isset($val['searching'])) {
 			if ($val['searching']) {
+				$placeholder = isset($data['placeholder']) ? $data['placeholder'] : 'Search here ...';
 				$val['class'] = 'bs-select';
-				$status .= ' data-live-search="true" data-size="6" data-style="blue"';
+				$status .= ' data-live-search="true" data-size="6" data-style="blue" data-live-search-placeholder="'.$placeholder.'"';
 			}
 		}
 

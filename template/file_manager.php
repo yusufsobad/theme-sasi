@@ -135,6 +135,7 @@ class create_file_manager
 	{
 		$max_size = isset($args['max_size']) ? $args['max_size'] : 2; // Default 2 MB
 		$index = isset($args['index']) ? $args['index'] : 0;
+		$attr = isset($args['attribute']) && !empty($args['attribute']) ? $args['attribute'] : 'html';
 
 		?>
 		<script type="text/javascript">
@@ -194,7 +195,7 @@ class create_file_manager
 			<?php if (isset($args['load']) && !empty($args['load'])) : ?>
 
 				myDropzone.on("success", function(file, response) {
-					sobad_callback("#<?php print($args['load']); ?>", response, 'html', true);
+					sobad_callback("#<?php print($args['load']); ?>", response, '<?= $attr ;?>', true);
 
 					// $(".dz-processing > .dz-remove").remove();
 
