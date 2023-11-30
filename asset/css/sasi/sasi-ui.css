@@ -1279,6 +1279,47 @@ ul.langdrop.dropdown-menu {
     box-shadow: 0 6px 12px rgb(0 0 0 / 18%);
   }
 
+  /* TABLE LIST CARD */
+  table.table-list-card {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;
+  }
+  .table-list-card thead th {
+    width: 100%;
+    font-size: 13px;
+    font-weight: bolder;
+    border-bottom: 1px solid #e7e7e7;
+    color: #777777;
+  }
+
+  .table-list-card tbody tr td {
+    font-size: 12px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  .table-list-card tbody tr {
+    box-shadow: 3px 8px 24px -1px #0000000f;
+    border-radius: 10px !important;
+  }
+
+  .table-list-card tbody tr td:first-child {
+    border-top-left-radius: 10px !important;
+  }
+  .table-list-card tbody tr td:last-child {
+    border-top-right-radius: 10px !important;
+  }
+
+  .table-list-card tbody tr td:first-child {
+    border-bottom-left-radius: 10px !important;
+  }
+  .table-list-card tbody tr td:last-child {
+    border-bottom-right-radius: 10px !important;
+  }
+
+  /* END TABLE LIST CARD */
+
   .table thead th {
     font-size: 15px;
   }
