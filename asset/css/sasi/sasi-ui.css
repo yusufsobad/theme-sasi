@@ -286,7 +286,7 @@ p {
 }
 
 .radius-xs {
-  border-radius: 4px;
+  border-radius: 4px !important;
 }
 
 .radius-sm {
@@ -294,7 +294,7 @@ p {
 }
 
 .radius-md {
-  border-radius: 15px;
+  border-radius: 15px !important;
 }
 
 .radius-lg {
@@ -1046,8 +1046,20 @@ select.form-control.input-sm {
   opacity: 1;
 }
 
+/* DISPLAY FLEX OPTION */
 .d-flex {
   display: flex !important;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+.align-items-end {
+  align-items: flex-end;
 }
 
 .flex-shrink-1 {
@@ -1283,6 +1295,12 @@ ul.langdrop.dropdown-menu {
   .sasi-card-body {
     height: 146px;
     border-radius: 9px !important;
+  }
+
+  .card-rounded-bordered {
+    background: #fff;
+    border-radius: 20px !important;
+    border: 1px solid #eff0f6;
   }
 
   .overlay {
