@@ -221,7 +221,7 @@ class sasi_layout extends sasi_template
 			$no = $args['modal']['no'] ?? '';
 			$load = 'here_modal' . $no;
 			$href = '#myModal' . $no;
-			$element_link =  '<a data-toggle="modal" data-sobad="' . $args['modal']['func'] . '" data-load="' . $load . '" data-type="' . $type . '" href="' . $href . '" class="sasi_childmenu"  onclick="' . $onclick . '" ' . $status . '>';
+			$element_link =  '<a data-toggle="modal" object="' . $func . '" data-sobad="' . $args['modal']['func'] . '" data-load="' . $load . '" data-type="' . $type . '" href="' . $href . '" class="sasi_childmenu"  onclick="' . $onclick . '" ' . $status . '>';
 		}
 	?>
 		<div class="overlay">
