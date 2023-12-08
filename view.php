@@ -248,7 +248,7 @@ class sasi_layout extends sasi_template
 	<?php
 	}
 
-	private static function _sidebar($menu = array())
+	public static function _sidebar($menu = array())
 	{
 		self::_menu_head_pagebar();
 	?>

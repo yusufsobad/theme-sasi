@@ -198,6 +198,11 @@ abstract class sasi_template extends custom_script
 			$type = $args['type'];
 		}
 
+		$object = '';
+		if (isset($args['object'])) {
+			$object = $args['object'];
+		}
+
 		$index = '';
 		if (isset($args['index'])) {
 			$index = $args['index'];
@@ -209,7 +214,7 @@ abstract class sasi_template extends custom_script
 		}
 
 	?>
-		<button id="btn_<?php print($idx); ?>" data-sobad="<?php print($args['link']); ?>" data-load="<?php print($args['load']); ?>" data-type="<?php print($type); ?>" type="button" class="btn blue" data-index="#frm_<?php print($idx); ?>" data-modal="<?php print($modal); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" <?php print($status); ?>>Save</button>
+		<button id="btn_<?php print($idx); ?>" object="<?= $object ?>" data-sobad="<?php print($args['link']); ?>" data-load="<?php print($args['load']); ?>" data-type="<?php print($type); ?>" type="button" class="btn blue" data-index="#frm_<?php print($idx); ?>" data-modal="<?php print($modal); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" <?php print($status); ?>>Save</button>
 		<button type="button" class="btn red-border" data-dismiss="modal">Cancel</button>
 
 		<script type="text/javascript">
@@ -447,7 +452,7 @@ abstract class sasi_template extends custom_script
 
 						echo '
 								<li class="' . $li_cls . '">
-									<a onclick="' . $script . '" id="' . $val['key'] . '" data-sobad="' . $func . '" data-load="'.$load.'" data-toggle="tab" href="#'. $load . $key . '" aria-expanded="true">
+									<a onclick="' . $script . '" id="' . $val['key'] . '" data-sobad="' . $func . '" data-load="' . $load . '" data-toggle="tab" href="#' . $load . $key . '" aria-expanded="true">
 									' . $val['label'] . ' 
 									<span class="badge ' . $info . '">' . $val['qty'] . '</span>
 									</a>
@@ -463,7 +468,7 @@ abstract class sasi_template extends custom_script
 					$no_tab = 0;
 					foreach ($args['tab'] as $key => $val) {
 					?>
-						<div class="tab-pane active" id="<?= $load ;?>">
+						<div class="tab-pane active" id="<?= $load; ?>">
 							<div class="row">
 
 								<?php
