@@ -1293,6 +1293,11 @@ ul.langdrop.dropdown-menu {
     color: #777777;
   }
 
+  .table-list-card tbody {
+    top: 10px;
+    position: relative;
+  }
+
   .table-list-card tbody tr td {
     font-size: 12px;
     padding: 10px;
