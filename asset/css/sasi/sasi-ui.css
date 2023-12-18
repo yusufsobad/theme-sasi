@@ -1055,6 +1055,9 @@ select.form-control.input-sm {
   justify-content: space-between;
 }
 
+.justify-flex-end {
+  justify-content: end;
+}
 .align-items-center {
   align-items: center;
 }
@@ -1291,11 +1294,6 @@ ul.langdrop.dropdown-menu {
     font-weight: bolder;
     border-bottom: 1px solid #e7e7e7;
     color: #777777;
-  }
-
-  .table-list-card tbody {
-    top: 10px;
-    position: relative;
   }
 
   .table-list-card tbody tr td {
