@@ -656,6 +656,181 @@ class create_form
 		return $inp . $btn . $script;
 	}
 
+	private static function opt_select_search()
+	{
+		ob_start();
+	?>
+
+		<style>
+			.search-box {
+				background-color: #fff;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				width: 300px;
+				margin-bottom: 20px;
+			}
+
+			.search-input {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 10px;
+			}
+
+			.search-btn {
+				background-color: #4285f4;
+				color: #fff;
+				padding: 10px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			.search-results {
+				width: 100%;
+				list-style-type: none;
+				padding: 0;
+			}
+
+			.result-item {
+				background-color: #fff;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 10px !important;
+				margin-bottom: 10px;
+				cursor: pointer;
+				color: #969696;
+			}
+
+			.result-item:hover {
+				background: #F8EBFF;
+			}
+
+			.card-list-search {
+				background-color: #FBFBFB;
+				border-radius: 10px !important;
+				padding: 20px;
+				display: none;
+			}
+
+			.btn-inner-searchlist {
+				width: 100%;
+				background-color: #EBF7FF;
+				padding: 10px;
+				display: inline-block;
+				text-align: center;
+				color: #009EF7;
+				border-radius: 10px !important;
+			}
+
+			.btn-inner-searchlist:hover {
+				background-color: #009EF7;
+				color: #EBF7FF;
+			}
+		</style>
+
+
+		<div class="search-container">
+			<label class="col-md-12 control-label pt-md">Packing Equipment Name</label>
+			<input type="text" class="search-input form-control input-circle" id="searchQuery" name="query" placeholder="Search Google" onkeyup="handleSearch()">
+			<div class="card-list-search" id="searchResultsCard">
+				<ul class="search-results" id="searchResults"></ul>
+				<input type="hidden" id="selectedIdInput" name="selectedId">
+				<a class="btn-inner-searchlist" id="add_11" data-toggle="modal" data-sobad="add_form" data-load="here_modal" data-type="add_new_product" data-alert="" href="#myModal" data-uri="" onclick="sobad_button(this,0)">
+					<i class="fa fa-plus"></i> Add New
+				</a>
+			</div>
+		</div>
+
+		<script>
+			var dummyData = [{
+					id: 1,
+					title: 'Dummy Result 1',
+					url: 'https://example.com/dummy1'
+				},
+				{
+					id: 2,
+					title: 'Dummy Result 2',
+					url: 'https://example.com/dummy2'
+				},
+				{
+					id: 3,
+					title: 'Dummy Result 3',
+					url: 'https://example.com/dummy3'
+				}
+			];
+
+			document.addEventListener('click', function(event) {
+				var isInsideSearchResults = document.getElementById('searchResultsCard').contains(event.target);
+				var isInput = event.target.id === 'searchQuery';
+
+				if (!isInsideSearchResults && !isInput) {
+					// Menyembunyikan daftar pencarian saat mengklik di luar daftar pencarian
+					document.getElementById('searchResultsCard').style.display = 'none';
+				}
+			});
+
+			function handleSearch() {
+				var searchQuery = document.getElementById("searchQuery").value.toLowerCase();
+				var resultsContainer = document.getElementById("searchResults");
+				var card = document.getElementById("searchResultsCard");
+
+				// Filter data dummy berdasarkan query
+				var searchResults = dummyData.filter(function(result) {
+					return result.title.toLowerCase().includes(searchQuery);
+				});
+
+				// Menampilkan atau menyembunyikan kartu berdasarkan hasil pencarian
+				if (searchResults.length > 0) {
+					card.style.display = "block"; // Tampilkan kartu
+				} else {
+					card.style.display = "none"; // Sembunyikan kartu
+				}
+
+				// Menampilkan hasil pencarian
+				resultsContainer.innerHTML = '';
+				console.log(searchQuery);
+				if (searchResults.length > 0 && searchQuery) {
+					searchResults.forEach(function(result) {
+						var liElement = document.createElement("li");
+						liElement.classList.add("result-item");
+						liElement.textContent = result.title;
+						liElement.setAttribute('data-id', result.id);
+						liElement.addEventListener('click', function() {
+							handleLiClick(liElement);
+						});
+						resultsContainer.appendChild(liElement);
+					});
+				} else {
+					// Jika Tidak ada item yg dicari
+					$(".card-list-search").show();
+					$("ul").append("<h4 class='color-dark-grey'>Not Found</h4>");
+				}
+			}
+
+			function handleLiClick(liElement) {
+				var selectedText = liElement.textContent;
+				var selectedId = liElement.getAttribute('data-id');
+
+				// Mengatur nilai formulir sesuai dengan yang dipilih
+				document.getElementById('searchQuery').value = selectedText;
+				document.getElementById('selectedIdInput').value = selectedId;
+
+				// Menghilangkan daftar hasil pencarian setelah dipilih
+				document.getElementById('searchResults').innerHTML = '';
+
+				// Menyembunyikan kartu setelah memilih
+				document.getElementById('searchResultsCard').style.display = 'none';
+			}
+		</script>
+
+
+	<?php
+		return ob_get_clean();
+	}
+
 	private static function opt_select($val = array())
 	{
 		// id, key , class , data , select
@@ -745,7 +920,7 @@ class create_form
 			if ($val['searching']) {
 				$placeholder = isset($data['placeholder']) ? $data['placeholder'] : 'Search here ...';
 				$val['class'] = 'bs-select';
-				$status .= ' data-live-search="true" data-size="6" data-style="blue" data-live-search-placeholder="'.$placeholder.'"';
+				$status .= ' data-live-search="true" data-size="6" data-style="blue" data-live-search-placeholder="' . $placeholder . '"';
 			}
 		}
 
