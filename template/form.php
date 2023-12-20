@@ -656,8 +656,9 @@ class create_form
 		return $inp . $btn . $script;
 	}
 
-	private static function opt_select_search()
+	private static function opt_select_search($args = [])
 	{
+
 		ob_start();
 	?>
 
@@ -733,8 +734,8 @@ class create_form
 
 
 		<div class="search-container">
-			<label class="col-md-12 control-label pt-md">Packing Equipment Name</label>
-			<input type="text" class="search-input form-control input-circle" id="searchQuery" name="query" placeholder="Search Google" onkeyup="handleSearch()">
+			<?= self::opt_label($args['label']); ?>
+			<input <?= $args['status'] ?> type="text" class="search-input form-control input-circle" id="searchQuery" name="query" placeholder="Search Google" onkeyup="handleSearch()">
 			<div class="card-list-search" id="searchResultsCard">
 				<ul class="search-results" id="searchResults"></ul>
 				<input type="hidden" id="selectedIdInput" name="selectedId">
@@ -773,6 +774,9 @@ class create_form
 			});
 
 			function handleSearch() {
+				const myInput = document.getElementById('searchQuery');
+				const attributes = myInput.attributes;
+				var searchValue = document.getElementById("searchQuery").value;
 				var searchQuery = document.getElementById("searchQuery").value.toLowerCase();
 				var resultsContainer = document.getElementById("searchResults");
 				var card = document.getElementById("searchResultsCard");
@@ -781,6 +785,25 @@ class create_form
 				var searchResults = dummyData.filter(function(result) {
 					return result.title.toLowerCase().includes(searchQuery);
 				});
+
+				var attr = [];
+				for (let i = 0; i < attributes.length; i++) {
+					const attribute = attributes[i];
+					const attributeValue = attribute.value;
+					const attributeName = attribute.name;
+
+					attr.push("&" + attributeName + "=" + attributeValue);
+					// Memastikan bahwa atribut dimulai dengan "data-"
+					// if (attribute.name.startsWith('data-')) {
+					// 	const attributeNameWithoutPrefix = attribute.name.slice(5); // Menghapus "data-" dari nama atribut
+					// 	eval(`var ${attributeNameWithoutPrefix} = '${attribute.value}'`);
+					// }
+				}
+				var attribute_tostring = attr.join('');
+				var ajx = <?= json_encode($args['ajax']['on_func']) ?>;
+				data = "ajax=" + ajx + "&object=" + object + "&data=" + searchValue + attribute_tostring;
+				sobad_ajax('', data, domSearch, false);
+
 
 				// Menampilkan atau menyembunyikan kartu berdasarkan hasil pencarian
 				if (searchResults.length > 0) {
@@ -791,7 +814,6 @@ class create_form
 
 				// Menampilkan hasil pencarian
 				resultsContainer.innerHTML = '';
-				console.log(searchQuery);
 				if (searchResults.length > 0 && searchQuery) {
 					searchResults.forEach(function(result) {
 						var liElement = document.createElement("li");
@@ -808,6 +830,10 @@ class create_form
 					$(".card-list-search").show();
 					$("ul").append("<h4 class='color-dark-grey'>Not Found</h4>");
 				}
+			}
+
+			function domSearch(args) {
+
 			}
 
 			function handleLiClick(liElement) {
