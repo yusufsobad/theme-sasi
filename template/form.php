@@ -746,22 +746,8 @@ class create_form
 		</div>
 
 		<script>
-			var dummyData = [{
-					id: 1,
-					title: 'Dummy Result 1',
-					url: 'https://example.com/dummy1'
-				},
-				{
-					id: 2,
-					title: 'Dummy Result 2',
-					url: 'https://example.com/dummy2'
-				},
-				{
-					id: 3,
-					title: 'Dummy Result 3',
-					url: 'https://example.com/dummy3'
-				}
-			];
+			var dummyData = [];
+
 
 			document.addEventListener('click', function(event) {
 				var isInsideSearchResults = document.getElementById('searchResultsCard').contains(event.target);
@@ -781,11 +767,9 @@ class create_form
 				var resultsContainer = document.getElementById("searchResults");
 				var card = document.getElementById("searchResultsCard");
 
-				// Filter data dummy berdasarkan query
-				var searchResults = dummyData.filter(function(result) {
-					return result.title.toLowerCase().includes(searchQuery);
-				});
 
+
+				// Mengambil seluruh atribut element
 				var attr = [];
 				for (let i = 0; i < attributes.length; i++) {
 					const attribute = attributes[i];
@@ -803,7 +787,18 @@ class create_form
 				var ajx = <?= json_encode($args['ajax']['on_func']) ?>;
 				data = "ajax=" + ajx + "&object=" + object + "&data=" + searchValue + attribute_tostring;
 				sobad_ajax('', data, domSearch, false);
+			}
 
+			function domSearch(args) {
+				var card = document.getElementById("searchResultsCard");
+				var resultsContainer = document.getElementById("searchResults");
+				var searchQuery = document.getElementById("searchQuery").value.toLowerCase();
+
+				// Filter data dummy berdasarkan query
+
+				var searchResults = args.filter(function(result) {
+					return result.name.toLowerCase().includes(searchQuery);
+				});
 
 				// Menampilkan atau menyembunyikan kartu berdasarkan hasil pencarian
 				if (searchResults.length > 0) {
@@ -818,10 +813,10 @@ class create_form
 					searchResults.forEach(function(result) {
 						var liElement = document.createElement("li");
 						liElement.classList.add("result-item");
-						liElement.textContent = result.title;
-						liElement.setAttribute('data-id', result.id);
+						liElement.textContent = result.name;
+						liElement.setAttribute('data-id', result.ID);
 						liElement.addEventListener('click', function() {
-							handleLiClick(liElement);
+							handleLiClick(liElement, result);
 						});
 						resultsContainer.appendChild(liElement);
 					});
@@ -832,11 +827,8 @@ class create_form
 				}
 			}
 
-			function domSearch(args) {
-
-			}
-
-			function handleLiClick(liElement) {
+			function handleLiClick(liElement, args) {
+				<?= isset($args['ajax']['on_load']) ? $args['ajax']['on_load'] : ''; ?>(args);
 				var selectedText = liElement.textContent;
 				var selectedId = liElement.getAttribute('data-id');
 
