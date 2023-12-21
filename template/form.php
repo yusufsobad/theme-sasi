@@ -739,8 +739,14 @@ class create_form
 			<div class="card-list-search" id="searchResultsCard">
 				<ul class="search-results" id="searchResults"></ul>
 				<input type="hidden" id="selectedIdInput" name="selectedId">
-				<?php if (isset($args['action'])) { ?>
-					<a class="btn-inner-searchlist" id="add_11" data-toggle="modal" data-sobad="add_form" data-load="here_modal" data-type="add_new_product" data-alert="" href="#myModal" data-uri="" onclick="sobad_button(this,0)">
+				<?php if (isset($args['action'])) {
+					$no = $args['action']['no'] ?? '2';
+					$type = '';
+					if (isset($args['action']['type'])) {
+						$type = $args['action']['type'];
+					}
+				?>
+					<a id="<?= $args['action']['id'] ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $no ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $no ?>" data-uri="" onclick="sobad_button(this,0)">
 						<i class="fa fa-plus"></i> Add New
 					</a>
 				<?php } ?>
