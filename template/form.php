@@ -735,13 +735,15 @@ class create_form
 
 		<div class="search-container">
 			<?= self::opt_label($args['label']); ?>
-			<input <?= $args['status'] ?> type="text" class="search-input form-control input-circle" id="searchQuery" name="query" placeholder="Search Google" onkeyup="handleSearch()">
+			<input <?= $args['status'] ?> type="text" class="search-input form-control input-circle" id="searchQuery" name="query" onkeyup="handleSearch()">
 			<div class="card-list-search" id="searchResultsCard">
 				<ul class="search-results" id="searchResults"></ul>
 				<input type="hidden" id="selectedIdInput" name="selectedId">
-				<a class="btn-inner-searchlist" id="add_11" data-toggle="modal" data-sobad="add_form" data-load="here_modal" data-type="add_new_product" data-alert="" href="#myModal" data-uri="" onclick="sobad_button(this,0)">
-					<i class="fa fa-plus"></i> Add New
-				</a>
+				<?php if (isset($args['action'])) { ?>
+					<a class="btn-inner-searchlist" id="add_11" data-toggle="modal" data-sobad="add_form" data-load="here_modal" data-type="add_new_product" data-alert="" href="#myModal" data-uri="" onclick="sobad_button(this,0)">
+						<i class="fa fa-plus"></i> Add New
+					</a>
+				<?php } ?>
 			</div>
 		</div>
 
@@ -823,7 +825,7 @@ class create_form
 				} else {
 					// Jika Tidak ada item yg dicari
 					$(".card-list-search").show();
-					$("ul").append("<h4 class='color-dark-grey'>Not Found</h4>");
+					$(".search-results").append("<h4 class='color-dark-grey'>Not Found</h4>");
 				}
 			}
 
