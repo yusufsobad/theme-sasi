@@ -735,18 +735,17 @@ class create_form
 
 		<div class="search-container">
 			<?= self::opt_label($args['label']); ?>
-			<input <?= $args['status'] ?> type="text" class="search-input form-control input-circle <?= $args['class'] ?? '' ?>" id="<?= $args['id'] ?? '' ?>" name="query" onkeyup="handleSearch()">
+			<input <?= $args['status'] ?> name="<?= $args['key'] ?>" type="text" class="search-input form-control input-circle <?= $args['class'] ?? '' ?>" id="<?= $args['id'] ?? '' ?>" name="query" onkeyup="handleSearch()">
 			<div class="card-list-search" id="searchResultsCard">
 				<ul class="search-results" id="searchResults"></ul>
 				<input type="hidden" id="selectedIdInput" name="selectedId">
 				<?php if (isset($args['action'])) {
-					$no = $args['action']['no'] ?? '2';
 					$type = '';
 					if (isset($args['action']['type'])) {
 						$type = $args['action']['type'];
 					}
 				?>
-					<a id="<?= $args['action']['id'] ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $no ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $no ?>" data-uri="" onclick="sobad_button(this,0)">
+					<a id="<?= $args['action']['id'] ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $args['action']['modal'] ?? 2 ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $args['action']['modal'] ?? 2 ?>" data-uri="" onclick="sobad_button(this,0)">
 						<i class="fa fa-plus"></i> Add New
 					</a>
 				<?php } ?>
