@@ -735,10 +735,10 @@ class create_form
 
 		<div class="search-container">
 			<?= self::opt_label($args['label']); ?>
-			<input <?= $args['status'] ?> name="<?= $args['key'] ?>" type="text" class="search-input form-control input-circle <?= $args['class'] ?? '' ?>" id="<?= $args['id'] ?? '' ?>" name="query" onkeyup="handleSearch()">
+			<input value="<?= $args['value'] ?? '' ?>" <?= $args['status'] ?> name="<?= $args['key'] ?>" type="text" class="search-input form-control input-circle <?= $args['class'] ?? '' ?>" id="<?= $args['id'] ?? '' ?>" name="query" onkeyup="handleSearch()">
 			<div class="card-list-search" id="searchResultsCard">
 				<ul class="search-results" id="searchResults"></ul>
-				<input type="hidden" id="selectedIdInput" name="selectedId">
+				<input type="hidden" id="selectedIdInput" name="selectedId" value="<?= $args['selected'] ?>">
 				<?php if (isset($args['action'])) {
 					$type = '';
 					if (isset($args['action']['type'])) {
