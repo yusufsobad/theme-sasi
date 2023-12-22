@@ -775,8 +775,6 @@ class create_form
 				var resultsContainer = document.getElementById("searchResults");
 				var card = document.getElementById("searchResultsCard");
 
-
-
 				// Mengambil seluruh atribut element
 				var attr = [];
 				for (let i = 0; i < attributes.length; i++) {
@@ -819,6 +817,7 @@ class create_form
 				resultsContainer.innerHTML = '';
 				if (searchResults.length > 0 && searchQuery) {
 					searchResults.forEach(function(result) {
+						<?= isset($args['ajax']['on_search']) ? $args['ajax']['on_search'] : ''; ?>(result);
 						var liElement = document.createElement("li");
 						liElement.classList.add("result-item");
 						liElement.textContent = result.name;
@@ -836,7 +835,7 @@ class create_form
 			}
 
 			function handleLiClick(liElement, args) {
-				<?= isset($args['ajax']['on_load']) ? $args['ajax']['on_load'] : ''; ?>(args);
+				<?= isset($args['ajax']['on_select']) ? $args['ajax']['on_select'] : ''; ?>(args);
 				var selectedText = liElement.textContent;
 				var selectedId = liElement.getAttribute('data-id');
 
