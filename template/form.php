@@ -754,19 +754,14 @@ class create_form
 		</div>
 
 		<script>
-			var dummyData = [];
-
-
 			document.addEventListener('click', function(event) {
 				var isInsideSearchResults = document.getElementById('searchResultsCard').contains(event.target);
 				var isInput = $(event.target).hasClass('search-input');
-
 				if (!isInsideSearchResults && !isInput) {
 					// Menyembunyikan daftar pencarian saat mengklik di luar daftar pencarian
 					$('#searchResultsCard').hide();
 				}
 			});
-
 
 			function handleSearch() {
 				const myInput = $('.search-input');
@@ -789,14 +784,12 @@ class create_form
 				sobad_ajax('', data, domSearch, false);
 			}
 
-
 			function domSearch(args) {
 				var card = document.getElementById("searchResultsCard");
 				var resultsContainer = document.getElementById("searchResults");
 				var searchQuery = $('.search-input').val().toLowerCase();
 
 				// Filter data dummy berdasarkan query
-
 				var searchResults = args.filter(function(result) {
 					return result.name.toLowerCase().includes(searchQuery);
 				});
@@ -812,6 +805,7 @@ class create_form
 				resultsContainer.innerHTML = '';
 				if (searchResults.length > 0 && searchQuery) {
 					searchResults.forEach(function(result) {
+						// script tambahan on_search
 						<?= isset($args['ajax']['on_search']) ? $args['ajax']['on_search'] : ''; ?>(result);
 						var liElement = document.createElement("li");
 						liElement.classList.add("result-item");
@@ -830,6 +824,7 @@ class create_form
 			}
 
 			function handleLiClick(liElement, args) {
+				// script tambahan on_select
 				<?= isset($args['ajax']['on_select']) ? $args['ajax']['on_select'] : ''; ?>(args);
 				var selectedText = liElement.textContent;
 				var selectedId = liElement.getAttribute('data-id');
