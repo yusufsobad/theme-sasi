@@ -735,7 +735,7 @@ class create_form
 
 		<div class="search-container">
 			<?= self::opt_label($args['label']); ?>
-			<input <?= $args['status'] ?> type="text" class="search-input form-control input-circle" id="searchQuery" name="query" onkeyup="handleSearch()">
+			<input <?= $args['status'] ?> type="text" class="search-input form-control input-circle <?= $args['class'] ?? '' ?>" id="<?= $args['id'] ?? '' ?>" name="query" onkeyup="handleSearch()">
 			<div class="card-list-search" id="searchResultsCard">
 				<ul class="search-results" id="searchResults"></ul>
 				<input type="hidden" id="selectedIdInput" name="selectedId">
@@ -759,46 +759,41 @@ class create_form
 
 			document.addEventListener('click', function(event) {
 				var isInsideSearchResults = document.getElementById('searchResultsCard').contains(event.target);
-				var isInput = event.target.id === 'searchQuery';
+				var isInput = $(event.target).hasClass('search-input');
 
 				if (!isInsideSearchResults && !isInput) {
 					// Menyembunyikan daftar pencarian saat mengklik di luar daftar pencarian
-					document.getElementById('searchResultsCard').style.display = 'none';
+					$('#searchResultsCard').hide();
 				}
 			});
 
+
 			function handleSearch() {
-				const myInput = document.getElementById('searchQuery');
-				const attributes = myInput.attributes;
-				var searchValue = document.getElementById("searchQuery").value;
-				var searchQuery = document.getElementById("searchQuery").value.toLowerCase();
-				var resultsContainer = document.getElementById("searchResults");
-				var card = document.getElementById("searchResultsCard");
+				const myInput = $('.search-input');
+				var searchValue = $('.search-input').val();
+				var searchQuery = $('.search-input').val().toLowerCase();
+				var resultsContainer = $('#searchResults');
+				var card = $('#searchResultsCard');
 
-				// Mengambil seluruh atribut element
+				var attributes = myInput.prop('attributes');
 				var attr = [];
-				for (let i = 0; i < attributes.length; i++) {
-					const attribute = attributes[i];
-					const attributeValue = attribute.value;
-					const attributeName = attribute.name;
-
-					attr.push("&" + attributeName + "=" + attributeValue);
-					// Memastikan bahwa atribut dimulai dengan "data-"
-					// if (attribute.name.startsWith('data-')) {
-					// 	const attributeNameWithoutPrefix = attribute.name.slice(5); // Menghapus "data-" dari nama atribut
-					// 	eval(`var ${attributeNameWithoutPrefix} = '${attribute.value}'`);
-					// }
-				}
+				$.each(attributes, function() {
+					if (this.specified) {
+						attr.push("&" + this.name + "=" + this.value);
+					}
+				});
 				var attribute_tostring = attr.join('');
+
 				var ajx = <?= json_encode($args['ajax']['on_func']) ?>;
 				data = "ajax=" + ajx + "&object=" + object + "&data=" + searchValue + attribute_tostring;
 				sobad_ajax('', data, domSearch, false);
 			}
 
+
 			function domSearch(args) {
 				var card = document.getElementById("searchResultsCard");
 				var resultsContainer = document.getElementById("searchResults");
-				var searchQuery = document.getElementById("searchQuery").value.toLowerCase();
+				var searchQuery = $('.search-input').val().toLowerCase();
 
 				// Filter data dummy berdasarkan query
 
@@ -840,7 +835,7 @@ class create_form
 				var selectedId = liElement.getAttribute('data-id');
 
 				// Mengatur nilai formulir sesuai dengan yang dipilih
-				document.getElementById('searchQuery').value = selectedText;
+				$('.search-input').val(selectedText);
 				document.getElementById('selectedIdInput').value = selectedId;
 
 				// Menghilangkan daftar hasil pencarian setelah dipilih
