@@ -745,7 +745,7 @@ class create_form
 						$type = $args['action']['type'];
 					}
 				?>
-					<a id="<?= $args['action']['id'] ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $args['action']['modal'] ?? 2 ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $args['action']['modal'] ?? 2 ?>" data-uri="" onclick="sobad_button(this,0)">
+					<a id="<?= $args['action']['id'] ?? '' ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $args['action']['modal'] ?? 2 ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $args['action']['modal'] ?? 2 ?>" data-uri="" onclick="sobad_button(this,0)">
 						<i class="fa fa-plus"></i> Add New
 					</a>
 				<?php } ?>
