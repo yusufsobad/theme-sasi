@@ -1138,6 +1138,9 @@ select.form-control.input-sm {
   justify-content: space-between;
 }
 
+.justify-center {
+  justify-content: center;
+}
 .justify-flex-end {
   justify-content: end;
 }
