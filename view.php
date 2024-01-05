@@ -96,7 +96,7 @@ class sasi_layout extends sasi_template
 			$data = $child['label'];
 		}
 
-		define('_object',$func);
+		define('_object', $func);
 	?>
 		<div id="here_content" class="containt">
 			<?php
@@ -112,7 +112,7 @@ class sasi_layout extends sasi_template
 							$uri = defined('uri') ? uri : array();
 							unset($uri[0]);
 
-							$uri = implode('/',$uri);
+							$uri = implode('/', $uri);
 							echo $func::_sidemenu($uri);
 						}
 					}
@@ -204,22 +204,40 @@ class sasi_layout extends sasi_template
 			$click = '';
 			$status = 'disabled';
 		}
+		$element_link = '<a id="sobad_' . $func . '" href="javascript:" class="sasi_childmenu ' . $status . '" data-uri="' .  $key . '" ' . $click . '>';
 
+		if (isset($args['modal'])) {
+			$status = $args['status'] ?? '';
+			$type = '';
+			if (isset($args['modal']['type'])) {
+				$type = $args['modal']['type'];
+			}
+
+			$onclick = 'sobad_button(this)';
+			if (isset($args['modal']['script'])) {
+				$onclick = $args['modal']['script'];
+			}
+
+			$no = $args['modal']['no'] ?? '';
+			$load = 'here_modal' . $no;
+			$href = '#myModal' . $no;
+			$element_link =  '<a data-toggle="modal" object="' . $func . '" data-sobad="' . $args['modal']['func'] . '" data-load="' . $load . '" data-type="' . $type . '" href="' . $href . '" class="sasi_childmenu"  onclick="' . $onclick . '" ' . $status . '>';
+		}
 	?>
 		<div class="overlay">
 			<div class="p-0 text-right">
 				<img class="circle-icon" src="theme/<?php echo _theme_folder; ?>/asset/img/sasi-logo-circle.png">
 			</div>
 			<div class="content-card-menu"></div>
-			<a id="sobad_<?php echo $func; ?>" href="javascript:" class="sasi_childmenu <?php echo $status; ?>" data-uri="<?php echo $key; ?>" <?php echo $click; ?>>
-				<div class="box-sidemenu">
-					<div class="content-menu absolute color-magenta pl-lg pr-lg top-0">
-						<div class="col text-left">
-							<h4 class="font-weight-600"><?php echo $label; ?></h4>
-							<p><?php echo $help; ?></p>
-						</div>
+			<?= $element_link ?>
+			<div class="box-sidemenu">
+				<div class="content-menu absolute color-magenta pl-lg pr-lg top-0">
+					<div class="col text-left">
+						<h4 class="font-weight-600"><?php echo $label; ?></h4>
+						<p><?php echo $help; ?></p>
 					</div>
 				</div>
+			</div>
 			</a>
 			<a href="javascript:">
 				<div class="col color-magenta text-left absolute bottom-6 pl-md pb-md-pr-md">
@@ -230,11 +248,12 @@ class sasi_layout extends sasi_template
 	<?php
 	}
 
-	private static function _sidebar($menu = array())
+	public static function _sidebar($menu = array())
 	{
 		self::_menu_head_pagebar();
 	?>
 		<div class="container-fluid sasi-menu">
+			<?= parent::_modal_form(2); ?>
 			<div class="mt-lg col-lg">
 				<div class="sasi-row justify-content-md-start">
 					<?php
@@ -380,9 +399,9 @@ class sasi_layout extends sasi_template
 			// get content
 			parent::{$func}($args);
 		} else {
-			?>
-				<div style="text-align:center;"> Tidak ada data yang di Load </div>
-			<?php
+		?>
+			<div style="text-align:center;"> Tidak ada data yang di Load </div>
+<?php
 		}
 	}
 }

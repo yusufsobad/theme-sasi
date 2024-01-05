@@ -656,6 +656,195 @@ class create_form
 		return $inp . $btn . $script;
 	}
 
+	private static function opt_select_search($args = [])
+	{
+
+		ob_start();
+	?>
+
+		<style>
+			.search-box {
+				background-color: #fff;
+				padding: 20px;
+				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+				width: 300px;
+				margin-bottom: 20px;
+			}
+
+			.search-input {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 10px;
+			}
+
+			.search-btn {
+				background-color: #4285f4;
+				color: #fff;
+				padding: 10px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+
+			.search-results {
+				width: 100%;
+				list-style-type: none;
+				padding: 0;
+			}
+
+			.result-item {
+				background-color: #fff;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 10px !important;
+				margin-bottom: 10px;
+				cursor: pointer;
+				color: #969696;
+			}
+
+			.result-item:hover {
+				background: #F8EBFF;
+			}
+
+			.card-list-search {
+				background-color: #FBFBFB;
+				border-radius: 10px !important;
+				padding: 20px;
+				display: none;
+			}
+
+			.btn-inner-searchlist {
+				width: 100%;
+				background-color: #EBF7FF;
+				padding: 10px;
+				display: inline-block;
+				text-align: center;
+				color: #009EF7;
+				border-radius: 10px !important;
+			}
+
+			.btn-inner-searchlist:hover {
+				background-color: #009EF7;
+				color: #EBF7FF;
+			}
+		</style>
+
+
+		<div class="search-container">
+			<?= self::opt_label($args['label']); ?>
+			<input value="<?= $args['value'] ?? '' ?>" <?= $args['status'] ?> name="<?= $args['key'] ?>" type="text" class="search-input form-control input-circle <?= $args['class'] ?? '' ?>" id="<?= $args['id'] ?? '' ?>" name="query" onkeyup="handleSearch()">
+			<div class="card-list-search" id="searchResultsCard">
+				<ul class="search-results" id="searchResults"></ul>
+				<input type="hidden" id="selectedIdInput" name="selectedId" value="<?= $args['selected'] ?>">
+				<?php if (isset($args['action'])) {
+					$type = '';
+					if (isset($args['action']['type'])) {
+						$type = $args['action']['type'];
+					}
+				?>
+					<a id="<?= $args['action']['id'] ?? '' ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $args['action']['modal'] ?? 2 ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $args['action']['modal'] ?? 2 ?>" data-uri="" onclick="sobad_button(this,0)">
+						<i class="fa fa-plus"></i> Add New
+					</a>
+				<?php } ?>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener('click', function(event) {
+				var isInsideSearchResults = document.getElementById('searchResultsCard').contains(event.target);
+				var isInput = $(event.target).hasClass('search-input');
+				if (!isInsideSearchResults && !isInput) {
+					// Menyembunyikan daftar pencarian saat mengklik di luar daftar pencarian
+					$('#searchResultsCard').hide();
+				}
+			});
+
+			function handleSearch() {
+				const myInput = $('.search-input');
+				var searchValue = $('.search-input').val();
+				var searchQuery = $('.search-input').val().toLowerCase();
+				var resultsContainer = $('#searchResults');
+				var card = $('#searchResultsCard');
+
+				var attributes = myInput.prop('attributes');
+				var attr = [];
+				$.each(attributes, function() {
+					if (this.specified) {
+						attr.push("&" + this.name + "=" + this.value);
+					}
+				});
+				var attribute_tostring = attr.join('');
+
+				var ajx = <?= json_encode($args['ajax']['on_func']) ?>;
+				data = "ajax=" + ajx + "&object=" + object + "&data=" + searchValue + attribute_tostring;
+				sobad_ajax('', data, domSearch, false);
+			}
+
+			function domSearch(args) {
+				var card = document.getElementById("searchResultsCard");
+				var resultsContainer = document.getElementById("searchResults");
+				var searchQuery = $('.search-input').val().toLowerCase();
+
+				// Filter data dummy berdasarkan query
+				var searchResults = args.filter(function(result) {
+					return result.name.toLowerCase().includes(searchQuery);
+				});
+
+				// Menampilkan atau menyembunyikan kartu berdasarkan hasil pencarian
+				if (searchResults.length > 0) {
+					card.style.display = "block"; // Tampilkan kartu
+				} else {
+					card.style.display = "none"; // Sembunyikan kartu
+				}
+
+				// Menampilkan hasil pencarian
+				resultsContainer.innerHTML = '';
+				if (searchResults.length > 0 && searchQuery) {
+					searchResults.forEach(function(result) {
+						// script tambahan on_search
+						<?= isset($args['ajax']['on_search']) ? $args['ajax']['on_search'] : ''; ?>(result);
+						var liElement = document.createElement("li");
+						liElement.classList.add("result-item");
+						liElement.textContent = result.name;
+						liElement.setAttribute('data-id', result.ID);
+						liElement.addEventListener('click', function() {
+							handleLiClick(liElement, result);
+						});
+						resultsContainer.appendChild(liElement);
+					});
+				} else {
+					// Jika Tidak ada item yg dicari
+					$(".card-list-search").show();
+					$(".search-results").append("<h4 class='color-dark-grey'>Not Found</h4>");
+				}
+			}
+
+			function handleLiClick(liElement, args) {
+				// script tambahan on_select
+				<?= isset($args['ajax']['on_select']) ? $args['ajax']['on_select'] : ''; ?>(args);
+				var selectedText = liElement.textContent;
+				var selectedId = liElement.getAttribute('data-id');
+
+				// Mengatur nilai formulir sesuai dengan yang dipilih
+				$('.search-input').val(selectedText);
+				document.getElementById('selectedIdInput').value = selectedId;
+
+				// Menghilangkan daftar hasil pencarian setelah dipilih
+				document.getElementById('searchResults').innerHTML = '';
+
+				// Menyembunyikan kartu setelah memilih
+				document.getElementById('searchResultsCard').style.display = 'none';
+			}
+		</script>
+
+
+	<?php
+		return ob_get_clean();
+	}
+
 	private static function opt_select($val = array())
 	{
 		// id, key , class , data , select
@@ -745,7 +934,7 @@ class create_form
 			if ($val['searching']) {
 				$placeholder = isset($data['placeholder']) ? $data['placeholder'] : 'Search here ...';
 				$val['class'] = 'bs-select';
-				$status .= ' data-live-search="true" data-size="6" data-style="blue" data-live-search-placeholder="'.$placeholder.'"';
+				$status .= ' data-live-search="true" data-size="6" data-style="blue" data-live-search-placeholder="' . $placeholder . '"';
 			}
 		}
 
