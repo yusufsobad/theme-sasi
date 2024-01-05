@@ -194,7 +194,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		$inp = '';
@@ -326,7 +326,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		self::$_require[$val['key']] = array(
@@ -413,7 +413,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		self::$_require[$val['key']] = array(
@@ -464,7 +464,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		$inp = '';
@@ -571,7 +571,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		$inp = '';
@@ -718,7 +718,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		$inp = '';
@@ -799,7 +799,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		$inp = '';
@@ -909,7 +909,7 @@ class create_form
 		$required = '';
 		if (isset($val['required'])) {
 			$req = $val['required'];
-			$required = 'required';
+			$required = $req ? 'required' : '';
 		}
 
 		$id = '';
