@@ -845,6 +845,281 @@ class create_form
 		return ob_get_clean();
 	}
 
+	private static function opt_search_tag()
+	{
+		ob_start();
+	?>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+			}
+
+			.tag-info {
+				margin-bottom: 10px;
+				font-size: 14px;
+				color: #555;
+			}
+
+			.tag-container {
+				position: relative;
+				width: 300px;
+				border: 1px solid #ccc;
+				padding: 10px;
+				border-radius: 5px;
+				overflow: visible;
+				/* Menampilkan elemen autocompleteList di luar border */
+			}
+
+			.tag-input {
+				width: calc(100% - 22px);
+				/* Lebar input dikurangkan dengan margin dari tombol close */
+				border: none;
+				outline: none;
+				font-size: 16px;
+			}
+
+			.tag-list {
+				display: flex;
+				flex-wrap: wrap;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			.tag {
+				position: relative;
+				background-color: #3498db;
+				color: #fff;
+				border-radius: 3px;
+				padding: 5px 10px;
+				margin: 5px;
+				display: flex;
+				align-items: center;
+				cursor: pointer;
+			}
+
+			.tag-close {
+				margin-left: 5px;
+				cursor: pointer;
+			}
+
+			.autocomplete-list {
+				position: absolute;
+				z-index: 1;
+				width: calc(100% - 22px);
+				/* Lebar autocompleteList sama dengan lebar input */
+				border: 1px solid #ccc;
+				max-height: 150px;
+				overflow-y: auto;
+				top: 100%;
+				/* Menempatkan autocompleteList di bawah tag-input */
+				left: 0;
+				border-radius: 0 0 5px 5px;
+				/* Memberikan radius pada bagian bawah */
+				display: none;
+				/* Mulai dengan menyembunyikan autocompleteList */
+			}
+
+			.autocomplete-item {
+				padding: 10px;
+				cursor: pointer;
+				background-color: #f9f9f9;
+			}
+
+			.autocomplete-item:hover {
+				background-color: #ddd;
+			}
+		</style>
+
+		<div class="tag-info tagInfo"></div>
+
+		<div class="tag-container">
+			<ul class="tag-list tagList"></ul>
+			<input type="text" class="tag-input tagInput" placeholder="Add a tag">
+			<div class="autocomplete-list autocompleteList"></div>
+			<input type="hidden" class="selectedTagsInput" name="selectedTags">
+		</div>
+
+
+		<script>
+			function search_tag() {
+				console.log('test-test')
+				const tagInput = $(".tagInput");
+				const tagList = $(".tagList");
+				const autocompleteList = $(".autocompleteList");
+				const tagInfo = $(".tagInfo");
+				const selectedTagsInput = $(".selectedTagsInput");
+
+				tagInput.on("input", function() {
+					const inputText = tagInput.val().trim().toLowerCase();
+					const suggestions = getAutocompleteSuggestions(inputText);
+
+					renderAutocompleteList(suggestions);
+				});
+
+				tagInput.on("keydown", function(event) {
+					if (event.key === "Enter" || event.key === ",") {
+						event.preventDefault();
+						const selectedAutocompleteItem = $(".autocomplete-item.selected");
+						const tag = selectedAutocompleteItem.length ? selectedAutocompleteItem.data("tag") : tagInput.val().trim();
+						addTag(tag);
+						tagInput.val("");
+						clearAutocompleteList();
+					} else if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+						event.preventDefault();
+						navigateAutocompleteList(event.key);
+					}
+				});
+
+				tagList.on("click", ".tag-close", function() {
+					removeTag($(this).parent());
+				});
+
+				$(document).on("click", function(event) {
+					if (!$(event.target).hasClass("tagInput") && !$(event.target).hasClass("autocomplete-item")) {
+						clearAutocompleteList();
+					}
+				});
+
+				function getAutocompleteSuggestions(inputText) {
+					// Data dummy untuk daftar pilihan dengan ID
+					const dummyData = [{
+							id: 1,
+							name: "JavaScript"
+						},
+						{
+							id: 2,
+							name: "HTML"
+						},
+						{
+							id: 3,
+							name: "CSS"
+						},
+						{
+							id: 4,
+							name: "React"
+						},
+						{
+							id: 5,
+							name: "Vue"
+						},
+						{
+							id: 6,
+							name: "Node.js"
+						},
+						{
+							id: 7,
+							name: "Express"
+						},
+						{
+							id: 8,
+							name: "MongoDB"
+						}
+					];
+
+					// Menghilangkan tag yang sudah dipilih dari daftar saran
+					const selectedTags = tagList.find(".tag").map(function() {
+						return $(this).data("tag").toLowerCase();
+					}).get();
+					const suggestions = dummyData.filter(tag => tag.name.toLowerCase().includes(inputText) && !selectedTags.includes(tag.name.toLowerCase()));
+
+					return suggestions;
+				}
+
+				function renderAutocompleteList(suggestions) {
+					autocompleteList.html("");
+					if (suggestions.length > 0) {
+						autocompleteList.css("display", "block"); // Menampilkan autocompleteList jika ada saran
+					} else {
+						autocompleteList.css("display", "none"); // Menyembunyikan autocompleteList jika tidak ada saran
+					}
+
+					$.each(suggestions, function(index, suggestion) {
+						const item = $("<div></div>")
+							.addClass("autocomplete-item")
+							.text(suggestion.name)
+							.data("tag", suggestion.name)
+							.data("tagId", suggestion.id)
+							.on("click", function() {
+								addTag(suggestion.name, suggestion.id);
+								tagInput.val("");
+								clearAutocompleteList();
+							});
+
+						autocompleteList.append(item);
+					});
+				}
+
+				function navigateAutocompleteList(direction) {
+					const items = $(".autocomplete-item");
+					let selectedIndex = items.filter(".selected").index();
+
+					if (direction === "ArrowUp" && selectedIndex > 0) {
+						selectedIndex--;
+					} else if (direction === "ArrowDown" && selectedIndex < items.length - 1) {
+						selectedIndex++;
+					}
+
+					items.removeClass("selected");
+					if (selectedIndex >= 0) {
+						items.eq(selectedIndex).addClass("selected");
+					}
+				}
+
+				function addTag(tagName, tagId) {
+					if (tagName !== "") {
+						const tag = $("<li></li>")
+							.addClass("tag")
+							.text(tagName)
+							.data("tag", tagName)
+							.data("tagId", tagId)
+							.append("<span class='tag-close'>&#10006;</span>");
+
+						tagList.append(tag);
+						updateTagInfo();
+						updateSelectedTagsInput();
+					}
+				}
+
+				function removeTag(tagElement) {
+					tagElement.remove();
+					updateTagInfo();
+					updateSelectedTagsInput();
+				}
+
+				function clearAutocompleteList() {
+					autocompleteList.html("");
+					autocompleteList.css("display", "none");
+				}
+
+				function updateTagInfo() {
+					const tagCount = tagList.children().length;
+					tagInfo.text(`Total Tags: ${tagCount}`);
+				}
+
+				function updateSelectedTagsInput() {
+					const selectedTags = tagList.find(".tag").map(function() {
+						return $(this).data("tagId");
+					}).get().join(",");
+					selectedTagsInput.val(selectedTags);
+				}
+
+				// Update tag info saat halaman dimuat pertama kali
+				updateTagInfo();
+			}
+
+			search_tag();
+		</script>
+
+	<?php
+		return ob_get_clean();
+	}
+
 	private static function opt_select($val = array())
 	{
 		// id, key , class , data , select
