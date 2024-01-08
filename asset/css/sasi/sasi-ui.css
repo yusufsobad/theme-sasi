@@ -3,6 +3,11 @@
   src: url("font/Inter.woff");
 }
 
+@font-face {
+  font-family: "Inter-bold";
+  src: url("font/Inter-Bold.woff");
+}
+
 .sasi-menu {
   margin-left: 8%;
   margin-right: 8%;
@@ -46,6 +51,10 @@ h6 {
 p {
   font-size: 15px !important;
   font-family: "Inter";
+}
+
+.bold {
+  font-family: "Inter-bold";
 }
 
 .width-fit {
