@@ -277,7 +277,7 @@ class create_form
 									' . $opt_group . '
   							 	  </select>';
 			} else {
-				$inp_group = '<span class="input-group-addon radius-left-sm">' . $val['prefix'] . '</span>';
+				$inp_group = '<span class="input-group-addon radius-left-sm bold">' . $val['prefix'] . '</span>';
 			}
 
 			$inp .= $inp_group;
@@ -301,7 +301,7 @@ class create_form
 									' . $opt_group . '
   							 	  </select>';
 			} else {
-				$inp_group = '<span class="input-group-addon radius-right-sm">' . $val['suffix'] . '</span>';
+				$inp_group = '<span class="input-group-addon radius-right-sm bold">' . $val['suffix'] . '</span>';
 			}
 
 			$inp .=  $inp_group;
