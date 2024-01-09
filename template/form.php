@@ -14,6 +14,8 @@ class create_form
 
 	public static $date_picker = false;
 
+	public static $clock_picker = false;
+
 	private static function option_form($args = array())
 	{
 		$inp = '';
@@ -140,7 +142,12 @@ class create_form
 			}
 			?>
 
-			sobad_clockpicker();
+			<?php
+			if (self::$clock_picker) {
+				echo 'sobad_clockpicker();';
+			}
+			?>
+
 			ComponentsDropdowns.init();
 			ComponentsEditors.init();
 		</script>
@@ -249,6 +256,8 @@ class create_form
 			case 'clock':
 				$val['type'] = 'text';
 				$val['class'] .= ' clockpicker';
+
+				self::$clock_picker = true;
 				break;
 
 			default:
