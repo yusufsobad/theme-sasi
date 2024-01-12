@@ -16,6 +16,8 @@ class create_form
 
 	public static $clock_picker = false;
 
+	public static $auto_upload = false;
+
 	private static function option_form($args = array())
 	{
 		$inp = '';
@@ -145,6 +147,16 @@ class create_form
 			<?php
 			if (self::$clock_picker) {
 				echo 'sobad_clockpicker();';
+			}
+			?>
+
+			<?php
+			if (self::$auto_upload) {
+				echo '
+					function sasi_auto_upload(){
+						$("input[name=import]").trigger("click");
+					}
+				';
 			}
 			?>
 
@@ -448,14 +460,23 @@ class create_form
 			$txt = $val['text'];
 		}
 
+		$auto = false;
+		if (isset($val['auto_upload'])) {
+			$auto = $val['auto_upload'];
+		}
+
+		self::$auto_upload = $auto;
+		$inp_submit = $auto ? 'style="display:none;"' : '';
+		$on_change = $auto ? 'onchange="sasi_auto_upload"' : '';
+
 		$cols = self::$col_input;
 
 		$inp .= '<div class="col-md-' . ($cols - 2) . '">';
-		$inp .= '<input ' . $id . ' type="file" class="form-control" name="' . $val['key'] . '" accept="' . $val['accept'] . '" ' . $val['data'] . ' ' . $required . '>';
+		$inp .= '<input ' . $id . ' type="file" class="form-control" name="' . $val['key'] . '" accept="' . $val['accept'] . '" ' . $on_change . ' ' . $val['data'] . ' ' . $required . '>';
 		$inp .= '</div>';
 
 		$inp .= '<div class="col-md-2">';
-		$inp .= '<input type="submit" name="import" value="' . $txt . '" class="btn green">';
+		$inp .= '<input type="submit" name="import" value="' . $txt . '" class="btn green" '.$inp_submit.'>';
 		$inp .= '</div>';
 		return $inp;
 	}
