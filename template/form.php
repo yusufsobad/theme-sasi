@@ -291,12 +291,14 @@ class create_form
 				$opt_group = '';
 				foreach ($val['prefix'] as $ky => $vl) {
 					$select_group = $ky == $key_select['value'] ? 'selected' : '';
-					$opt_group .= '<option value="' . $ky . '" ' . $select_group . '>' . $val . '</option>';
+					$opt_group .= '<option value="' . $ky . '" ' . $select_group . '>' . $vl . '</option>';
 				}
 
-				$inp_group = '<select class="custom-select" name="' . $key_select['key'] . '">
-									' . $opt_group . '
-  							 	  </select>';
+				$inp_group = '<div class="input-group-addon radius-left-sm bold"> 
+				<select class="custom-select" name="' . $key_select['key'] . '" style="background: #E5E5E5;border: 0;" '. ($key_select['attr'] ?? '').'>
+					' . $opt_group . '
+				</select>
+			</div>';
 			} else {
 				$inp_group = '<span class="input-group-addon radius-left-sm bold">' . $val['prefix'] . '</span>';
 			}
@@ -315,12 +317,14 @@ class create_form
 				$opt_group = '';
 				foreach ($val['suffix'] as $ky => $vl) {
 					$select_group = $ky == $key_select['value'] ? 'selected' : '';
-					$opt_group .= '<option value="' . $ky . '" ' . $select_group . '>' . $val . '</option>';
+					$opt_group .= '<option value="' . $ky . '" ' . $select_group . '>' . $vl . '</option>';
 				}
 
-				$inp_group = '<select class="custom-select" name="' . $key_select['key'] . '">
+				$inp_group = '<div class="input-group-addon radius-right-sm bold"> 
+								<select class="custom-select" name="' . $key_select['key'] . '" style="background: #E5E5E5;border: 0;" '. ($key_select['attr'] ?? '').'>
 									' . $opt_group . '
-  							 	  </select>';
+								</select>
+							</div>';
 			} else {
 				$inp_group = '<span class="input-group-addon radius-right-sm bold">' . $val['suffix'] . '</span>';
 			}
