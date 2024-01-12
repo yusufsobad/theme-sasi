@@ -471,7 +471,7 @@ class create_form
 
 		self::$auto_upload = $auto;
 		$inp_submit = $auto ? 'style="display:none;"' : '';
-		$on_change = $auto ? 'onchange="sasi_auto_upload"' : '';
+		$on_change = $auto ? 'onchange="sasi_auto_upload()"' : '';
 
 		$cols = self::$col_input;
 
