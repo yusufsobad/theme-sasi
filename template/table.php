@@ -139,7 +139,7 @@ class create_table
 							<div class="col-md-4 p-0">
 								<?php
 								if (!empty($check)) {
-									self::_dropdown($args, $search, $val_src);
+									self::_dropdown($args, $search, $val_src, $filter);
 								}
 								?>
 							</div>
@@ -162,10 +162,10 @@ class create_table
 
 	private static function _dropdown($args = array(), $search = '', $value = 0, $filter = true)
 	{
-		$filter = $filter ? 'display' : 'none';
+		$filter = $filter ? 1 : 0;
 	?>
 		<div class="btn-group">
-			<button id="filter-sasi" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs mr-xs" aria-hidden="true" style="display:<?= $filter ;?>"></i><span class="filter-title">Filter</span><span class="caret ml-xs"></span></button>
+			<button id="filter-sasi" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="opacity:<?= $filter ;?>"><i class="fa fa-cogs mr-xs" aria-hidden="true"></i><span class="filter-title">Filter</span><span class="caret ml-xs"></span></button>
 			<div class="dropdown-menu hold-on-click dropdown-radiobuttons" role="menu">
 				<?php
 				foreach ($args as $key => $val) {
