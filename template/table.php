@@ -98,6 +98,7 @@ class create_table
 		$load = isset($data['load']) ? empty($data['load']) ? 'sobad_portlet' : $data['load'] : 'sobad_portlet'; //load hasil request
 		$search = isset($data['name']) ? $data['name'] : ''; //name search
 		$val_src = isset($data['value']) ? $data['value'] : ''; //value search
+		$filter = isset($data['filter']) ? $data['filter'] : true; //button filter
 
 		?>
 		<div class="row search-form-default">
@@ -159,11 +160,12 @@ class create_table
 	<?php
 	}
 
-	private static function _dropdown($args = array(), $search = '', $value = 0)
+	private static function _dropdown($args = array(), $search = '', $value = 0, $filter = true)
 	{
+		$filter = $filter ? 'display' : 'none';
 	?>
 		<div class="btn-group">
-			<button id="filter-sasi" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs mr-xs" aria-hidden="true"></i><span class="filter-title">Filter</span><span class="caret ml-xs"></span></button>
+			<button id="filter-sasi" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-cogs mr-xs" aria-hidden="true" style="display:<?= $filter ;?>"></i><span class="filter-title">Filter</span><span class="caret ml-xs"></span></button>
 			<div class="dropdown-menu hold-on-click dropdown-radiobuttons" role="menu">
 				<?php
 				foreach ($args as $key => $val) {
