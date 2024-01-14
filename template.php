@@ -198,6 +198,11 @@ abstract class sasi_template extends custom_script
 			$type = $args['type'];
 		}
 
+		$notif = '';
+		if (isset($args['notify'])) {
+			$notif = $args['notify'];
+		}
+
 		$object = '';
 		if (isset($args['object'])) {
 			$object = $args['object'];
@@ -214,7 +219,7 @@ abstract class sasi_template extends custom_script
 		}
 
 	?>
-		<button id="btn_<?php print($idx); ?>" object="<?= $object ?>" data-sobad="<?php print($args['link']); ?>" data-load="<?php print($args['load']); ?>" data-type="<?php print($type); ?>" type="button" class="btn blue" data-index="#frm_<?php print($idx); ?>" data-modal="<?php print($modal); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" <?php print($status); ?>>Save</button>
+		<button id="btn_<?php print($idx); ?>" object="<?= $object ?>" data-sobad="<?php print($args['link']); ?>" data-load="<?php print($args['load']); ?>" data-type="<?php print($type); ?>" data-notify="<?php print($notif); ?>" type="button" class="btn blue" data-index="#frm_<?php print($idx); ?>" data-modal="<?php print($modal); ?>" onclick="metronicSubmit_<?php print($idx); ?>()" <?php print($status); ?>>Save</button>
 		<button type="button" class="btn red-border" data-dismiss="modal">Cancel</button>
 
 		<script type="text/javascript">
