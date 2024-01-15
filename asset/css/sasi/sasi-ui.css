@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "Inter-semi-bold";
+  src: url("font/Inter-SemiBold.woff");
+}
+
+@font-face {
   font-family: "Inter-bold";
   src: url("font/Inter-Bold.woff");
 }
@@ -55,6 +60,10 @@ p {
 
 .bold {
   font-family: "Inter-bold";
+}
+
+.semi-bold {
+  font-family: "Inter-semi-bold";
 }
 
 .width-fit {

@@ -818,6 +818,9 @@ class create_form
 			}
 
 			function domSearch(args) {
+				if (typeof args === 'string') {
+					args = [];
+				}
 				var card = document.getElementById("searchResultsCard");
 				var resultsContainer = document.getElementById("searchResults");
 				var searchQuery = $('.search-input').val().toLowerCase();
