@@ -128,25 +128,30 @@ class sasi_header
 					<div id="myDropDown" class="dropdown">
 						<button class="dropdown-toggle transparent border-none btn-circle" type="button" id="notify" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 							<div class="navbar-content color-light p-0 m-0">
-								<h2 class="m-0"><i class="fa fa-bell-o" aria-hidden="true"></i></h2>
+								<h2 class="m-0">
+									<i class="fa fa-bell-o" aria-hidden="true">
+										<span id="bell-notify" class="badge badge-default red hide">0</span>
+									</i>
+								</h2>
 							</div>
 						</button>
 						<ul id="myTabs" class="dropdown-menu navdrop" role="menu" aria-labelledby="dLabel">
 							<ul class="nav nav-line">
 								<li class="active"><a href="#home" data-toggle="tab">
 										<h4 class="color-dark-black font-weight-600">Notification</h4>
-										<div class="number-notify red"><small>1</small></div>
+										<div id="tabs-notify" class="number-notify red hide"><small>0</small></div>
 									</a>
 								</li>
 								<li><a href=" #profile" data-toggle="tab">
 										<h4 class="color-dark-black font-weight-600">Team Activity</h4>
-										<div class="number-notify red"><small>90</small></div>
+										<div id="tabs-activity" class="number-notify red hide"><small>0</small></div>
 									</a>
 								</li>
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content">
 								<div class="tab-pane active" id="home">
+								<!--
 									<li><small class="color-dark-grey mt-md">Today</small></li>
 									<li class="content-notify mt-sm ">
 										<img class="img-notify mr-sm" src="<?php print($image); ?>">
@@ -163,8 +168,10 @@ class sasi_header
 												min</small>
 										</span>
 									</li>
+								-->
 								</div>
 								<div class="tab-pane" id="profile">
+								<!--
 									<li><small class="color-dark-grey mt-md">Yesterday</small></li>
 									<li class="content-notify mt-sm ">
 										<img class="img-notify mr-sm" src="../assets/sasi-ui/img/gading-shape.png">
@@ -181,6 +188,7 @@ class sasi_header
 												days ago</small>
 										</span>
 									</li>
+								-->
 								</div>
 							</div>
 						</ul>

@@ -250,6 +250,26 @@ class create_table
 
 	?>
 		<style>
+			.bg-row-red{
+				background-color: #ffcbd1;
+			}
+
+			.bg-row-orange{
+				background-color: #fedebe;
+			}
+
+			.bg-row-green{
+				background-color: #bee3ba;
+			}
+
+			.bg-row-blue{
+				background-color: #aad6fa;
+			}
+
+			.bg-row-violet{
+				background-color: #dabcff;
+			}
+
 			.loader {
 				border: 5px solid #f3f3f3;
 				border-radius: 30px !important;
