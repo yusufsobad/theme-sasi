@@ -254,20 +254,40 @@ class create_table
 				background-color: #ffcbd1;
 			}
 
+			.table-hover>tbody>tr.bg-row-red:hover {
+			    background-color: #f1959b;
+			}
+
 			.bg-row-orange{
 				background-color: #fedebe;
+			}
+
+			.table-hover>tbody>tr.bg-row-orange:hover {
+			    background-color: #ffd4a1;
 			}
 
 			.bg-row-green{
 				background-color: #bee3ba;
 			}
 
+			.table-hover>tbody>tr.bg-row-green:hover {
+			    background-color: #a5e1a6;
+			}
+
 			.bg-row-blue{
 				background-color: #aad6fa;
 			}
 
+			.table-hover>tbody>tr.bg-row-blue:hover {
+			    background-color: #97c5ff;
+			}
+
 			.bg-row-violet{
 				background-color: #dabcff;
+			}
+
+			.table-hover>tbody>tr.bg-row-violet:hover {
+			    background-color: #d4a7d3;
 			}
 
 			.loader {
