@@ -401,9 +401,7 @@ class sasi_layout extends sasi_template
 			<?php endif; ?>
 
 			<li class="content-notify mt-sm ">
-				<span>
-					<i class="mr-sm <?= $icon ;?> color-purple icon-menu" style="font-size: 20px;padding: 10px;background-color: #F6E7FF;width: 40px;border-radius: 50%;"></i>
-				</span>
+				<i class="mr-sm <?= $icon ;?> color-purple icon-menu" style="font-size: 20px;padding: 10px;background-color: #F6E7FF;width: 40px;border-radius: 50%;"></i>
 
 				<?= self::_content_notification($val['content'],$val['link']) ?>
 
@@ -456,7 +454,7 @@ class sasi_layout extends sasi_template
 		$content = str_replace(']', $close, $content);
 
 		if(!empty($link)){
-			$content = '<a href="'.$link.'" > '.$content.' </a>';
+			$content = '<a href="'.$link.'" style="display:contents;"> '.$content.' </a>';
 		}
 
 		return $content;
