@@ -271,12 +271,13 @@ class sasi_layout extends sasi_template
 	{
 		$idx = $child['id'] ?? 'mn_' . $key;
 		$badge = $child['notify'] ?? '';
+		$hide = empty($badge) ? 'hide' : '';
 	?>
 		<div class="col-19 sasi-col pt-lg">
 			<div class="panel panel-default border-light radius-sm shadow-md sasi-card-body">
 				<div class="panel-body card-menu p-0">
 					<div class="col-lg-12 p-lg">
-						<span id="<?= $idx ?>" class="badge badge-success red" src="" style="position: absolute;top: 12px;right: 6px;font-size: 12px !important;border-radius: 6px !important;"><?= $badge ?></span>
+						<span id="<?= $idx ?>" class="badge badge-success red <?= $hide ;?>" src="" style="position: absolute;top: 12px;right: 6px;font-size: 12px !important;border-radius: 6px !important;"><?= $badge ?></span>
 						<?php
 						self::_contain_menu($child);
 						self::_contain_hover($key, $child);
