@@ -445,7 +445,7 @@ class sasi_layout extends sasi_template
 		$bold = '<span class="color-dark-black font-weight-600"><small>';
 		$purple = '<span class="color-purple font-weight-600"><small>';
 		$normal = '<span class="color-dark-grey"><small>';
-		$colse = '</small></span>';
+		$close = '</small></span>';
 
 		$content = str_replace('[bold=', $bold, $content);
 		$content = str_replace('[purple=', $purple, $content);
