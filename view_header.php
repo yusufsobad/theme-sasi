@@ -130,7 +130,7 @@ class sasi_header
 							<div class="navbar-content color-light p-0 m-0">
 								<h2 class="m-0">
 									<i class="fa fa-bell-o" aria-hidden="true">
-										<span id="bell-notify" class="badge badge-default red hide">0</span>
+										<span id="bell-notify" class="fa fa-circle red hide" style="position: absolute;top: -14px;right: -2px;"></span>
 									</i>
 								</h2>
 							</div>
@@ -150,7 +150,7 @@ class sasi_header
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content">
-								<div class="tab-pane active" id="home">
+								<div class="tab-pane active" id="list-notify">
 								<!--
 									<li><small class="color-dark-grey mt-md">Today</small></li>
 									<li class="content-notify mt-sm ">
@@ -170,7 +170,7 @@ class sasi_header
 									</li>
 								-->
 								</div>
-								<div class="tab-pane" id="profile">
+								<div class="tab-pane" id="list-activity">
 								<!--
 									<li><small class="color-dark-grey mt-md">Yesterday</small></li>
 									<li class="content-notify mt-sm ">

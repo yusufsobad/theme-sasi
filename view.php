@@ -269,11 +269,14 @@ class sasi_layout extends sasi_template
 
 	private static function _sidebar_menu($key = '', $child = array())
 	{
+		$idx = $child['id'] ?? 'mn_' . $key;
+		$badge = $child['notify'] ?? 0;
 	?>
 		<div class="col-19 sasi-col pt-lg">
 			<div class="panel panel-default border-light radius-sm shadow-md sasi-card-body">
 				<div class="panel-body card-menu p-0">
 					<div class="col-lg-12 p-lg">
+						<span id="<?= $idx ?>" class="badge badge-success red" src="" style="position: absolute;top: -10px;right: 2px;font-size: 9px;color: #d51442;"><?= $badge ?></span>
 						<?php
 						self::_contain_menu($child);
 						self::_contain_hover($key, $child);
@@ -367,6 +370,93 @@ class sasi_layout extends sasi_template
 			}
 		</script>
 	<?php
+	}
+
+	// ------------------------------------------------------------------------------
+	// Notification -----------------------------------------------------------------
+	// ------------------------------------------------------------------------------
+
+	public static function _notification($data=[]){
+		$_date = '0000-00-00';
+		foreach ($data as $key => $val) {
+			$status_date = false;
+
+			$icon = $val['icon'] ?? '';
+			$icon = empty($icon) ? 'sasi-icon-other' : $icon;
+
+			$time = strtotime($val['inserted']);
+			$time = date('H:i',$time);
+
+			if($val['date'] != $_date){
+				$status_date = true;
+
+				$_date = $val['post_date'];
+				$date = $val['post_date'] == date('Y-m-d') ? 'Today' : format_date_id($val['post_date']);
+			}
+
+		?>
+			<?php if($status_date): ?>
+				<li><small class="color-dark-grey mt-md"><?= $date ;?></small></li>
+			<?php endif; ?>
+
+			<li class="content-notify mt-sm ">
+				<i class="img-notify mr-sm <?= $icon ;?> color-purple icon-menu"></i>
+
+				<?= self::_content_notification($val['content'],$val['link']) ?>
+
+				<span class="color-dark-grey ml-lg align-right">
+					<small><?= $time ;?></small>
+				</span>
+				<!--
+					<span class="color-dark-black font-weight-600"><small>Gading
+						Rengga</small>
+					</span>
+					<span class="color-dark-grey"><small> send you a new
+							task</small>
+					</span>
+					<span class="color-dark-black font-weight-600"><small>
+							Project Team</small>
+					</span>
+					<span class="color-dark-grey ml-lg align-right"><small>6
+							min</small>
+					</span>
+				-->
+			</li>
+		<?php
+
+		}
+	}
+
+	public static function _content_notification($content='',$link=''){
+		/*
+			[bold={text}]	=> <span class="color-dark-black font-weight-600">
+									<small>{text}</small>
+								</span>
+
+			[purple={text}]	=> <span class="color-purple font-weight-600">
+									<small>{text}</small>
+								</span>
+			
+			[normal={text}]	=> <span class="color-dark-grey">
+										<small>{text}</small>
+									</span>
+		*/
+
+		$bold = '<span class="color-dark-black font-weight-600"><small>';
+		$purple = '<span class="color-purple font-weight-600"><small>';
+		$normal = '<span class="color-dark-grey"><small>';
+		$colse = '</small></span>';
+
+		$content = str_replace('[bold=', $bold, $content);
+		$content = str_replace('[purple=', $purple, $content);
+		$content = str_replace('[normal=', $normal, $content);
+		$content = str_replace(']', $close, $content);
+
+		if(!empty($link)){
+			$content = '<a href="'.$link.'" > '.$content.' </a>';
+		}
+
+		return $content;
 	}
 
 	// ------------------------------------------------------------------------------
