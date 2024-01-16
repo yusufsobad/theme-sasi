@@ -270,7 +270,7 @@ class sasi_layout extends sasi_template
 	private static function _sidebar_menu($key = '', $child = array())
 	{
 		$idx = $child['id'] ?? 'mn_' . $key;
-		$badge = $child['notify'] ?? 0;
+		$badge = $child['notify'] ?? '';
 	?>
 		<div class="col-19 sasi-col pt-lg">
 			<div class="panel panel-default border-light radius-sm shadow-md sasi-card-body">
