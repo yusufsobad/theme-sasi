@@ -387,7 +387,7 @@ class sasi_layout extends sasi_template
 			$time = strtotime($val['inserted']);
 			$time = date('H:i',$time);
 
-			if($val['date'] != $_date){
+			if($val['post_date'] != $_date){
 				$status_date = true;
 
 				$_date = $val['post_date'];
