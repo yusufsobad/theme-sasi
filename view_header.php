@@ -130,7 +130,7 @@ class sasi_header
 							<div class="navbar-content color-light p-0 m-0">
 								<h2 class="m-0">
 									<i class="fa fa-bell-o" aria-hidden="true">
-										<span id="bell-notify" class="fa fa-circle red hide" style="position: absolute;top: -10px;right: 2px;font-size: 9px;"></span>
+										<span id="bell-notify" class="fa fa-circle hide" style="position: absolute;top: -10px;right: 2px;font-size: 9px;color: #d51442;"></span>
 									</i>
 								</h2>
 							</div>
