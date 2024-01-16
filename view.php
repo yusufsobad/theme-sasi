@@ -276,7 +276,7 @@ class sasi_layout extends sasi_template
 			<div class="panel panel-default border-light radius-sm shadow-md sasi-card-body">
 				<div class="panel-body card-menu p-0">
 					<div class="col-lg-12 p-lg">
-						<span id="<?= $idx ?>" class="badge badge-success red" src="" style="position: absolute;top: -10px;right: 2px;font-size: 9px;color: #d51442;"><?= $badge ?></span>
+						<span id="<?= $idx ?>" class="badge badge-success red" src="" style="position: absolute;top: 12px;right: 6px;font-size: 12px !important;border-radius: 6px !important;"><?= $badge ?></span>
 						<?php
 						self::_contain_menu($child);
 						self::_contain_hover($key, $child);
