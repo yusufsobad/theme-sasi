@@ -461,6 +461,10 @@ class sasi_layout extends sasi_template
 		return $content;
 	}
 
+	public static function _conv_content_notification($content=''){
+		echo self::_content_notification($content);
+	}
+
 	// ------------------------------------------------------------------------------
 	// Head Title -------------------------------------------------------------------
 	// ------------------------------------------------------------------------------	
