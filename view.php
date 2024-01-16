@@ -400,7 +400,9 @@ class sasi_layout extends sasi_template
 			<?php endif; ?>
 
 			<li class="content-notify mt-sm ">
-				<i class="img-notify mr-sm <?= $icon ;?> color-purple icon-menu"></i>
+				<span>
+					<i class="mr-sm <?= $icon ;?> color-purple icon-menu" style="font-size: 20px;padding: 10px;background-color: #F6E7FF;width: 40px;border-radius: 50%;"></i>
+				</span>
 
 				<?= self::_content_notification($val['content'],$val['link']) ?>
 
