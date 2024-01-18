@@ -385,14 +385,14 @@ class sasi_layout extends sasi_template
 			$icon = $val['icon'] ?? '';
 			$icon = empty($icon) ? 'sasi-icon-other' : $icon;
 
-			$time = strtotime($val['inserted']);
+			$time = strtotime($val['date']);
 			$time = date('H:i',$time);
 
-			if($val['post_date'] != $_date){
+			if($val['date'] != $_date){
 				$status_date = true;
 
-				$_date = $val['post_date'];
-				$date = $val['post_date'] == date('Y-m-d') ? 'Today' : format_date_id($val['post_date']);
+				$_date = $val['date'];
+				$date = $val['date'] == date('Y-m-d') ? 'Today' : format_date_id($val['date']);
 			}
 
 		?>
