@@ -200,7 +200,8 @@ abstract class sasi_template extends custom_script
 
 		$notif = '';
 		if (isset($args['notify'])) {
-			$notif = $args['notify'];
+			$frekuensi = defined('frekuensi_notif') ? frekuensi_notif : 0;
+			$notif = $args['notify'] . 'fn' . $frekuensi;
 		}
 
 		$object = '';
