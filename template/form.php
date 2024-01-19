@@ -295,7 +295,7 @@ class create_form
 				}
 
 				$inp_group = '<div class="input-group-addon radius-left-sm bold"> 
-				<select class="custom-select" name="' . $key_select['key'] . '" style="background: #E5E5E5;border: 0;" '. ($key_select['attr'] ?? '').'>
+				<select class="custom-select" name="' . $key_select['key'] . '" style="background: #E5E5E5;border: 0;" ' . ($key_select['attr'] ?? '') . '>
 					' . $opt_group . '
 				</select>
 			</div>';
@@ -321,7 +321,7 @@ class create_form
 				}
 
 				$inp_group = '<div class="input-group-addon radius-right-sm bold"> 
-								<select class="custom-select" name="' . $key_select['key'] . '" style="background: #E5E5E5;border: 0;" '. ($key_select['attr'] ?? '').'>
+								<select class="custom-select" name="' . $key_select['key'] . '" style="background: #E5E5E5;border: 0;" ' . ($key_select['attr'] ?? '') . '>
 									' . $opt_group . '
 								</select>
 							</div>';
@@ -480,7 +480,7 @@ class create_form
 		$inp .= '</div>';
 
 		$inp .= '<div class="col-md-2">';
-		$inp .= '<input type="submit" name="import" value="' . $txt . '" class="btn green" '.$inp_submit.'>';
+		$inp .= '<input type="submit" name="import" value="' . $txt . '" class="btn green" ' . $inp_submit . '>';
 		$inp .= '</div>';
 		return $inp;
 	}
@@ -779,7 +779,7 @@ class create_form
 						$type = $args['action']['type'];
 					}
 				?>
-					<a id="<?= $args['action']['id'] ?? '' ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $args['action']['modal'] ?? 2 ?>" data-type="<?= $type ?>" data-alert="" href="#myModal<?= $args['action']['modal'] ?? 2 ?>" data-uri="" onclick="sobad_button(this,0)">
+					<a id="<?= $args['action']['id'] ?? '' ?>" class="btn-inner-searchlist" data-toggle="modal" data-sobad="<?= $args['action']['func'] ?>" data-load="here_modal<?= $args['action']['modal'] ?? 2 ?>" data-type="<?= $type ?>" data-alert="" data-notify="" href="#myModal<?= $args['action']['modal'] ?? 2 ?>" data-uri="" onclick="sobad_button(this,0)">
 						<i class="fa fa-plus"></i> Add New
 					</a>
 				<?php } ?>
