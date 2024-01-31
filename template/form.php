@@ -130,8 +130,8 @@ class create_form
 				mask_decimal('.decimal');
 			});
 
-			$('.number').on('keydown', function() {
-				mask_quantity('.number');
+			$('.decimal2').on('keydown', function() {
+				mask_quantity('.decimal2');
 			});
 
 			$('.decimal3').on('keydown', function() {
@@ -257,7 +257,7 @@ class create_form
 
 			case 'number':
 				$val['type'] = 'text';
-				$val['class'] .= ' number';
+				$val['class'] .= ' decimal2';
 				break;
 
 			case 'decimal3':
