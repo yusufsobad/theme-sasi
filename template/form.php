@@ -135,7 +135,7 @@ class create_form
 			});
 
 			$('.decimal3').on('keydown', function() {
-				mask_quantity('.decimal3');
+				mask_decimal3('.decimal3');
 			});
 
 			<?php
