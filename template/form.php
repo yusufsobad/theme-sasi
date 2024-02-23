@@ -140,13 +140,29 @@ class create_form
 
 			<?php
 			if (self::$date_picker) {
-				echo 'sobad_picker();';
+				echo '
+					  if (jQuery().datepicker) {
+					    $(".date-picker").datepicker({
+					      rtl: false,
+					      orientation: "right",
+					      autoclose: true,
+					    });
+					  }
+				';
 			}
 			?>
 
 			<?php
 			if (self::$clock_picker) {
-				echo 'sobad_clockpicker();';
+				echo '
+					  if (jQuery().clockpicker) {
+					    $(".clockpicker").clockpicker({
+					      placement: "right",
+					      align: "left",
+					      autoclose: true,
+					    });
+					  }
+				';
 			}
 			?>
 
