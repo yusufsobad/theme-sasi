@@ -382,6 +382,7 @@ abstract class sasi_template extends custom_script
 		}
 
 		$object = defined("_object") ? _object : '';
+		$object = $args['object'] ?? $object; 
 
 	?>
 		<div class="col-md-12">
