@@ -395,6 +395,12 @@ class sasi_layout extends sasi_template
 				$date = $val['date'] == date('Y-m-d') ? 'Today' : format_date_id($val['date']);
 			}
 
+			$notify = '';
+			if(!empty($val['link'])){
+				$base = $val['ID'] . '#' . $val['post_id'];
+				$notify = base64_encode($base);
+			}
+
 		?>
 			<?php if($status_date): ?>
 				<li><small class="color-dark-grey mt-md"><?= $date ;?></small></li>
@@ -403,7 +409,7 @@ class sasi_layout extends sasi_template
 			<li class="content-notify mt-sm ">
 				<i class="mr-sm <?= $icon ;?> color-purple icon-menu" style="font-size: 20px;padding: 10px;background-color: #F6E7FF;width: 40px;border-radius: 50%;"></i>
 
-				<?= self::_content_notification($val['content'],$val['link']) ?>
+				<?= self::_content_notification($val['content'],$val['link'],$notify) ?>
 
 				<span class="color-dark-grey ml-lg align-right">
 					<small><?= $time ;?></small>
@@ -428,7 +434,7 @@ class sasi_layout extends sasi_template
 		}
 	}
 
-	public static function _content_notification($content='',$link=''){
+	public static function _content_notification($content='',$link='',$notify=''){
 		/*
 			[bold={text}]	=> <span class="color-dark-black font-weight-600">
 									<small>{text}</small>
@@ -454,6 +460,7 @@ class sasi_layout extends sasi_template
 		$content = str_replace(']', $close, $content);
 
 		if(!empty($link)){
+			$link = '/?notify=' . $notify;
 			$content = '<a href="'.$link.'" style="display:contents;"> '.$content.' </a>';
 		}
 
