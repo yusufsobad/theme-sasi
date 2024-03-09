@@ -460,7 +460,7 @@ class sasi_layout extends sasi_template
 		$content = str_replace(']', $close, $content);
 
 		if(!empty($link)){
-			$link = '/?notify=' . $notify;
+			$link .= '/?notify=' . $notify;
 			$content = '<a href="'.$link.'" style="display:contents;"> '.$content.' </a>';
 		}
 
