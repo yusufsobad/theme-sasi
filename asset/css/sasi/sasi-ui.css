@@ -784,6 +784,244 @@ p {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
+.border-0 {
+  border: unset;
+}
+
+.border-light {
+  border: 1px solid #fff;
+}
+
+.border-grey {
+  border: 1px solid #9e9e9e;
+}
+
+.border-light-grey {
+  border: 1px solid #f4f4f4;
+}
+
+.border-bottom-light-grey {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.border-blue {
+  border: 1px solid #009ef7;
+}
+
+.border-violet {
+  border: 1px solid #a020f0;
+}
+
+.border-light-violet {
+  border: 1px solid #e6b9ff;
+}
+
+.border-left-light-violet {
+  border-left: 1px solid #e6b9ff;
+}
+
+.border-left-tosca {
+  border-left: 1px solid #1eafaf;
+}
+
+.border-left-purple {
+  border-left: 1px solid #9d28dd;
+}
+
+.border-left-blue {
+  border-left: 1px solid #0a86cc;
+}
+
+.border-left-magenta {
+  border-left: 1px solid #bf3d7c;
+}
+
+.border-left-orange {
+  border-left: 1px solid #b2700d;
+}
+
+.border-orange {
+  border: 1px solid #b2700d;
+}
+
+.border-green {
+  border: 1px solid #15ba6b;
+}
+
+.border-red {
+  border: 1px solid #d51442;
+}
+
+.bg-light-grey {
+  background: #f4f4f4;
+}
+
+.bg-light-orange {
+  color: #ec7a00;
+  background: #ffe2c4;
+}
+
+.bg-violet {
+  background: #a020f0;
+  color: #fff;
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(180deg, #de5dfe 0%, #c25dfa 47.92%, #9d28dd 100%);
+  color: #fff;
+}
+
+.bg-gradient-tosca {
+  background: linear-gradient(180deg, #14c9c9 0%, #4beaea 100%);
+  color: #fff;
+}
+
+.bg-gradient-orange {
+  background: linear-gradient(180deg, #f79400 0%, #f8b755 100%);
+  color: #fff;
+}
+
+.bg-gradient-yellow {
+  background: linear-gradient(122.93deg, #fbc664 30.35%, #ffe0a1 95.04%);
+  color: #fff;
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(180deg, #009ef7 0%, #4abeff 100%);
+  color: #fff;
+}
+
+.bg-gradient-magenta {
+  background: linear-gradient(180deg, #f356a2 0%, #fb71b3 100%);
+  color: #fff;
+}
+
+.bg-gradient-red {
+  background: linear-gradient(116.09deg, #d51414 24.2%, #ff6565 86.73%);
+  color: #fff;
+}
+
+.bg-magenta {
+}
+
+.bg-green {
+  background-color: #15ba6b;
+}
+
+.bg-light-tosca {
+  color: #25b7b7;
+  background-color: #e9ffff;
+}
+
+.card-content {
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+}
+
+.grey {
+  color: #9e9e9e;
+}
+
+.orange {
+  color: #f79401;
+}
+
+.deep-grey {
+  color: #646464;
+}
+
+.violet {
+  color: #a020f0;
+}
+
+.tosca {
+  color: #25b7b7;
+}
+
+.color-tosca {
+  color: #25b7b7;
+}
+
+.color-tosca {
+  color: #25b7b7;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.align-space-between {
+  align-content: space-between;
+}
+
+.align-space-arround {
+  align-content: space-around;
+}
+
+.align-space-evenly {
+  align-content: space-evenly;
+}
+
+.align-flex-end {
+  align-items: flex-end;
+}
+
+.justify-items-end {
+  justify-items: end;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-space-arround {
+  justify-content: space-around;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.relative {
+  position: relative;
+}
+
+.radius-left-xs {
+  border-top-left-radius: 3px !important;
+  border-bottom-left-radius: 3px !important;
+}
+
+.gap-xs {
+  gap: 0.25em;
+}
+
+.gap-sm {
+  gap: 0.5em;
+}
+
+.gap-md {
+  gap: 1em;
+}
+
+.gap-lg {
+  gap: 1.5em;
+}
+
+.gap-xl {
+  gap: 2em;
+}
+
+.w-30 {
+  width: 30%;
+}
+
 .top-0 {
   top: 0;
 }
